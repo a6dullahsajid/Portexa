@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌐 Portexa - Portfolio Builder App
 
-## Getting Started
+**Portexa** is a modern web application that allows users to create, customize, and publish beautiful personal portfolios with ease. Built using **Next.js**, **Redux Toolkit**, **Firebase**, and **Cloudinary**, it offers a smooth user experience and flexible customization for developers and creatives alike.
 
-First, run the development server:
+> 🔗 [Live Demo Coming Soon]  
+> 🛠️ Built & maintained by [@a6dullahsajid](https://github.com/a6dullahsajid)
 
+---
+
+## ✨ Features
+
+- 🔐 **Authentication**
+  - Login with **Google** or **GitHub** using NextAuth
+- 🧾 **Multi-Step Portfolio Form**
+  - Add personal info, skills, experience, projects, and contact details
+- 🖼️ **Image Upload**
+  - Upload profile image directly to **Cloudinary**
+- 💾 **Data Persistence**
+  - Form data saved securely in **Firebase Firestore**
+- 🌐 **Public Preview**
+  - Dynamic portfolio pages with unique URLs
+- 🧠 **State Management**
+  - Centralized state with **Redux Toolkit**
+- 🎯 **Responsive Design**
+  - Built with **Tailwind CSS** for modern, mobile-friendly layouts
+
+---
+
+## 🧰 Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Auth**: [NextAuth.js](https://next-auth.js.org/)
+- **Database**: Firebase Firestore
+- **State Management**: Redux Toolkit
+- **Image Upload**: Cloudinary
+- **Styling**: Tailwind CSS
+- **Deployment**: Vercel
+
+---
+
+## 📦 Installation
+
+1. **Clone the repository**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/a6dullahsajid/Portexa.git
+cd Portexa
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+3.**env.local**
+```env.local
+NEXTAUTH_SECRET=your_nextauth_secret
+NEXTAUTH_URL=http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# OAuth credentials
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
 
-## Learn More
+GITHUB_CLIENT_ID=your_github_client_id
+GITHUB_CLIENT_SECRET=your_github_client_secret
 
-To learn more about Next.js, take a look at the following resources:
+# Firebase URI
+FIREBASE_URI=your_firebase_uri
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Cloudinary
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_UPLOAD_PRESET=portexa
+```
+4.**Run the app**
+```bash
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
