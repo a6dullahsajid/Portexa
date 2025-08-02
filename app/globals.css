@@ -1,26 +1,46 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Anton&family=Bebas+Neue&family=Comfortaa:wght@300..700&family=Fjalla+One&family=Itim&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:wght@100..900&family=Pacifico&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Vinyl&family=Rubik+Wet+Paint&family=Russo+One&family=Space+Grotesk:wght@300..700&display=swap');
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+    margin: 0;
+    padding: 0;
+    scrollbar-width: none;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: white;
+    overflow: scroll;
+}
+
+:root {
+    --theme-bg: rgb(228, 233, 255);
+    --theme-text-color: rgb(42, 39, 129);
+    --theme-button-color: rgb(47, 85, 138);
+    --theme-text-shadow: -1px 0px 2px rgb(125, 121, 231);
+}
+
+#bgCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-color: rgb(228, 233, 255);
+}
+
+.loggedOut{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 99vh;
+    width: 100%;
+}
+
+.loggedOut h1{
+    font-size: 3rem;
+    color: var(--theme-text-color);
+    margin-bottom: 5rem;
 }
