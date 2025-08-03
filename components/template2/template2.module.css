@@ -1,0 +1,1624 @@
+.root {
+    display: flex;
+    position: relative;
+    background-image: linear-gradient(to right,
+            rgb(255, 255, 255),
+            rgb(230, 248, 255),
+            rgb(225, 246, 254),
+            rgb(217, 244, 255),
+            rgb(214, 243, 255),
+            rgb(208, 239, 255),
+            rgb(202, 239, 255));
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5%;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    gap: 30px;
+    height: 35%;
+    width: 100%;
+}
+
+.nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    text-decoration: none;
+    color: rgb(58, 56, 56);
+    transition: 500ms all ease;
+}
+
+.nav img {
+    width: 35px;
+    transition: 700ms all ease;
+}
+
+.menuContainer:hover img,
+.menuContainer:hover a {
+    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.4));
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    width: 95%;
+    height: 100vh;
+    box-sizing: border-box;
+    transition-duration: 3s all ease;
+}
+
+.section {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    gap: 30px;
+    min-height: 65vh;
+    height: fit-content;
+    width: 100%;
+    padding-left: 130px;
+    box-sizing: border-box;
+    padding-bottom: 50px;
+    padding-top: 30px;
+}
+
+.section1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 13rem;
+}
+
+.line {
+    width: 85%;
+    height: 1px;
+    border: 1px solid rgba(22, 17, 121, 0.618);
+}
+
+.profession {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+}
+
+.name {
+    font-family: "Fjalla One", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 85px;
+    width: 100%;
+}
+
+.profname {
+    font-family: monospace;
+    font-size: 40px;
+    width: 100%;
+}
+
+.photo {
+    /* background-color: aquamarine; */
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+}
+
+.photo img {
+    height: 25rem;
+    border-radius: 5%;
+}
+
+.section2 {
+    gap: 20px;
+    min-height: 83vh;
+}
+
+.section h2 {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-family: "Kanit", serif;
+    width: 90%;
+    padding-bottom: 20px;
+    font-size: 70px;
+    color: rgba(84, 76, 234, 1);
+    text-shadow: -2px 2px 2px rgb(22, 17, 121);
+}
+
+.aboutContainer {
+    width: 80%;
+    margin-left: 50px;
+}
+
+.description {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    word-spacing: 3px;
+    width: 65%;
+    font-family: sans-serif;
+    gap: 10px;
+    color: rgb(109, 84, 173);
+}
+
+.resume {
+    cursor: pointer;
+    width: 85px;
+    height: 40px;
+    font-size: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: 0;
+    background-color: rgba(84, 76, 234, 0.663);
+    color: white;
+    font-size: 16px;
+    transition: all 300ms ease-out;
+}
+
+.resume:hover {
+    background-color: rgb(129, 99, 203);
+}
+
+.section h3 {
+    font-weight: bold;
+    margin: 30px 0px 15px 0px;
+    font-size: 35px;
+    color: rgb(84, 88, 173);
+}
+
+.skillContainer {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+}
+
+.skillCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 10px 25px;
+    background-color: #ffffff;
+    color: rgb(129, 99, 203);
+    gap: 5px;
+    font-size: 16px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px white;
+}
+
+.skillCard img {
+    width: 25px;
+}
+
+.section3 {
+    gap: 30px;
+}
+
+.experienceContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    width: 80%;
+    gap: 5px;
+    color: rgb(109, 84, 173);
+}
+
+.work {
+    width: 55%;
+    padding-left: 25px;
+}
+
+.position {
+    font-weight: 600;
+    color: rgb(76, 53, 135);
+}
+
+.companyDetails {
+    font-style: italic;
+}
+
+.section4 {
+    gap: 30px;
+}
+
+.projectContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 95%;
+    margin-left: 50px;
+    gap: 40px;
+}
+
+
+.projectCard {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: -2px 2px 4px rgb(129, 99, 203);
+    min-height: 400px;
+    height: fit-content;
+    width: 350px;
+    gap: 10px;
+    padding-bottom: 20px;
+    border-radius: 15px;
+}
+
+.projectCard img {
+    width: 100%;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.projectName {
+    padding: 5px 15px;
+    font-size: 23px;
+    font-family: system-ui;
+    color: rgb(71, 48, 130);
+    font-weight: bold;
+    width: 100%;
+}
+
+.projDesc {
+    width: 100%;
+    padding: 8px 25px;
+    font-size: 13px;
+    color: rgb(129, 99, 203);
+}
+
+.cardButtons {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    gap: 60%;
+    padding: 0px 15px;
+
+}
+
+.cardButtons a button {
+    cursor: pointer;
+    padding: 5px 8px;
+    border-radius: 40px;
+    border: 1px solid rgb(129, 99, 203);
+    background-color: white;
+    color: rgb(129, 99, 203);
+    font-size: 12px;
+    transition: all 500ms ease-out;
+}
+
+.cardButtons a button:hover {
+    color: white;
+    background-color: rgb(129, 99, 203);
+}
+
+.section5 {
+    gap: 30px;
+}
+
+.connectContainer {
+    margin-left: 30px;
+}
+
+.connectButtons {
+    /* margin-left: 30px; */
+    margin-top: 40px;
+    display: flex;
+    gap: 75px;
+}
+
+.connectButtons img {
+    cursor: pointer;
+    width: 125px;
+    max-width: fit-content;
+    height: 40px;
+    transition: all 300ms ease-out;
+}
+
+.connectButtons img:hover {
+    filter: drop-shadow(0px 0px 1px rgb(0, 0, 114));
+}
+
+
+@media (max-width:389px) {
+    .root {
+        display: flex;
+        position: relative;
+        flex-direction: column-reverse;
+        background-image: linear-gradient(to top,
+                rgb(255, 255, 255),
+                rgb(230, 248, 255),
+                rgb(225, 246, 254),
+                rgb(217, 244, 255),
+                rgb(214, 243, 255),
+                rgb(208, 239, 255),
+                rgb(202, 239, 255));
+    }
+
+    .left {
+        align-items: flex-end;
+        justify-content: center;
+        width: 100%;
+        height: 10vh;
+        box-sizing: border-box;
+        background-color: transparent;
+    }
+
+    .nav {
+        flex-direction: row;
+        gap: 30px;
+        height: 90%;
+        border-radius: 30px;
+        width: 80%;
+        background-color: white;
+        box-shadow: 0px 1px 3px black;
+    }
+
+    .nav a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 8px;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        transition: 500ms all ease;
+    }
+
+    .nav img {
+        width: 18px;
+        transition: 700ms all ease;
+    }
+
+    .menuContainer:hover img,
+    .menuContainer:hover a {
+        filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.4));
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 88vh;
+    }
+
+    .section {
+        display: flex;
+        align-items: start;
+        justify-content: end;
+        flex-direction: column;
+        gap: 30px;
+        min-height: 65vh;
+        height: fit-content;
+        width: 90%;
+        padding-left: 15px;
+        box-sizing: border-box;
+        padding-bottom: 25px;
+        padding-top: 10px;
+    }
+
+    .section1 {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: flex-start;
+        height: 92vh;
+        gap: 20px;
+    }
+
+    .line {
+        width: 85%;
+        height: 1px;
+        border: 1px solid rgba(22, 17, 121, 0.618);
+    }
+
+    .profession {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: fit-content;
+        height: fit-content;
+    }
+
+    .name {
+        font-family: "Fjalla One", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 45px;
+        width: 100%;
+    }
+
+    .profname {
+        font-family: monospace;
+        font-size: 20px;
+        width: fit-content;
+    }
+
+    .photo {
+        /* background-color: aquamarine; */
+        display: flex;
+        align-items: center;
+        justify-content: start;
+
+    }
+
+    .photo img {
+        height: 200px;
+        border-radius: 5%;
+    }
+
+    .section2 {
+        gap: 20px;
+        width: 90%;
+        min-height: 83vh;
+    }
+
+    .section h2 {
+        width: 90%;
+        padding-bottom: 10px;
+        font-size: 40px;
+        text-shadow: -1px 1px 2px rgb(22, 17, 121);
+    }
+
+    .aboutContainer {
+        width: 100%;
+        margin-left: 20px;
+    }
+
+    .description {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        word-spacing: 3px;
+        font-size: 12px;
+        width: 85%;
+        font-family: sans-serif;
+        gap: 10px;
+    }
+
+    .resume {
+        cursor: pointer;
+        width: 55px;
+        height: 25px;
+        margin-top: 10px;
+        border-radius: 5px;
+        font-size: 10px;
+    }
+
+    .section h3 {
+        font-weight: bold;
+        margin: 20px 0px 15px 0px;
+        font-size: 22px;
+        color: rgb(84, 88, 173);
+    }
+
+    .skillContainer {
+        justify-content: center;
+        gap: 12px;
+        width: 85%;
+    }
+
+    .skillCard {
+        padding: 5px 15px;
+        background-color: #ffffff;
+        color: rgb(129, 99, 203);
+        gap: 5px;
+        font-size: 10px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 3px white;
+    }
+
+    .skillCard img {
+        width: 25px;
+    }
+
+    .section3 {
+        gap: 20px;
+    }
+
+    .experienceContainer {
+        margin-left: 20px;
+        margin-bottom: 10px;
+        width: 95%;
+        gap: 3px;
+    }
+
+    .work {
+        width: 85%;
+        font-size: 10px;
+        padding-left: 15px;
+    }
+
+    .position {
+        font-size: 15px;
+    }
+
+    .companyDetails {
+        font-size: 10px;
+        font-style: italic;
+    }
+
+    .section4 {
+        gap: 20px;
+    }
+
+    .projectContainer {
+        align-items: center;
+        justify-content: center;
+        width: 95%;
+        margin-left: 0px;
+        gap: 20px;
+    }
+
+
+    .projectCard {
+        align-items: start;
+        justify-content: space-between;
+        box-shadow: -1px 1px 3px rgb(129, 99, 203);
+        min-height: 300px;
+        height: fit-content;
+        width: 250px;
+        gap: 10px;
+        padding-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    .projectCard img {
+        width: 100%;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    .projectName {
+        padding: 3px 10px;
+        font-size: 17px;
+    }
+
+    .projDesc {
+        width: 100%;
+        padding: 8px 25px;
+        font-size: 10px;
+    }
+
+    .cardButtons {
+        gap: 52%;
+        padding: 0px 15px;
+
+    }
+
+    .cardButtons a button {
+        padding: 3px 6px;
+        border-radius: 40px;
+        font-size: 10px;
+    }
+
+    .section5 {
+        min-height: 54vh;
+        gap: 15px;
+    }
+
+    .connectContainer {
+        margin-left: 20px;
+    }
+
+    .connectButtons {
+        margin-top: 30px;
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 35px;
+    }
+
+    .connectButtons img {
+        cursor: pointer;
+        width: 65px;
+        max-width: fit-content;
+        height: 20px;
+        transition: all 300ms ease-out;
+    }
+
+    .connectButtons img:hover {
+        filter: drop-shadow(0px 0px 1px rgb(0, 0, 114));
+    }
+}
+
+
+@media (min-width:390px) and (max-width: 576px) {
+
+    .root {
+        display: flex;
+        position: relative;
+        flex-direction: column-reverse;
+        background-image: linear-gradient(to top,
+                rgb(255, 255, 255),
+                rgb(230, 248, 255),
+                rgb(225, 246, 254),
+                rgb(217, 244, 255),
+                rgb(214, 243, 255),
+                rgb(208, 239, 255),
+                rgb(202, 239, 255));
+    }
+
+    .left {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 8vh;
+        box-sizing: border-box;
+        background-color: transparent;
+    }
+
+    .nav {
+        flex-direction: row;
+        gap: 30px;
+        height: 80%;
+        border-radius: 30px;
+        width: fit-content;
+        padding: 0px 15px;
+        background-color: white;
+        box-shadow: 0px 1px 3px black;
+    }
+
+    .nav a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 9px;
+        padding: 5px 0px;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        transition: 500ms all ease;
+    }
+
+    .nav img {
+        width: 20px;
+        transition: 700ms all ease;
+    }
+
+    .menuContainer:hover img,
+    .menuContainer:hover a {
+        filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.4));
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 85vh;
+    }
+
+    .section {
+        display: flex;
+        align-items: start;
+        justify-content: end;
+        flex-direction: column;
+        gap: 30px;
+        min-height: 65vh;
+        height: fit-content;
+        width: 90%;
+        padding-left: 15px;
+        box-sizing: border-box;
+        padding-bottom: 25px;
+        padding-top: 10px;
+    }
+
+    .section1 {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        height: 90vh;
+        gap: 20px;
+    }
+
+    .line {
+        width: 85%;
+        height: 1px;
+        border: 1px solid rgba(22, 17, 121, 0.618);
+    }
+
+    .profession {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: fit-content;
+        height: fit-content;
+    }
+
+    .name {
+        font-family: "Fjalla One", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 55px;
+        width: 100%;
+    }
+
+    .profname {
+        font-family: monospace;
+        font-size: 25px;
+        width: fit-content;
+    }
+
+    .photo {
+        /* background-color: aquamarine; */
+        display: flex;
+        align-items: center;
+        justify-content: start;
+
+    }
+
+    .photo img {
+        height: 230px;
+        border-radius: 5%;
+    }
+
+    .section2 {
+        gap: 10px;
+        min-height: 50vh;
+    }
+
+    .section h2 {
+        width: 90%;
+        padding-bottom: 10px;
+        font-size: 43px;
+        text-shadow: -1px 1px 2px rgb(22, 17, 121);
+    }
+
+    .aboutContainer {
+        width: 100%;
+        margin-left: 20px;
+    }
+
+    .description {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        word-spacing: 3px;
+        font-size: 14px;
+        width: 90%;
+        font-family: sans-serif;
+        gap: 10px;
+    }
+
+    .resume {
+        cursor: pointer;
+        width: 60px;
+        height: 28px;
+        margin-top: 10px;
+        border-radius: 5px;
+        font-size: 12px;
+    }
+
+    .section h3 {
+        font-weight: bold;
+        margin: 20px 0px 15px 0px;
+        font-size: 24px;
+        color: rgb(84, 88, 173);
+    }
+
+    .skillContainer {
+        justify-content: center;
+        gap: 12px;
+        width: 85%;
+    }
+
+    .skillCard {
+        padding: 5px 15px;
+        background-color: #ffffff;
+        color: rgb(129, 99, 203);
+        gap: 5px;
+        font-size: 11px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 3px white;
+    }
+
+    .skillCard img {
+        width: 15px;
+    }
+
+    .section3 {
+        gap: 20px;
+        min-height: 55vh;
+    }
+
+    .experienceContainer {
+        margin-left: 20px;
+        margin-bottom: 10px;
+        width: 95%;
+        gap: 3px;
+    }
+
+    .work {
+        width: 85%;
+        font-size: 13px;
+        padding-left: 15px;
+    }
+
+    .position {
+        font-size: 19px;
+    }
+
+    .companyDetails {
+        font-size: 13px;
+        font-style: italic;
+    }
+
+    .section4 {
+        gap: 20px;
+    }
+
+    .projectContainer {
+        align-items: center;
+        justify-content: center;
+        width: 95%;
+        margin-left: 0px;
+        gap: 20px;
+    }
+
+    .projectCard {
+        align-items: start;
+        justify-content: space-between;
+        box-shadow: -1px 1px 3px rgb(129, 99, 203);
+        min-height: 300px;
+        height: fit-content;
+        width: 280px;
+        gap: 10px;
+        padding-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    .projectCard img {
+        width: 100%;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    .projectName {
+        padding: 5px 10px;
+        font-size: 19px;
+    }
+
+    .projDesc {
+        width: 100%;
+        padding: 8px 25px;
+        font-size: 12px;
+    }
+
+    .cardButtons {
+        gap: 58%;
+        padding: 0px 15px;
+
+    }
+
+    .cardButtons a button {
+        padding: 3px 6px;
+        border-radius: 40px;
+        font-size: 10px;
+    }
+
+    .section5 {
+        min-height: 35vh;
+        gap: 15px;
+    }
+
+    .connectContainer {
+        margin-left: 20px;
+    }
+
+    .connectButtons {
+        margin-top: 30px;
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .connectButtons img {
+        cursor: pointer;
+        width: 65px;
+        max-width: fit-content;
+        height: 22px;
+        transition: all 300ms ease-out;
+    }
+
+    .connectButtons img:hover {
+        filter: drop-shadow(0px 0px 1px rgb(0, 0, 114));
+    }
+}
+
+
+@media (min-width: 577px) and (max-width: 767px) {
+
+
+    .root {
+        display: flex;
+        position: relative;
+        flex-direction: column-reverse;
+        background-image: linear-gradient(to top,
+                rgb(255, 255, 255),
+                rgb(230, 248, 255),
+                rgb(225, 246, 254),
+                rgb(217, 244, 255),
+                rgb(214, 243, 255),
+                rgb(208, 239, 255),
+                rgb(202, 239, 255));
+    }
+
+    .left {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 8vh;
+        box-sizing: border-box;
+        background-color: transparent;
+    }
+
+    .nav {
+        flex-direction: row;
+        gap: 30px;
+        height: 80%;
+        border-radius: 30px;
+        width: fit-content;
+        padding: 20px 15px;
+        background-color: white;
+        box-shadow: 0px 1px 3px black;
+    }
+
+    .nav a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 9px;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        transition: 500ms all ease;
+    }
+
+    .nav img {
+        width: 20px;
+        transition: 700ms all ease;
+    }
+
+    .menuContainer:hover img,
+    .menuContainer:hover a {
+        filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.4));
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 90vh;
+    }
+
+    .section {
+        display: flex;
+        align-items: start;
+        justify-content: end;
+        flex-direction: column;
+        gap: 30px;
+        min-height: 65vh;
+        height: fit-content;
+        width: 90%;
+        padding-left: 15px;
+        box-sizing: border-box;
+        padding-bottom: 25px;
+        padding-top: 10px;
+    }
+
+    .section1 {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        height: 90vh;
+        gap: 20px;
+    }
+
+    .line {
+        width: 85%;
+        height: 1px;
+        border: 1px solid rgba(22, 17, 121, 0.618);
+    }
+
+    .profession {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: fit-content;
+        height: fit-content;
+    }
+
+    .name {
+        font-family: "Fjalla One", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 63px;
+        width: 100%;
+    }
+
+    .profname {
+        font-family: monospace;
+        font-size: 30px;
+        width: fit-content;
+    }
+
+    .photo {
+        /* background-color: aquamarine; */
+        display: flex;
+        align-items: center;
+        justify-content: start;
+
+    }
+
+    .photo img {
+        height: 270px;
+        border-radius: 5%;
+    }
+
+    .section2 {
+        gap: 10px;
+        min-height: 50vh;
+    }
+
+    .section h2 {
+        width: 90%;
+        padding-bottom: 10px;
+        font-size: 47px;
+        text-shadow: -1px 1px 2px rgb(22, 17, 121);
+    }
+
+    .aboutContainer {
+        width: 100%;
+        margin-left: 20px;
+    }
+
+    .description {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        word-spacing: 2px;
+        font-size: 16px;
+        width: 90%;
+        font-family: sans-serif;
+        gap: 10px;
+    }
+
+    .resume {
+        cursor: pointer;
+        width: 65px;
+        height: 32px;
+        margin-top: 10px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .section h3 {
+        font-weight: bold;
+        margin: 20px 0px 15px 0px;
+        font-size: 26px;
+    }
+
+    .skillContainer {
+        justify-content: center;
+        gap: 12px;
+        width: 85%;
+    }
+
+    .skillCard {
+        padding: 5px 15px;
+        background-color: #ffffff;
+        color: rgb(129, 99, 203);
+        gap: 5px;
+        font-size: 14px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 3px white;
+    }
+
+    .skillCard img {
+        width: 17px;
+    }
+
+    .section3 {
+        gap: 20px;
+        min-height: 55vh;
+    }
+
+    .experienceContainer {
+        margin-left: 20px;
+        margin-bottom: 10px;
+        width: 95%;
+        gap: 3px;
+    }
+
+    .work {
+        width: 85%;
+        font-size: 15px;
+        padding-left: 15px;
+    }
+
+    .position {
+        font-size: 21px;
+    }
+
+    .companyDetails {
+        font-size: 15px;
+        font-style: italic;
+    }
+
+    .section4 {
+        gap: 20px;
+    }
+
+    .projectContainer {
+        align-items: center;
+        justify-content: center;
+        width: 95%;
+        margin-left: 0px;
+        gap: 20px;
+    }
+
+    .projectCard {
+        align-items: start;
+        justify-content: space-between;
+        box-shadow: -1px 1px 3px rgb(129, 99, 203);
+        min-height: 300px;
+        height: fit-content;
+        width: 280px;
+        gap: 10px;
+        padding-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    .projectCard img {
+        width: 100%;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    .projectName {
+        padding: 5px 10px;
+        font-size: 19px;
+    }
+
+    .projDesc {
+        width: 100%;
+        padding: 8px 25px;
+        font-size: 12px;
+    }
+
+    .cardButtons {
+        gap: 58%;
+        padding: 0px 15px;
+
+    }
+
+    .cardButtons a button {
+        padding: 3px 6px;
+        border-radius: 40px;
+        font-size: 10px;
+    }
+
+    .section5 {
+        min-height: 35vh;
+        gap: 15px;
+    }
+
+    .connectContainer {
+        margin-left: 20px;
+    }
+
+    .connectButtons {
+        margin-top: 30px;
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 35px;
+    }
+
+    .connectButtons img {
+        cursor: pointer;
+        width: 85px;
+        max-width: fit-content;
+        height: 29px;
+        transition: all 300ms ease-out;
+    }
+
+    .connectButtons img:hover {
+        filter: drop-shadow(0px 0px 1px rgb(0, 0, 114));
+    }
+}
+
+
+@media (min-width: 767px) and (max-width: 991px) {
+    .root {
+        display: flex;
+        position: relative;
+        background-image: linear-gradient(to right,
+                rgb(255, 255, 255),
+                rgb(230, 248, 255),
+                rgb(225, 246, 254),
+                rgb(217, 244, 255),
+                rgb(214, 243, 255),
+                rgb(208, 239, 255),
+                rgb(202, 239, 255));
+    }
+
+    .left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 7%;
+        height: 100vh;
+        box-sizing: border-box;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        gap: 22px;
+        height: 35%;
+        width: 100%;
+    }
+
+    .nav a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        text-decoration: none;
+        color: rgb(58, 56, 56);
+        transition: 500ms all ease;
+    }
+
+    .nav img {
+        width: 30px;
+        transition: 700ms all ease;
+    }
+
+    .menuContainer:hover img,
+    .menuContainer:hover a {
+        filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.4));
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        width: 90%;
+        height: 100vh;
+        box-sizing: border-box;
+        transition-duration: 3s all ease;
+    }
+
+    .section {
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        flex-direction: column;
+        gap: 30px;
+        min-height: 65vh;
+        height: fit-content;
+        width: 100%;
+        padding-left: 50px;
+        box-sizing: border-box;
+        padding-bottom: 30px;
+        padding-top: 10px;
+    }
+
+    .section1 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding-left: 10px;
+        height: 100vh;
+        gap: 3rem;
+    }
+
+    .line {
+        width: 85%;
+        height: 1px;
+        border: 1px solid rgba(22, 17, 121, 0.618);
+    }
+
+    .profession {
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        flex-direction: column;
+        width: fit-content;
+        height: fit-content;
+    }
+
+    .name {
+        font-family: "Fjalla One", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 62px;
+        width: 100%;
+    }
+
+    .profname {
+        font-family: monospace;
+        font-size: 26px;
+        width: 100%;
+    }
+
+    .photo {
+        /* background-color: aquamarine; */
+        display: flex;
+        align-items: center;
+        justify-content: start;
+
+    }
+
+    .photo img {
+        height: 16rem;
+        border-radius: 5%;
+    }
+
+    .section2 {
+        gap: 10px;
+        min-height: 83vh;
+    }
+
+    .section h2 {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        font-family: "Kanit", serif;
+        width: 90%;
+        padding-bottom: 12px;
+        font-size: 65px;
+        color: rgba(84, 76, 234, 1);
+        text-shadow: -2px 2px 2px rgb(22, 17, 121);
+    }
+
+    .aboutContainer {
+        width: 80%;
+        margin-left: 50px;
+    }
+
+    .description {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        word-spacing: 3px;
+        width: 100%;
+        font-size: 16px;
+        font-family: sans-serif;
+        gap: 10px;
+        color: rgb(109, 84, 173);
+    }
+
+    .resume {
+        cursor: pointer;
+        width: 75px;
+        height: 35px;
+        font-size: 14px;
+        margin-top: 15px;
+        border-radius: 8px;
+        border: 0;
+        background-color: rgba(84, 76, 234, 0.663);
+        color: white;
+        font-size: 16px;
+        transition: all 300ms ease-out;
+    }
+
+    .resume:hover {
+        background-color: rgb(129, 99, 203);
+    }
+
+    .section h3 {
+        font-weight: bold;
+        margin: 30px 0px 15px 0px;
+        font-size: 32px;
+        color: rgb(84, 88, 173);
+    }
+
+    .skillContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        width: 100%;
+    }
+
+    .skillCard {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding: 8px 19px;
+        background-color: #ffffff;
+        color: rgb(129, 99, 203);
+        gap: 5px;
+        font-size: 14px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 3px white;
+    }
+
+    .skillCard img {
+        width: 25px;
+    }
+
+    .section3 {
+        gap: 30px;
+    }
+
+    .experienceContainer {
+        display: flex;
+        flex-direction: column;
+        margin-left: 50px;
+        margin-bottom: 30px;
+        width: 95%;
+        gap: 5px;
+        color: rgb(109, 84, 173);
+    }
+
+    .work {
+        width: 85%;
+        font-size: 14px;
+        padding-left: 25px;
+    }
+
+    .position {
+        font-weight: 600;
+        color: rgb(76, 53, 135);
+    }
+
+    .companyDetails {
+        font-style: italic;
+    }
+
+    .section4 {
+        gap: 30px;
+    }
+
+    .projectContainer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        width: 95%;
+        margin-left: 50px;
+        gap: 40px;
+    }
+
+
+    .projectCard {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: -1px 1px 3px rgb(129, 99, 203);
+        min-height: 400px;
+        height: fit-content;
+        width: 320px;
+        gap: 10px;
+        padding-bottom: 20px;
+        border-radius: 15px;
+    }
+
+    .projectCard img {
+        width: 100%;
+        border-radius: 15px 15px 0px 0px;
+    }
+
+    .projectName {
+        padding: 5px 15px;
+        font-size: 23px;
+        font-family: system-ui;
+        color: rgb(71, 48, 130);
+        font-weight: bold;
+        width: 100%;
+    }
+
+    .projDesc {
+        width: 100%;
+        padding: 8px 25px;
+        font-size: 13px;
+        color: rgb(129, 99, 203);
+    }
+
+    .cardButtons {
+        display: flex;
+        justify-content: end;
+        width: 100%;
+        gap: 55%;
+        padding: 0px 15px;
+
+    }
+
+    .cardButtons a button {
+        cursor: pointer;
+        padding: 5px 8px;
+        border-radius: 40px;
+        border: 1px solid rgb(129, 99, 203);
+        background-color: white;
+        color: rgb(129, 99, 203);
+        font-size: 12px;
+        transition: all 500ms ease-out;
+    }
+
+    .cardButtons a button:hover {
+        color: white;
+        background-color: rgb(129, 99, 203);
+    }
+
+    .section5 {
+        gap: 30px;
+    }
+
+    .connectContainer {
+        margin-left: 30px;
+    }
+
+    .connectButtons {
+        /* margin-left: 30px; */
+        margin-top: 40px;
+        display: flex;
+        gap: 75px;
+    }
+
+    .connectButtons img {
+        cursor: pointer;
+        width: 125px;
+        max-width: fit-content;
+        height: 40px;
+        transition: all 300ms ease-out;
+    }
+
+    .connectButtons img:hover {
+        filter: drop-shadow(0px 0px 1px rgb(0, 0, 114));
+    }
+}
