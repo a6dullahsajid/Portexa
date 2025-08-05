@@ -23,6 +23,7 @@ import {
     setLinkedin,
     setGithub,
     setX,
+    setExperience,
 } from "@/store/userDataSlice";
 
 
@@ -74,6 +75,7 @@ export default function Dashboard() {
                 dispatch(setBio(user.details.bio));
                 dispatch(setResume(user.details.resume));
                 dispatch(setSkills(user.details.skills));
+                dispatch(setExperience(user.details.experience));
                 dispatch(setProjects(user.details.projects));
                 dispatch(setConnectDesc(user.details.connectDesc));
                 dispatch(setEmail(user.details.email));

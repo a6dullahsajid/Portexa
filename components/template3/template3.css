@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Anton&family=Bebas+Neue&family=Comfortaa:wght@300..700&family=Fjalla+One&family=Itim&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:wght@100..900&family=Pacifico&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Vinyl&family=Rubik+Wet+Paint&family=Russo+One&family=Space+Grotesk:wght@300..700&display=swap');
+
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger img {
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+
+.headerRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-right: 20px;
+    font-size: 14px;
+}
+
+.headerRight ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    list-style-type: none;
+}
+
+.headerRight ul li:hover {
+    color: #aa66fd;
+    cursor: pointer;
+}
+
+
+
+@media (max-width:389px) {
+    .burger img {
+        width: 25px;
+        height: 25px;
+        margin-right: 0px;
+        cursor: pointer;
+    }
+
+    .headerRight {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
+
+@media (min-width:390px) and (max-width: 576px) {
+    .burger {
+        display: block;
+    }
+    
+    .burger img {
+        width: 25px;
+        height: 25px;
+        margin-right: 0px;
+        cursor: pointer;
+    }
+
+    .headerRight {
+        display: none;
+    }
+
+}
+
+
+@media (min-width: 577px) and (max-width: 767px) {
+    .burger img {
+        width: 32px;
+        height: 32px;
+        margin-right: 3px;
+        cursor: pointer;
+    }
+
+    .headerRight {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+    .headerRight {
+        display: flex;
+        gap: 18px;
+        margin-right: 10px;
+        font-size: 12px;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    .headerRight ul {
+        gap: 18px;
+    }
+}

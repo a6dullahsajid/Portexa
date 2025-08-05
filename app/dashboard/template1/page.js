@@ -87,7 +87,6 @@ export default function PortfolioForm() {
         const uploadingToast = toast.loading("Uploading image...");
 
         try {
-            // Get signature from backend
             const sigRes = await fetch("/api/upload");
             const { timestamp, signature, apiKey, cloudName, folder } = await sigRes.json();
 
@@ -98,7 +97,6 @@ export default function PortfolioForm() {
             formData.append("signature", signature);
             formData.append("folder", folder);
 
-            // Upload to Cloudinary
             const uploadRes = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
                 method: "POST",
                 body: formData,
@@ -109,7 +107,6 @@ export default function PortfolioForm() {
 
             if (uploadRes.ok) {
                 toast.success("Image uploaded!");
-                // console.log("Cloudinary URL:", data.secure_url);
                 dispatch(setProfileImage(data.secure_url));
             } else {
                 toast.error(data.error?.message || "Upload failed");
@@ -255,16 +252,10 @@ export default function PortfolioForm() {
             toast.error("Please fill all experience fields.");
             return;
         }
-        console.log("experience add");
         const updated = [...experienceSelector, experienceInput];
-        console.log(updated, "add experience se");
         dispatch(setExperience(updated));
         setExperienceInput({ company: "", position: "", from: "", to: "", work: "" });
     };
-
-    useEffect(() => {
-        console.log(experienceSelector, "experience selector se");
-    }, [experienceSelector])
 
 
     const handleRemoveExperience = (indexToRemove) => {
@@ -499,8 +490,9 @@ export default function PortfolioForm() {
                     {step === 3 && (
                         <div className={styles.formSection}>
                             <p>You can skip this if you are a fresher</p>
-                            {experienceSelector.map((exp, index) => (
-                                <div key={index} className={styles.projectEntry}>
+                            {console.log(experienceSelector)}
+                            {experienceSelector.map((exp, index) => {
+                                return <div key={index} className={styles.projectEntry}>
                                     <div className={styles.formInput}>{exp.company}</div>
                                     <div className={styles.formInput}>{exp.position}</div>
                                     <div className={styles.formInput}>{exp.work}</div>
@@ -512,7 +504,7 @@ export default function PortfolioForm() {
                                         × Remove
                                     </button>
                                 </div>
-                            ))}
+                            })}
 
                             <input
                                 type="text"

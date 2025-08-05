@@ -4,6 +4,7 @@ import { db } from "@/lib/firebaseAdmin";
 import { notFound } from "next/navigation";
 import HomePage1 from "@/components/template1/HomePage1";
 import HomePage2 from "@/components/template2/HomePage2";
+import HomePage3 from "@/components/template3/HomePage3";
 
 // This function fetches the specific user's data from Firestore
 async function getUserData(userName) {
@@ -28,5 +29,7 @@ export default async function UserPortfolioPage({ params }) {
   }
   else if (userData.template === "template2") {
     return <HomePage2 userData={userData} />;
+  } else if (userData.template === "template3") {
+    return <HomePage3 userData={userData} />
   }
 }

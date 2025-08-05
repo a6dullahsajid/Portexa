@@ -1,0 +1,1828 @@
+.root {
+    background-color: white;
+    color: black;
+    font-family: "Roboto Mono", monospace;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 30px;
+    padding-left: 30px;
+    align-items: center;
+    padding-top: 10px;
+    height: 12vh;
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1; */
+    background-color: white;
+}
+
+.headerLeft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-left: 20px;
+    font-size: 35px;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    color: #aa66fd;
+}
+
+.headerLeft img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.headerRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-right: 20px;
+    font-size: 14px;
+}
+
+.headerRight ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    list-style-type: none;
+}
+
+.headerRight ul li:hover {
+    color: #aa66fd;
+    cursor: pointer;
+}
+
+.resume {
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 6px 12px;
+    background: none;
+    border: #aa66fd solid 1px;
+    color: #aa66fd;
+    cursor: pointer;
+}
+
+.resume:hover {
+    background-color: #aa66fd;
+    color: white;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: -100%;
+    top: 0;
+    width: 250px;
+    gap: 30px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    background-color: hsla(0, 0%, 100%, 0.9);
+    color: black;
+    transition: all 0.5s ease;
+    height: 88vh;
+    z-index: 1;
+}
+
+.card ul {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.close {
+    cursor: pointer;
+    color: #aa66fd;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger img {
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.screen {
+    display: flex;
+    height: 88vh;
+    width: 100%;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 25px;
+    height: 100%;
+    width: 5%;
+    background-color: white;
+}
+
+.socialIcons {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.socialIcons a img {
+    width: 30px;
+    transition: all 300ms ease-out;
+}
+
+.socialIcons a img:hover {
+    filter: drop-shadow(0px 0px 2px black);
+}
+
+.vline {
+    height: 40%;
+    border: 1px solid #aa66fd;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 195px;
+    height: 100%;
+    width: 5%;
+    background-color: white;
+}
+
+.rightMail {
+    letter-spacing: 1px;
+    font-size: 12px;
+    width: 16px;
+    transform: rotate(90deg);
+    transition: all 300ms ease-out;
+}
+
+.rightMail:hover {
+    text-shadow: 0px 0px 1px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    width: 90%;
+    height: 100%;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    box-sizing: border-box;
+    height: 75vh;
+    min-height: min-content;
+    width: 100%;
+    padding-left: 240px;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+/* section1 starts here */
+
+.section1 {
+    padding-left: 150px;
+}
+
+.hi {
+    font-size: 16px;
+    color: #aa66fd;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.name {
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-size: 80px; */
+    font-size: clamp(40px, 4vw + 1.5rem, 80px);
+    width: fit-content;
+    font-weight: bold;
+    color: rgb(21, 21, 21);
+}
+
+.profName {
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-size: 70px; */
+    font-size: clamp(40px, 4vw + 1.5rem, 70px);
+    font-weight: bold;
+    color: rgb(78, 76, 76);
+    padding-bottom: 20px;
+    width: fit-content;
+}
+
+/* section2 starts here */
+
+.heading {
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    gap: 15px;
+}
+
+.heading h4 {
+    font-size: 35px;
+    font-family: "Roboto Mono", monospace;
+    font-weight: bold;
+    display: flex;
+}
+
+.hline {
+    border-top: 1px solid rgb(182, 133, 227);
+    width: 200px;
+}
+
+.content {
+    margin-left: 10px;
+    margin-top: 30px;
+    display: flex;
+    gap: 30px;
+}
+
+.profileImg {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 200px;
+    height: 200px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.aboutBio {
+    font-size: 16px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    min-width: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 25px;
+}
+
+.skillList {
+    max-width: 600px;
+    min-width: 200px;
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(140px, 200px));
+    gap: 0px 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    margin: 10px 0 0;
+    overflow: hidden;
+    list-style-type: none;
+}
+
+.skillList li {
+    max-width: 600px;
+    min-width: 200px;
+    position: relative;
+    margin-bottom: 10px;
+    color: blueviolet;
+}
+
+.work {
+    display: flex;
+    height: 400px;
+    padding-top: 40px;
+    padding-left: 120px;
+}
+
+.workLeft {
+    background-color: #aa66fd;
+    width: fit-content;
+    padding-top: 30px;
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+.companyList {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.companyList li {
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.companyContent {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-left: 10px;
+    padding-right: 50px;
+    max-width: 500px;
+    border: #aa66fd solid 1px;
+    padding: 30px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 25px;
+}
+
+.companyContent h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.highlight {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.companyContent p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.companyAbout {
+    list-style-type: disc;
+}
+
+/* section4 starts here */
+
+.projectContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 90%;
+    gap: 20px;
+    padding: 20px 0px;
+}
+
+.projectCard {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+    background-color: #ddc8f7;
+    backdrop-filter: 10px;
+    width: 320px;
+    min-height: 330px;
+    height: fit-content;
+    padding: 15px;
+    color: black;
+    gap: 30px;
+    cursor: pointer;
+    border: #aa66fd solid 1px;
+    transition: all 300ms;
+}
+
+.projectCard:hover .projectName {
+    color: #aa66fd;
+}
+
+.projectCard:hover {
+    transform: scale(1.02);
+    box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.cardHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.cardHead img {
+    width: 25px;
+}
+
+.links {
+    display: flex;
+    gap: 3px;
+}
+
+.projectCard a {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.projectName {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.projectDesc {
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.projectTech {
+    font-size: 13px;
+    font-family: monospace;
+    letter-spacing: -1px;
+}
+
+/* section5 starts here */
+
+.section5 {
+    padding-top: 100px;
+    /* min-height: 65vh; */
+}
+
+.section5 h4 {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+}
+
+.connectContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    width: 80%;
+    font-size: 16px;
+}
+
+.connectContent {
+    text-align: center;
+    margin-top: 30px;
+    width: 65%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.helloBtn {
+    color: #aa66fd;
+    border: 1px solid #aa66fd;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.helloBtn:hover {
+    background-color: #aa66fd;
+    color: white;
+}
+
+
+@media (max-width:389px) {
+    .header {
+        padding-right: 12px;
+        padding-left: 12px;
+        padding-top: 5px;
+        height: 10vh;
+        background-color: white;
+    }
+
+    .headerLeft {
+        gap: 5px;
+        margin-left: 5px;
+        font-size: 25px;
+        font-weight: 500;
+        font-family: 'Times New Roman', Times, serif;
+        color: #aa66fd;
+    }
+
+    .headerLeft img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+    }
+
+    .headerRight {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        margin-right: 20px;
+        font-size: 14px;
+    }
+
+    .headerRight ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        list-style-type: none;
+    }
+
+    .headerRight ul li:hover {
+        color: #aa66fd;
+        cursor: pointer;
+    }
+
+    .resume {
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        padding: 4px 8px;
+        font-size: 8px;
+    }
+
+    .resume:hover {
+        background-color: #aa66fd;
+        color: white;
+    }
+
+    .card {
+        width: 160px;
+        gap: 20px;
+        padding-top: 20px;
+        padding-bottom: 50px;
+        background-color: hsla(0, 0%, 100%, 0.9);
+        color: black;
+        transition: all 0.5s ease;
+        height: 95vh;
+        z-index: 1;
+    }
+
+    .card ul {
+        font-size: 10px;
+        gap: 20px;
+    }
+
+    .close {
+        font-size: 10px;
+    }
+
+    .screen {
+        display: flex;
+        height: 90vh;
+        width: 100%;
+    }
+
+    .left {
+        display: none;
+    }
+
+    .right {
+        display: none;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+        width: 100%;
+        height: 100%;
+    }
+
+    .section {
+        justify-content: start;
+        height: 90vh;
+        width: 100%;
+        padding-left: 0px;
+        padding-top: 50px;
+        padding-bottom: 40px;
+    }
+
+    /* section1 starts here */
+
+    .section1 {
+        padding-left: 40px;
+        padding-top: 100px;
+    }
+
+    .hi {
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+
+    .name {
+        font-size: 28px;
+    }
+
+    .profName {
+        font-size: 26px;
+        padding-bottom: 20px;
+    }
+
+    /* section2 starts here */
+
+    .heading {
+        gap: 8px;
+    }
+
+    .heading h4 {
+        margin-left: 15px;
+        font-size: 18px;
+        font-family: "Roboto Mono", monospace;
+        font-weight: bold;
+        display: flex;
+        width: fit-content;
+    }
+
+    .hline {
+        width: 100px;
+    }
+
+    .content {
+        margin-left: 40px;
+        margin-top: 15px;
+        gap: 10px;
+    }
+
+    .profileImg {
+        margin-top: 10px;
+        margin-left: 10px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .aboutBio {
+        font-size: 9px;
+        margin-top: 10px;
+        gap: 5px;
+        max-width: 170px;
+        min-width: 120px;
+        line-height: 15px;
+    }
+
+    .skillList {
+        max-width: 170px;
+        min-width: 120px;
+        grid-template-columns: repeat(2, minmax(80px, 100px));
+        gap: 0px 6px;
+        padding-left: 5px;
+        padding-top: 5px;
+        margin: 5px 0 0;
+    }
+
+    .skillList li {
+        max-width: 170px;
+        min-width: 120px;
+        margin-bottom: 5px;
+    }
+
+    .work {
+        display: flex;
+        height: 300px;
+        padding-top: 40px;
+        padding-left: 40px;
+    }
+
+    .workLeft {
+        width: 65px;
+        padding-top: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .companyList {
+        gap: 5px;
+    }
+
+    .companyList li {
+        cursor: pointer;
+        font-size: 10px;
+    }
+
+    .companyContent {
+        gap: 5px;
+        padding-left: 5px;
+        padding-right: 10px;
+        max-width: 230px;
+        padding: 10px;
+        line-height: 25px;
+    }
+
+    .companyContent h2 {
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .companyContent p {
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    .companyAbout {
+        font-size: 9px;
+        padding-left: 3px;
+        gap: 3px;
+        display: flex;
+        flex-direction: column;
+        list-style-type: disc;
+    }
+
+    .companyAbout li {
+        line-height: 12px;
+    }
+
+    /* section4 starts here */
+
+    .projectContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        width: 90%;
+        gap: 20px;
+        padding-left: 30px;
+    }
+
+    .projectCard {
+        width: 250px;
+        min-height: 265px;
+        padding: 10px;
+        color: black;
+        gap: 12px;
+    }
+
+    .projectCard:hover {
+        transform: scale(1.02);
+        box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.3);
+    }
+
+
+    .cardHead {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0px;
+    }
+
+    .cardHead img {
+        width: 18px;
+    }
+
+    .links {
+        display: flex;
+        gap: 3px;
+    }
+
+    .projectCard a {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .projectName {
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+    .projectDesc {
+        font-size: 10px;
+    }
+
+    .projectTech {
+        font-size: 10px;
+        letter-spacing: 0px;
+    }
+
+    /* section5 starts here */
+
+    .section5 {
+        padding-top: 80px;
+        /* min-height: 55vh; */
+    }
+
+    .section5 h4 {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+    }
+
+    .connectContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        font-size: 11px;
+    }
+
+    .connectContent {
+        text-align: center;
+        margin-top: 30px;
+        width: 80%;
+    }
+
+    .helloBtn {
+        padding: 5px 7px;
+        font-size: 11px;
+    }
+}
+
+
+@media (min-width:390px) and (max-width: 576px) {
+    .header {
+        padding-right: 12px;
+        padding-left: 12px;
+        padding-top: 5px;
+        height: 9vh;
+    }
+
+    .headerLeft {
+        gap: 5px;
+        margin-left: 5px;
+        font-size: 28px;
+    }
+
+    .headerLeft img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .resume {
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+
+    .resume:hover {
+        background-color: #aa66fd;
+        color: white;
+    }
+
+    .card {
+        justify-content: start;
+        width: 160px;
+        gap: 40px;
+        padding-top: 70px;
+        padding-bottom: 0px;
+        height: 95vh;
+        z-index: 1;
+    }
+
+    .card ul {
+        font-size: 12px;
+        gap: 20px;
+    }
+
+    .close {
+        font-size: 10px;
+    }
+
+    .screen {
+        display: flex;
+        height: 84vh;
+        width: 100%;
+    }
+
+    .left {
+        display: none;
+    }
+
+    .right {
+        display: none;
+    }
+
+    .main {
+        width: 100%;
+        height: 100%;
+    }
+
+    .section {
+        justify-content: start;
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 0px;
+        padding-top: 50px;
+        padding-bottom: 40px;
+    }
+
+    /* section1 starts here */
+
+    .section1 {
+        min-height: 75vh;
+        padding-left: 20px;
+        padding-top: 150px;
+    }
+
+    .hi {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .name {
+        font-size: 38px;
+    }
+
+    .profName {
+        font-size: 32px;
+        padding-bottom: 20px;
+    }
+
+    /* section2 starts here */
+
+    .heading {
+        gap: 8px;
+    }
+
+    .heading h4 {
+        margin-left: 15px;
+        font-size: 22px;
+    }
+
+    .hline {
+        width: 80px;
+    }
+
+    .content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 25px;
+        margin-top: 15px;
+        gap: 10px;
+    }
+
+    .profileImg {
+        margin-top: 10px;
+        margin-left: 10px;
+        width: 130px;
+        height: 130px;
+    }
+
+    .aboutBio {
+        padding: 3px;
+        font-size: 14px;
+        margin-top: 10px;
+        gap: 10px;
+        max-width: 100%;
+        min-width: 140px;
+        line-height: 18px;
+    }
+
+    .skillList {
+        max-width: 100%;
+        min-width: 120px;
+        grid-template-columns: repeat(2);
+        gap: 5px 6px;
+        padding-left: 5px;
+        padding-top: 5px;
+        margin: 5px 0 0;
+    }
+
+    .skillList li {
+        max-width: 170px;
+        min-width: 120px;
+        margin-bottom: 5px;
+    }
+
+    .work {
+        display: flex;
+        height: 350px;
+        padding-top: 60px;
+        padding-left: 20px;
+    }
+
+    .workLeft {
+        width: 72px;
+        padding-top: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .companyList {
+        gap: 5px;
+    }
+
+    .companyList li {
+        cursor: pointer;
+        font-size: 10px;
+    }
+
+    .companyContent {
+        gap: 7px;
+        padding-left: 5px;
+        padding-right: 10px;
+        max-width: 270px;
+        padding: 10px;
+        line-height: 25px;
+    }
+
+    .companyContent h2 {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .companyContent p {
+        font-size: 11px;
+        font-weight: bold;
+    }
+
+    .companyAbout {
+        font-size: 10px;
+        padding-left: 3px;
+        gap: 3px;
+        display: flex;
+        flex-direction: column;
+        list-style-type: disc;
+    }
+
+    .companyAbout li {
+        line-height: 12px;
+    }
+
+    /* section4 starts here */
+    .section4 h4 {
+        font-size: 16px;
+    }
+
+    .projectContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        width: 90%;
+        gap: 20px;
+        padding-top: 50px;
+        padding-left: 30px;
+    }
+
+    .projectCard {
+        width: 250px;
+        min-height: 265px;
+        padding: 10px;
+        color: black;
+        gap: 12px;
+    }
+
+    .projectCard:hover {
+        transform: scale(1.02);
+        box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.3);
+    }
+
+
+    .cardHead {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0px;
+    }
+
+    .cardHead img {
+        width: 18px;
+    }
+
+    .links {
+        display: flex;
+        gap: 3px;
+    }
+
+    .projectCard a {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .projectName {
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+    .projectDesc {
+        font-size: 10px;
+    }
+
+    .projectTech {
+        font-size: 10px;
+        letter-spacing: 0px;
+    }
+
+    /* section5 starts here */
+
+    .section5 h4 {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+    }
+
+    .connectContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        font-size: 11px;
+    }
+
+    .connectContent {
+        text-align: center;
+        margin-top: 30px;
+        width: 80%;
+    }
+
+    .helloBtn {
+        padding: 5px 7px;
+        font-size: 11px;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 767px) {
+    .header {
+        padding-right: 12px;
+        padding-left: 12px;
+        padding-top: 5px;
+        height: 11vh;
+    }
+
+    .headerLeft {
+        gap: 8px;
+        margin-left: 8px;
+        font-size: 32px;
+    }
+
+    .headerLeft img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .resume {
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+
+    .resume:hover {
+        background-color: #aa66fd;
+        color: white;
+    }
+
+    .card {
+        justify-content: start;
+        width: 160px;
+        gap: 40px;
+        padding-top: 70px;
+        padding-bottom: 0px;
+        height: 95vh;
+        z-index: 1;
+    }
+
+    .card ul {
+        font-size: 14px;
+        gap: 20px;
+    }
+
+    .close {
+        font-size: 14px;
+    }
+
+    .screen {
+        display: flex;
+        height: 84vh;
+        width: 100%;
+    }
+
+    .left {
+        display: none;
+    }
+
+    .right {
+        display: none;
+    }
+
+    .main {
+        width: 100%;
+        height: 100%;
+    }
+
+    .section {
+        justify-content: start;
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 0px;
+        padding-top: 50px;
+        padding-bottom: 40px;
+    }
+
+    /* section1 starts here */
+
+    .section1 {
+        min-height: 85vh;
+        padding-left: 40px;
+        padding-top: 100px;
+    }
+
+    .hi {
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+
+    .name {
+        font-size: 50px;
+    }
+
+    .profName {
+        font-size: 43px;
+        padding-bottom: 20px;
+    }
+
+    /* section2 starts here */
+
+    .heading {
+        gap: 12px;
+    }
+
+    .heading h4 {
+        margin-left: 20px;
+        font-size: 32px;
+    }
+
+    .hline {
+        width: 170px;
+    }
+
+    .content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin-left: 25px;
+        margin-top: 15px;
+        gap: 10px;
+    }
+
+    .profileImg {
+        margin-top: 10px;
+        margin-left: 50px;
+        width: 160px;
+        height: 160px;
+    }
+
+    .aboutBio {
+        padding: 3px;
+        font-size: 16px;
+        margin-top: 10px;
+        margin-left: 120px;
+        gap: 10px;
+        max-width: 80%;
+        min-width: 140px;
+        line-height: 22px;
+    }
+
+    .skillList {
+        max-width: 100%;
+        min-width: 120px;
+        grid-template-columns: repeat(2);
+        gap: 3px 8px;
+        padding-left: 5px;
+        padding-top: 5px;
+        margin: 5px 0 0;
+    }
+
+    .skillList li {
+        max-width: 170px;
+        min-width: 120px;
+        margin-bottom: 5px;
+    }
+
+    .work {
+        display: flex;
+        height: 400px;
+        padding-top: 20px;
+        padding-left: 50px;
+    }
+
+    .workLeft {
+        width: 110px;
+        padding-top: 20px;
+        padding-left: 5px;
+        padding-right: 0px;
+    }
+
+    .companyList {
+        gap: 12px;
+    }
+
+    .companyList li {
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .companyContent {
+        gap: 20px;
+        padding-left: 8px;
+        padding-right: 8px;
+        max-width: 350px;
+        padding: 10px;
+    }
+
+    .companyContent h2 {
+        font-size: 21px;
+        padding: 0;
+        font-weight: bold;
+    }
+
+    .companyContent p {
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .companyAbout {
+        font-size: 14px;
+        padding-left: 7px;
+        gap: 18px;
+        display: flex;
+        flex-direction: column;
+        list-style-type: disc;
+    }
+
+    .companyAbout li {
+        line-height: 18px;
+    }
+
+    /* section4 starts here */
+    .section4 h4 {
+        font-size: 28px;
+        width: fit-content;
+    }
+
+    .projectContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        width: 90%;
+        gap: 23px;
+        padding-top: 50px;
+        padding-left: 20px;
+    }
+
+    .projectCard {
+        width: 310px;
+        min-height: 345px;
+        padding: 10px;
+        color: black;
+        gap: 20px;
+    }
+
+    .projectCard:hover {
+        transform: scale(1.02);
+        box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.3);
+    }
+
+
+    .cardHead {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0px;
+    }
+
+    .cardHead img {
+        width: 23px;
+    }
+
+    .links {
+        display: flex;
+        gap: 5px;
+    }
+
+    .projectCard a {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .projectName {
+        font-size: 21px;
+        font-weight: bold;
+    }
+
+    .projectDesc {
+        font-size: 13px;
+    }
+
+    .projectTech {
+        font-size: 13px;
+        letter-spacing: -1px;
+    }
+
+    .section5 h4 {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+    }
+
+    .connectContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .connectContent {
+        text-align: center;
+        margin-top: 30px;
+        width: 70%;
+    }
+
+    .helloBtn {
+        padding: 6px 9px;
+        font-size: 13px;
+    }
+}
+
+
+@media (min-width: 767px) and (max-width: 991px) {
+    .root {
+        background-color: white;
+        color: black;
+        font-family: "Roboto Mono", monospace;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header {
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+        padding-right: 10px;
+        padding-left: 10px;
+        align-items: center;
+        padding-top: 8px;
+        height: 14vh;
+        background-color: white;
+    }
+
+    .headerLeft {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-left: 10px;
+        font-size: 32px;
+        font-weight: 500;
+        font-family: 'Times New Roman', Times, serif;
+        color: #aa66fd;
+    }
+
+    .headerLeft img {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+    }
+
+    .headerRight {
+        gap: 15px;
+        margin-right: 10px;
+        font-size: 13px;
+    }
+
+    .headerRight ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        list-style-type: none;
+    }
+
+    .headerRight ul li:hover {
+        color: #aa66fd;
+        cursor: pointer;
+    }
+
+    .resume {
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    .screen {
+        display: flex;
+        height: 86vh;
+        width: 100%;
+    }
+
+    .left {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: column;
+        gap: 15px;
+        height: 100%;
+        width: 5%;
+        background-color: white;
+    }
+
+    .socialIcons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .socialIcons a img {
+        width: 22px;
+        transition: all 300ms ease-out;
+    }
+
+    .socialIcons a img:hover {
+        filter: drop-shadow(0px 0px 2px black);
+    }
+
+    .vline {
+        height: 30%;
+        border: 1px solid #aa66fd;
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: column;
+        gap: 145px;
+        height: 100%;
+        width: 5%;
+        background-color: white;
+    }
+
+    .rightMail {
+        letter-spacing: 1px;
+        font-size: 9px;
+        width: 16px;
+        transform: rotate(90deg);
+        transition: all 300ms ease-out;
+    }
+
+    .rightMail:hover {
+        text-shadow: 0px 0px 1px ;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+        width: 90%;
+        height: 100%;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        box-sizing: border-box;
+        height: 75vh;
+        min-height: min-content;
+        width: 100%;
+        padding-left: 80px;
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+
+    /* section1 starts here */
+
+    .section1 {
+        padding-left: 70px;
+    }
+
+    .hi {
+        font-size: 14px;
+        color: #aa66fd;
+        margin-bottom: 12px;
+        font-weight: normal;
+    }
+
+    .name {
+        font-size: 60px;
+    }
+
+    .profName {
+        font-size: 45px;
+        padding-bottom: 12px;
+        width: fit-content;
+    }
+
+    /* section2 starts here */
+
+    .heading {
+        display: flex;
+        height: fit-content;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .heading h4 {
+        font-size: 30px;
+        font-family: "Roboto Mono", monospace;
+        font-weight: bold;
+        display: flex;
+    }
+
+    .hline {
+        border-top: 1px solid rgb(182, 133, 227);
+        width: 200px;
+    }
+
+    .content {
+        margin-left: 10px;
+        margin-top: 30px;
+        display: flex;
+        gap: 22px;
+    }
+
+    .profileImg {
+        margin-top: 10px;
+        margin-left: 10px;
+        width: 140px;
+        height: 140px;
+    }
+
+    .aboutBio {
+        font-size: 13px;
+        margin-top: 10px;
+        gap: 7px;
+        max-width: 400px;
+        min-width: 300px;
+        line-height: 20px;
+    }
+
+    .skillList {
+        max-width: 600px;
+        min-width: 200px;
+        width: fit-content;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(140px, 200px));
+        gap: 0px 10px;
+        padding-left: 8px;
+        padding-top: 8px;
+        margin: 8px 0 0;
+    }
+
+    .skillList li {
+        max-width: 600px;
+        min-width: 200px;
+        position: relative;
+        margin-bottom: 10px;
+        color: blueviolet;
+    }
+
+    .work {
+        height: 330px;
+        padding-top: 20px;
+        padding-left: 60px;
+    }
+
+    .workLeft {
+        padding-top: 20px;
+        padding-left: 8px;
+        padding-right: 10px;
+    }
+
+    .companyList {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .companyList li {
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .companyContent {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 380px;
+        padding: 20px;
+        line-height: 25px;
+    }
+
+    .companyContent h2 {
+        font-size: 17px;
+    }
+
+    .highlight {
+        color: #4caf50;
+        font-weight: bold;
+    }
+
+    .companyContent p {
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .companyAbout {
+        font-size: 12px;
+        list-style-type: disc;
+    }
+
+    /* section4 starts here */
+
+    .projectContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        width: 90%;
+        gap: 35px;
+        padding: 40px 0px;
+    }
+
+    .projectCard {
+        backdrop-filter: 10px;
+        width: 270px;
+        min-height: 280px;
+        height: fit-content;
+        padding: 11px;
+        gap: 22px;
+    }
+
+    .projectCard:hover .projectName {
+        color: #aa66fd;
+    }
+
+    .projectCard:hover {
+        transform: scale(1.02);
+        box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.3);
+    }
+
+
+    .cardHead {
+        padding: 10px 0px;
+    }
+
+    .cardHead img {
+        width: 21px;
+    }
+
+    .links {
+        display: flex;
+        gap: 3px;
+    }
+
+    .projectCard a {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .projectName {
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+    .projectDesc {
+        font-size: 11px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .projectTech {
+        font-size: 11px;
+        font-family: monospace;
+        letter-spacing: -1px;
+    }
+
+    /* section5 starts here */
+
+    .section5 {
+        padding-top: 10px;
+        /* min-height: 65vh; */
+    }
+
+    .section5 h4 {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+    }
+
+    .connectContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+        width: 95%;
+        font-size: 12px;
+    }
+
+    .connectContent {
+        margin-top: 25px;
+        width: 70%;
+    }
+
+    .helloBtn {
+        padding: 5px 8px;
+        font-size: 9px;
+    }
+
+}
