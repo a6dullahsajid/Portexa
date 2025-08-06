@@ -5,7 +5,7 @@ export default function Section4({ userDetails }) {
   return (
     <section id="section4" className={`${styles.section} ${styles.section4}`}>
       <div className={styles.heading}>
-        <h4>Some Things I've Built</h4>
+        <h4>Some Things I&apos;ve Built</h4>
         <div className={styles.hline}></div>
       </div>
       <div className={styles.projectContainer}>

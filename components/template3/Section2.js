@@ -12,7 +12,7 @@ export default function Section2({ userDetails }) {
         <img  className={styles.profileImg} src={userDetails.profileImage} alt="Profile" />
         <div className={styles.aboutBio}>
           <div>{userDetails.bio}</div>
-          <div>Here are few technologies I've been working with recently:</div>
+          <div>Here are few technologies I&apos;ve been working with recently:</div>
           <ul className={styles.skillList}>
             {userDetails.skills.map((skill, index) => {
               return <li key={index}>
