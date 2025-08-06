@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Portexa",
+  title: "Portexa - Build your portfolio",
   description: "A portfolio builder that lets you create a fully customized portfolio to showcase your skills and projects.",
   icons: {
     icon: "/favicon.ico"

@@ -2,7 +2,7 @@ import styles from "./template1.module.css";
 
 export default function section4({connectDesc, github, linkedin, x, email}) {
   return (
-    <section className={styles.section4}>
+    <section id="section4" className={styles.section4}>
       <h2 className={styles.h2}>
         Let's connect
         <div className={styles.line}></div>

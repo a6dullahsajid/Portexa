@@ -70,6 +70,26 @@ const userDataSlice = createSlice({
             state.details.x = action.payload;
         },
         resetUserData: () => initialState,
+        initializeUserData: (state, action) => {
+            const user = action.payload;
+            if (user) {
+                state.userName = user.userName;
+                state.template = user.template;
+                state.details.name = user.details.name;
+                state.details.title = user.details.title;
+                state.details.profileImage = user.details.profileImage;
+                state.details.bio = user.details.bio;
+                state.details.resume = user.details.resume;
+                state.details.skills = user.details.skills;
+                state.details.experience = user.details.experience;
+                state.details.projects = user.details.projects;
+                state.details.connectDesc = user.details.connectDesc;
+                state.details.email = user.details.email;
+                state.details.linkedin = user.details.linkedin;
+                state.details.github = user.details.github;
+                state.details.x = user.details.x;
+            }
+        },
     },
 });
 
@@ -90,6 +110,7 @@ export const {
     setGithub,
     setX,
     resetUserData,
+    initializeUserData,
 } = userDataSlice.actions;
 
 export default userDataSlice.reducer;

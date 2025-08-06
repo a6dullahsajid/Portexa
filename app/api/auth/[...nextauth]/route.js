@@ -1,15 +1,18 @@
 import NextAuth from 'next-auth';
 import GithubProvider from 'next-auth/providers/github';
-import { db } from "@/lib/firebaseAdmin"; // 👈 Import your Firebase Admin config
+import GoogleProvider from 'next-auth/providers/google';
+import { db } from "@/lib/firebaseAdmin";
 
-export const authOptions = { // It's better to define options as an object
+export const authOptions = {
     providers: [
         GithubProvider({
             clientId: process.env.GITHUB_ID,
             clientSecret: process.env.GITHUB_SECRET
+        }), GoogleProvider({
+            clientId: process.env.GOOGLE_CLIENT_ID,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET,
         }),
     ],
-    // 👇 Add the callbacks block here
     callbacks: {
         async signIn({ user, account }) {
 
@@ -17,10 +20,8 @@ export const authOptions = { // It's better to define options as an object
             if (account.provider === "github" && user.email) {
                 try {
                     const userRef = db.collection("users").doc(user.email);
-                    const doc = await userRef.get(); 
+                    const doc = await userRef.get();
                     const slug = user.name.replace(/\s+/g, "");
-
-                    console.log(slug);
 
                     if (!doc.exists) {
                         await userRef.set({
@@ -43,7 +44,6 @@ export const authOptions = { // It's better to define options as an object
                                 x: "",
                             },
                         });
-                        console.log("New user created in Firestore:", user.email);
                     }
                     return true;
                 } catch (error) {
@@ -55,7 +55,6 @@ export const authOptions = { // It's better to define options as an object
         },
 
         async session({ session, token }) {
-            // Ensure email is included in session
             session.user.email = token.email;
             if (token?.email) {
                 session.user.email = token.email;
@@ -64,7 +63,6 @@ export const authOptions = { // It's better to define options as an object
         },
 
         async jwt({ token, user }) {
-            // Add email to JWT token
 
             console.log("✅ jwt callback - token IN:", token, "user:", user);
             if (user?.email) {

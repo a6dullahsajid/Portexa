@@ -6,6 +6,7 @@ import styles from "./FormPage.module.css";
 import Navbar from "@/components/Navbar";
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
+import useCloudinaryUpload from "@/app/hooks/useCloudinaryUpload";
 import { setName, setProfileImage, setTitle, setBio, setResume, setSkills, setExperience, setProjects, setConnectDesc, setX, setGithub, setLinkedin, setEmail } from "@/store/userDataSlice";
 
 export default function PortfolioForm() {
@@ -20,21 +21,26 @@ export default function PortfolioForm() {
 
 
     const dispatch = useDispatch();
+    const {
+        details: {
+            name,
+            title,
+            profile,
+            bio,
+            resume,
+            skills,
+            experience,
+            projects,
+            connectDesc,
+            email,
+            linkedin,
+            github,
+            x
+        },
+        template
+    } = useSelector((state) => state.userData);
 
-    const nameSelector = useSelector(state => state.userData.details.name);
-    const titleSelector = useSelector(state => state.userData.details.title);
-    const profileSelector = useSelector(state => state.userData.details.profile);
-    const templateSelector = useSelector(state => state.userData.template);
-    const bioSelector = useSelector(state => state.userData.details.bio);
-    const resumeSelector = useSelector(state => state.userData.details.resume);
-    const skillsSelector = useSelector(state => state.userData.details.skills);
-    const experienceSelector = useSelector((state) => state.userData.details.experience);
-    const projectsSelector = useSelector((state) => state.userData.details.projects);
-    const connectDescSelector = useSelector((state) => state.userData.details.connectDesc);
-    const emailSelector = useSelector((state) => state.userData.details.email);
-    const linkedinSelector = useSelector((state) => state.userData.details.linkedin);
-    const githubSelector = useSelector((state) => state.userData.details.github);
-    const xSelector = useSelector((state) => state.userData.details.x);
+    const { uploadImage, uploading } = useCloudinaryUpload();
 
     const [step, setStep] = useState(1);
     const [localProfileFile, setLocalProfileFile] = useState(null);
@@ -74,54 +80,15 @@ export default function PortfolioForm() {
     };
 
     const handleUploadProfileImage = async () => {
-        if (!localProfileFile) {
-            toast.error("No file selected!");
+        if (!localProfileFile) return;
+        if (file.size > 10 * 1024 * 1024) {
+            toast.error("Image must be smaller than 10MB");
             return;
         }
-
-        if (localProfileFile.size > 10 * 1024 * 1024) {
-            toast.error("File must be smaller than 10MB");
-            return;
-        }
-
-        const uploadingToast = toast.loading("Uploading image...");
-
-        try {
-            const sigRes = await fetch("/api/upload");
-            const { timestamp, signature, apiKey, cloudName, folder } = await sigRes.json();
-
-            const formData = new FormData();
-            formData.append("file", localProfileFile);
-            formData.append("api_key", apiKey);
-            formData.append("timestamp", timestamp);
-            formData.append("signature", signature);
-            formData.append("folder", folder);
-
-            const uploadRes = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
-                method: "POST",
-                body: formData,
-            });
-
-            const data = await uploadRes.json();
-            toast.dismiss(uploadingToast);
-
-            if (uploadRes.ok) {
-                toast.success("Image uploaded!");
-                dispatch(setProfileImage(data.secure_url));
-            } else {
-                toast.error(data.error?.message || "Upload failed");
-            }
-        } catch (err) {
-            toast.dismiss(uploadingToast);
-            toast.error("Something went wrong");
-            console.error(err);
-        }
+        uploadImage(localProfileFile, (url) => {
+            dispatch(setProfileImage(url));
+        });
     };
-
-
-
-
-
 
     const handleBioChange = (e) => {
         dispatch(setBio(e.target.value))
@@ -133,14 +100,14 @@ export default function PortfolioForm() {
 
     const handleAddSkill = () => {
         const trimmed = skillInput.trim();
-        if (trimmed && !skillsSelector.includes(trimmed)) {
-            dispatch(setSkills([...skillsSelector, trimmed]));
+        if (trimmed && !skills.includes(trimmed)) {
+            dispatch(setSkills([...skills, trimmed]));
             setSkillInput("");
         }
     };
 
     const handleRemoveSkill = (indexToRemove) => {
-        const updatedSkills = skillsSelector.filter((_, idx) => idx !== indexToRemove);
+        const updatedSkills = skills.filter((_, idx) => idx !== indexToRemove);
         dispatch(setSkills(updatedSkills));
     };
 
@@ -163,78 +130,50 @@ export default function PortfolioForm() {
     };
 
     const handleAddProject = async () => {
-        const { title, prevLink, githubLink, image } = project;
+        const { title, desc, githubLink, image } = project;
 
-        if (!title || !prevLink || !githubLink) {
+        if (!title || !desc || !githubLink) {
             toast.error("Please fill in all required project fields.");
             return;
         }
 
-        let imageUrl = "";
+        const updateProjects = (imageUrl = "") => {
+            const updatedProjects = [...projects, {
+                ...project,
+                image: imageUrl
+            }];
+            dispatch(setProjects(updatedProjects));
 
+            setProject({
+                title: "",
+                desc: "",
+                tech: "",
+                image: "",
+                prevLink: "",
+                githubLink: ""
+            });
+        };
+
+        // If image is provided
         if (image) {
             if (image.size > 10 * 1024 * 1024) {
                 toast.error("Image must be smaller than 10MB");
                 return;
             }
 
-            const uploadingToast = toast.loading("Uploading image...");
-
-            try {
-                const sigRes = await fetch("/api/upload");
-                const { timestamp, signature, apiKey, cloudName, folder } = await sigRes.json();
-
-                const formData = new FormData();
-                formData.append("file", image);
-                formData.append("api_key", apiKey);
-                formData.append("timestamp", timestamp);
-                formData.append("signature", signature);
-                formData.append("folder", folder);
-
-                const uploadRes = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
-                    method: "POST",
-                    body: formData,
-                });
-
-                const data = await uploadRes.json();
-                toast.dismiss(uploadingToast);
-
-                if (uploadRes.ok) {
-                    imageUrl = data.secure_url;
-                    toast.success("Image uploaded successfully!");
-                } else {
-                    toast.error(data.error?.message || "Upload failed");
-                    return;
-                }
-            } catch (err) {
-                toast.dismiss(uploadingToast);
-                toast.error("Something went wrong during upload.");
-                console.error(err);
-                return;
-            }
+            uploadImage(image, (url) => {
+                updateProjects(url);
+            });
+        } else {
+            updateProjects();
         }
-
-        const updatedProjects = [...projectsSelector, {
-            ...project,
-            image: imageUrl,
-        }];
-
-        dispatch(setProjects(updatedProjects));
-
-        setProject({
-            title: "",
-            desc: "",
-            tech: "",
-            image: "",
-            prevLink: "",
-            githubLink: ""
-        });
     };
 
 
 
+
     const handleRemoveProject = (indexToRemove) => {
-        const updatedProjects = projectsSelector.filter((_, index) => index !== indexToRemove);
+        const updatedProjects = projects.filter((_, index) => index !== indexToRemove);
         dispatch(setProjects(updatedProjects));
     };
 
@@ -252,14 +191,14 @@ export default function PortfolioForm() {
             toast.error("Please fill all experience fields.");
             return;
         }
-        const updated = [...experienceSelector, experienceInput];
+        const updated = [...experience, experienceInput];
         dispatch(setExperience(updated));
         setExperienceInput({ company: "", position: "", from: "", to: "", work: "" });
     };
 
 
     const handleRemoveExperience = (indexToRemove) => {
-        const updated = experienceSelector.filter((_, index) => index !== indexToRemove);
+        const updated = experience.filter((_, index) => index !== indexToRemove);
         dispatch(setExperience(updated));
     };
 
@@ -332,14 +271,14 @@ export default function PortfolioForm() {
                                 name="name"
                                 placeholder="Full Name"
                                 onChange={handleNameChange}
-                                value={nameSelector}
+                                value={name}
                                 className={styles.formInput}
                             />
                             <input
                                 name="title"
                                 placeholder="Role / Title"
                                 onChange={handleTitleChange}
-                                value={titleSelector}
+                                value={title}
                                 className={styles.formInput}
                             />
                             <div className={styles.uploadImage}>
@@ -363,7 +302,7 @@ export default function PortfolioForm() {
                                 name="bio"
                                 placeholder="About Me"
                                 onChange={handleBioChange}
-                                value={bioSelector}
+                                value={bio}
                                 className={styles.formTextarea}
                             />
 
@@ -371,7 +310,7 @@ export default function PortfolioForm() {
                                 name="resume"
                                 placeholder="Resume Link"
                                 onChange={handleResumeChange}
-                                value={resumeSelector}
+                                value={resume}
                                 className={styles.formInput}
                             />
                             <div className={styles.skillInputWrapper}>
@@ -387,7 +326,7 @@ export default function PortfolioForm() {
                             </div>
 
                             <div className={styles.skillList}>
-                                {skillsSelector.map((skill, index) => (
+                                {skills.map((skill, index) => (
                                     <div key={index} className={styles.skillChip}>
                                         {skill}
                                         <button type="button" onClick={() => handleRemoveSkill(index)} className={styles.removeSkill}>×</button>
@@ -406,7 +345,7 @@ export default function PortfolioForm() {
                     {/* STEP 2 - Projects */}
                     {step === 2 && (
                         <div className={styles.formSection}>
-                            {projectsSelector.map((proj, index) => (
+                            {projects.map((proj, index) => (
                                 <div key={index} className={styles.projectEntry}>
                                     <div className={styles.formInput}>{proj.title}</div>
                                     <div className={styles.formInput}>{proj.desc}</div>
@@ -490,8 +429,7 @@ export default function PortfolioForm() {
                     {step === 3 && (
                         <div className={styles.formSection}>
                             <p>You can skip this if you are a fresher</p>
-                            {console.log(experienceSelector)}
-                            {experienceSelector.map((exp, index) => {
+                            {experience.map((exp, index) => {
                                 return <div key={index} className={styles.projectEntry}>
                                     <div className={styles.formInput}>{exp.company}</div>
                                     <div className={styles.formInput}>{exp.position}</div>
@@ -565,35 +503,35 @@ export default function PortfolioForm() {
                                 name="connectDesc"
                                 placeholder="Say something for your connect section"
                                 onChange={handleConnectDescChange}
-                                value={connectDescSelector}
+                                value={connectDesc}
                                 className={styles.formTextarea}
                             />
                             <input
                                 name="email"
                                 placeholder="Email"
                                 onChange={handleEmailChange}
-                                value={emailSelector}
+                                value={email}
                                 className={styles.formInput}
                             />
                             <input
                                 name="linkedin"
                                 placeholder="LinkedIn URL"
                                 onChange={handleLinkedinChange}
-                                value={linkedinSelector}
+                                value={linkedin}
                                 className={styles.formInput}
                             />
                             <input
                                 name="github"
                                 placeholder="GitHub URL"
                                 onChange={handleGithubChange}
-                                value={githubSelector}
+                                value={github}
                                 className={styles.formInput}
                             />
                             <input
                                 name="x"
                                 placeholder="Twitter / X Profile"
                                 onChange={handlexChange}
-                                value={xSelector}
+                                value={x}
                                 className={styles.formInput}
                             />
                             <div className={styles.formNav}>

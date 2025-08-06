@@ -2,6 +2,7 @@ import VideoPreview from "@/components/VideoPreview.js";
 import AnimatedBackground from "@/components/AnimatedBackground.js";
 import Link from "next/link";
 import styles from "./globals.module.css";
+import Image from "next/image";
 
 export default function Home() {
   const videoList = ["example_1", "example_2", "example_3"];
@@ -11,7 +12,7 @@ export default function Home() {
       <AnimatedBackground />
       <div className={styles.section1}>
         <div className={styles.logo}>
-          <img src="/logo.png" alt="Logo" className={styles.logoImg} />
+          <Image width={100} height={23} src="/logo.png" alt="Logo" />
           <h1 className={styles.section1h1}>Portexa</h1>
         </div>
         <p className={styles.section1p}>Design your portfolio with just a few clicks</p>

@@ -9,7 +9,7 @@ export default function HomePage1({ userData }) {
     return (
         <div className={styles.root}>
             <Header logoImage={userData.details.profileImage}/>
-            <NavBar/>
+            <NavBar experience={userData.details.experience}/>
             <Screen userData={userData} />
         </div>
     );

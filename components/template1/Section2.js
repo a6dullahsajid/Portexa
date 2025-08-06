@@ -1,7 +1,7 @@
 import styles from "./template1.module.css"
 export default function Section2({ bio, skills }) {
   return (
-    <section className={`${styles.section} ${styles.section2}`}>
+    <section id="section2" className={`${styles.section} ${styles.section2}`}>
       <h2 className={styles.h2}>
         About me
         <div className={styles.line}></div>

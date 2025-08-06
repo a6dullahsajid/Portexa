@@ -134,8 +134,8 @@
 
 .profile img {
     width: 25rem;
-    border-radius: 10%;
-    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.4));
+    border-radius: 3%;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.4));
 }
 
 .section2 {
@@ -401,6 +401,32 @@
     color: white;
 }
 
+
+.experienceContainer {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgba(0, 0, 0, 0.7);
+    gap: 5px;
+}
+
+.work {
+    width: 100%;
+    padding-left: 25px;
+    word-spacing: 0.3rem;
+    letter-spacing: 0.035rem;
+}
+
+.position {
+    font-weight: 600;
+}
+
+.companyDetails {
+    font-style: italic;
+}
+
+
 @media (max-width:389px) {
     .root {
         grid-template-columns: 1fr;
@@ -408,7 +434,7 @@
             'a'
             'c'
             'b';
-        grid-template-rows: 8vh auto 7vh;
+        grid-template-rows: 9vh auto 5vh;
         height: 100%;
         width: 100%;
     }
@@ -471,7 +497,7 @@
     .main {
         grid-area: c;
         width: 100%;
-        height: 75vh;
+        height: 83vh;
         box-sizing: border-box;
         display: flex;
         flex-wrap: wrap;
@@ -498,7 +524,7 @@
         justify-content: start;
         align-items: center;
         box-sizing: border-box;
-        padding-top: 1rem;
+        padding-top: 2rem;
         padding-left: 0rem;
     }
 
@@ -517,6 +543,7 @@
         display: flex;
         align-items: end;
         justify-content: center;
+        margin-top: 3rem;
         padding-bottom: 0rem;
     }
 
@@ -730,6 +757,28 @@
         background-color: transparent;
         color: var(--theme-color);
     }
+
+    .experienceContainer {
+        margin-left: 20px;
+        margin-bottom: 10px;
+        width: 95%;
+        gap: 3px;
+    }
+
+    .work {
+        width: 85%;
+        font-size: 10px;
+        padding-left: 15px;
+    }
+
+    .position {
+        font-size: 15px;
+    }
+
+    .companyDetails {
+        font-size: 10px;
+        font-style: italic;
+    }
 }
 
 @media (min-width:390px) and (max-width: 576px) {
@@ -739,7 +788,7 @@
             'a'
             'c'
             'b';
-        grid-template-rows: 8vh auto 7vh;
+        grid-template-rows: 10vh auto 7vh;
         height: 100%;
         width: 100%;
     }
@@ -802,14 +851,15 @@
     .main {
         grid-area: c;
         width: 100%;
-        height: 79vh;
+        height: 82vh;
         box-sizing: border-box;
         display: flex;
         flex-wrap: wrap;
         overflow: scroll;
         align-items: center;
         justify-content: center;
-        box-shadow: 0px 0px 0.5px var(--theme-color);
+        /* box-shadow: 0px 0px 0.5px var(--theme-color); */
+        box-shadow: none;
     }
 
     .section {
@@ -835,15 +885,16 @@
     }
 
     .name {
-        font-size: 3.3rem;
+        font-size: 3rem;
         color: rgba(0, 0, 0, 0.85);
     }
 
     .profession {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .profile {
+        margin-top: 2rem;
         width: 100%;
         height: 50%;
         display: flex;
@@ -853,7 +904,7 @@
     }
 
     .profile img {
-        width: 18rem;
+        width: 15rem;
         border-radius: 5%;
         filter: blur(0.02rem) drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.3));
     }
@@ -1004,6 +1055,33 @@
     .msgbtn:hover {
         background-color: transparent;
         color: var(--theme-color);
+    }
+
+    .experienceContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 80%;
+        gap: 10px;
+        margin: 10px 0px;
+    }
+
+    .work {
+        width: 100%;
+        font-size: 11px;
+        padding-left: 12px;
+        word-spacing: 0.1rem;
+        letter-spacing: 0.03rem;
+    }
+
+    .position {
+        font-size: 16px;
+    }
+
+    .companyDetails {
+        font-size: 11px;
+        font-style: italic;
     }
 }
 
@@ -1278,6 +1356,33 @@
         background-color: transparent;
         color: var(--theme-color);
     }
+
+    .experienceContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 80%;
+        gap: 10px;
+        margin: 10px 0px;
+    }
+
+    .work {
+        width: 100%;
+        font-size: 14px;
+        padding-left: 0px;
+        word-spacing: 0.02rem;
+        letter-spacing: 0.02rem;
+    }
+
+    .position {
+        font-size: 17px;
+    }
+
+    .companyDetails {
+        font-size: 14px;
+        font-style: italic;
+    }
 }
 
 @media (min-width: 767px) and (max-width: 991px) {
@@ -1370,8 +1475,8 @@
 
     .profile img {
         width: 17rem;
-        border-radius: 50%;
-        filter: blur(0.025rem) drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.4));
+        border-radius: 5%;
+        filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.4));
     }
 
     .section2 {
@@ -1631,4 +1736,26 @@
         color: white;
     }
 
+    .experienceContainer {
+        display: flex;
+        flex-direction: column;
+        margin-left: 50px;
+        margin-bottom: 30px;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .work {
+        width: 80%;
+        font-size: 14px;
+        padding-left: 25px;
+    }
+
+    .position {
+        font-weight: 600;
+    }
+
+    .companyDetails {
+        font-style: italic;
+    }
 }

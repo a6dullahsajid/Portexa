@@ -1,6 +1,6 @@
 import styles from "./template1.module.css";
 
-export default function NavBar() {
+export default function NavBar({ experience }) {
   return (
     <nav className={styles.navTemplate1}>
       <a href="#section1">
@@ -15,6 +15,13 @@ export default function NavBar() {
           About
         </p>
       </a>
+      {experience.length !== 0 && <a href="#sectionexp">
+        <p>
+          <img src="/template1/experience.svg" alt="logo" />
+          Experience
+        </p>
+      </a>
+      }
       <a href="#section3">
         <p>
           <img src="/template1/project.svg" alt="logo" />
