@@ -17,7 +17,7 @@ export default function Section5({ userDetails }) {
                         </a>
                         <a href={userDetails.linkedin} target='_blank'>
                             <button>
-                                <img src="/template2/linkedinlogo.png" alt="Linkedin Logo" />
+                                <img src="/template1/linkedin.png" alt="Linkedin Logo" />
                             </button>
                         </a>
                         <a href={userDetails.github} target='_blank'>
