@@ -27,7 +27,7 @@ export default function LoginPage() {
             <h1>Login/Signup</h1>
           </div>
           <button
-            onClick={() => signIn("github")}
+            onClick={() => signIn("google")}
             className="flex items-center bg-gray-50 border border-gray-300 rounded-lg shadow-md max-w-xs px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
             <FcGoogle size={24} />
             <span>Continue with Google</span>
