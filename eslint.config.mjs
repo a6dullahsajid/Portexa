@@ -1,3 +1,4 @@
+// eslint.config.mjs
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
@@ -9,16 +10,13 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-// Merge Next.js defaults (like core-web-vitals) with custom rules
-const eslintConfig = [
+export default [
   ...compat.config({
-    extends: ["next/core-web-vitals"], // more strict than "next"
+    extends: ["next/core-web-vitals"],
     rules: {
       "react/no-unescaped-entities": "off",
+      "@next/next/no-img-element": "off",
       "@next/next/no-page-custom-font": "off",
-      "@next/next/no-img-element": "off", // optional: suppress <img /> warning too
     },
   }),
 ];
-
-export default eslintConfig;
