@@ -6,7 +6,7 @@ export default function Section5({ userDetails }) {
     return (
         <>
             <section id="section5" className={`${styles.section} ${styles.section5}`}>
-                <h2>Let's Connect</h2>
+                <h2>Let&apos;s Connect</h2>
                 <div className={styles.connectContainer}>
                     <div className={styles.description}>{userDetails.connectDesc}</div>
                     <div className={styles.connectButtons}>

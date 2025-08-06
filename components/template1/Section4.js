@@ -4,7 +4,7 @@ export default function section4({connectDesc, github, linkedin, x, email}) {
   return (
     <section id="section4" className={styles.section4}>
       <h2 className={styles.h2}>
-        Let's connect
+        Let&apos;s connect
         <div className={styles.line}></div>
       </h2>
       <div className={styles.description}>{connectDesc}
