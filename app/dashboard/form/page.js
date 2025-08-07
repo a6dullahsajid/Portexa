@@ -85,7 +85,7 @@ export default function PortfolioForm() {
             toast.error("No Image Selected");
             return;
         }
-        if (file.size > 10 * 1024 * 1024) {
+        if (localProfileFile.size > 10 * 1024 * 1024) {
             toast.error("Image must be smaller than 10MB");
             return;
         }
