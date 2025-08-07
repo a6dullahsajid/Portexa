@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import useCloudinaryUpload from "@/app/hooks/useCloudinaryUpload";
 import { setName, setProfileImage, setTitle, setBio, setResume, setSkills, setExperience, setProjects, setConnectDesc, setX, setGithub, setLinkedin, setEmail } from "@/store/userDataSlice";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function PortfolioForm() {
 
@@ -38,11 +39,14 @@ export default function PortfolioForm() {
             github,
             x
         },
-        template
+        template,
+        userName
     } = useSelector((state) => state.userData);
 
+    const router = useRouter();
     const { uploadImage, uploading } = useCloudinaryUpload();
 
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const [step, setStep] = useState(1);
     const [localProfileFile, setLocalProfileFile] = useState("");
 
@@ -228,10 +232,15 @@ export default function PortfolioForm() {
     const prevStep = () => setStep((prev) => prev - 1);
 
     const userData = useSelector((state) => state.userData);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Submit Chala");
-        console.log(userData);
+
+        if (isSubmitting) {
+            return;
+        }
+
+        setIsSubmitting(true);
 
         try {
             const res = await fetch("/api/saveUserData", {
@@ -246,14 +255,17 @@ export default function PortfolioForm() {
 
             if (result.success) {
                 toast.success("User data saved successfully!");
-                console.log("Saved ID:", result.insertedId);
+                router.push(`/${userName}`);
+
             } else {
                 toast.error("Failed to save data.");
                 console.log(result.error);
+                setIsSubmitting(false);
             }
         } catch (err) {
             console.log("Error submitting form:", err);
             toast.error("Something went wrong.");
+            setIsSubmitting(false);
         }
     };
 
@@ -541,7 +553,9 @@ export default function PortfolioForm() {
                             />
                             <div className={styles.formNav}>
                                 <button type="button" onClick={prevStep} className={styles.btnPrev}>Back</button>
-                                <button type="submit" className={styles.btnSubmit}>Finish</button>
+                                <button type="submit" className={styles.btnSubmit} disabled={isSubmitting}>
+                                    {isSubmitting ? "Generating Portfolio..." : "Finish"}
+                                </button>
                             </div>
                         </div>
                     )}

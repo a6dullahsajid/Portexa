@@ -35,6 +35,11 @@ export default function Navbar() {
                                     <img src={session.user.image} alt="user profile" className={styles.userProfile} />{session.user.name}
                                 </li>
                                 <li>
+                                    <Link href={`/dashboard`}>
+                                        <button>Dashboard</button>
+                                    </Link>
+                                </li>
+                                <li>
                                     <Link href={`/${session.user.email.split("@")[0]}`}>
                                         <button>View Portfolio</button>
                                     </Link>
