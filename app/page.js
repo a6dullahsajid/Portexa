@@ -2,6 +2,7 @@ import AnimatedBackground from "@/components/AnimatedBackground.js";
 import Link from "next/link";
 import styles from "./globals.module.css";
 import Image from "next/image";
+import StartButton from "@/components/StartButton";
 
 export default function Home() {
 
@@ -17,9 +18,7 @@ export default function Home() {
         </div>
         <p className={styles.section1p}>Design your portfolio with just a few clicks</p>
         <Link href="/dashboard">
-          <button className={styles.section1button}>
-            Get started
-          </button>
+          <StartButton />
         </Link>
       </div>
     </main>

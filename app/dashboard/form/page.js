@@ -554,7 +554,10 @@ export default function PortfolioForm() {
                             <div className={styles.formNav}>
                                 <button type="button" onClick={prevStep} className={styles.btnPrev}>Back</button>
                                 <button type="submit" className={styles.btnSubmit} disabled={isSubmitting}>
-                                    {isSubmitting ? "Generating Portfolio..." : "Finish"}
+                                    {isSubmitting ? <>
+                                        Generating Portfolio<span className={styles.dots}></span>
+                                    </>
+                                        : "Finish"}
                                 </button>
                             </div>
                         </div>
