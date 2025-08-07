@@ -44,7 +44,7 @@ export default function PortfolioForm() {
     const { uploadImage, uploading } = useCloudinaryUpload();
 
     const [step, setStep] = useState(1);
-    const [localProfileFile, setLocalProfileFile] = useState(null);
+    const [localProfileFile, setLocalProfileFile] = useState("");
 
     const [skillInput, setSkillInput] = useState("");
     const [experienceInput, setExperienceInput] = useState({
