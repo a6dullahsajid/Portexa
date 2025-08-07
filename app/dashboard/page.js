@@ -65,29 +65,27 @@ export default function Dashboard() {
         );
     }
 
-    if (status === "unauthenticated") {
-        router.push('/login');
-        return null;
-    }
-
     return (
         <main className={styles.dashboard}>
             <Navbar />
             <div className={styles.dashboardContainer}>
-                <h1>Choose a Template</h1>
+                <div className={styles.heading}>
+                    <h1>Choose a Template</h1>
+                    <p>Select a starting point. You can always change it later.</p>
+                </div>
                 <div className={styles.templateContainer}>
                     {templates.map((tpl) => (
                         <div className={styles.templateCard}
                             key={tpl.id}
-                            onClick={() => selectTemplate(tpl.id)}
                         >
-                            <Image
-                                src={tpl.img}
-                                alt={tpl.name}
-                                width={400}
-                                height={250}
-                                style={{ pointerEvents: "none" }}
-                            />
+                            <div className={styles.templateCardImageContainer}>
+                                <Image
+                                    onClick={() => selectTemplate(tpl.id)}
+                                    src={tpl.img}
+                                    alt={tpl.name}
+                                    fill
+                                />
+                            </div>
                             <div className={styles.tempTextContainer}>
                                 <p>{tpl.name}</p>
                                 <a className={styles.tempPrevButton} href={tpl.preview} target="_blank" rel="noopener noreferrer">Preview</a>

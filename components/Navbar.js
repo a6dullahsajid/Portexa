@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useState } from "react";
 import styles from "./navbar.module.css";
+import Image from "next/image";
 
 export default function Navbar() {
     const { data: session } = useSession();
@@ -11,8 +12,10 @@ export default function Navbar() {
     return (
         <nav className={styles.nav}>
             <Link href="/">
-                <div className={styles.logo}>
-                    <img src="/logo.png" alt="Logo" className={styles.logoImg} />
+                <div className={styles.logoContainer}>
+                    <div className={styles.logo}>
+                        <Image fill src="/logo.png" alt="Logo" className={styles.logoImg} />
+                    </div>
                     Portexa
                 </div>
             </Link>

@@ -11,8 +11,10 @@ export default function Home() {
     <main className={styles.homepage}>
       <AnimatedBackground />
       <div className={styles.section1}>
-        <div className={styles.logo}>
-          <Image width={100} height={23} src="/logo.png" alt="Logo" />
+        <div className={styles.logoContainer}>
+          <div className={styles.logo}>
+            <Image fill src="/logo.png" alt="Logo" className={styles.logoImg}/>
+          </div>
           <h1 className={styles.section1h1}>Portexa</h1>
         </div>
         <p className={styles.section1p}>Design your portfolio with just a few clicks</p>
@@ -23,7 +25,7 @@ export default function Home() {
         </Link>
       </div>
 
-      <div className={styles.exampleContainer}>
+      {/* <div className={styles.exampleContainer}>
         <div className={styles.exampleFolios}>
           {videoList.map((name) => (
             <VideoPreview
@@ -34,7 +36,7 @@ export default function Home() {
           ))}
         </div>
         <h2 className={styles.exampleContainerh2}>Examples of some built portfolios</h2>
-      </div>
+      </div> */}
     </main>
   );
 }
