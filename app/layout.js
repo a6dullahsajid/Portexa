@@ -3,6 +3,7 @@ import "./globals.css";
 import StoreProvider from "@/components/StoreProvider";
 import SessionWrapper from "@/components/SessionWrapper";
 import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
           <StoreProvider>
         <Toaster position="top-right" />
             {children}
+            <Analytics />
           </StoreProvider>
         </SessionWrapper>
       </body>
