@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import useCloudinaryUpload from "@/app/hooks/useCloudinaryUpload";
 import { setName, setProfileImage, setTitle, setBio, setResume, setSkills, setExperience, setProjects, setConnectDesc, setX, setGithub, setLinkedin, setEmail } from "@/store/userDataSlice";
+import Image from "next/image";
 
 export default function PortfolioForm() {
 
@@ -25,7 +26,7 @@ export default function PortfolioForm() {
         details: {
             name,
             title,
-            profile,
+            profileImage,
             bio,
             resume,
             skills,
@@ -80,7 +81,10 @@ export default function PortfolioForm() {
     };
 
     const handleUploadProfileImage = async () => {
-        if (!localProfileFile) return;
+        if (!localProfileFile) {
+            toast.error("No Image Selected");
+            return;
+        }
         if (file.size > 10 * 1024 * 1024) {
             toast.error("Image must be smaller than 10MB");
             return;
@@ -290,6 +294,7 @@ export default function PortfolioForm() {
                                     onChange={handleProfileChange}
                                     className={`${styles.formInput} ${styles.imageInput}`}
                                 />
+                                {/* {profileImage && <img width={52} height={42} src={profileImage} alt="profile" />} */}
                                 <button
                                     type="button"
                                     onClick={handleUploadProfileImage}

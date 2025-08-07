@@ -9,8 +9,8 @@ export default function NoData() {
                 <span className={styles.emoji}>📝</span>
                 <h1 className={styles.h1}>No Portfolio Found</h1>
                 <p className={styles.p}>Looks like you haven&apos;t created your portfolio yet.</p>
-                <Link href="/dashboard/form">
-                    <button className={styles.button}>Fill the Form</button>
+                <Link href="/dashboard">
+                    <button className={styles.button}>Create One</button>
                 </Link>
             </div>
         </div>
