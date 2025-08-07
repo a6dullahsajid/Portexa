@@ -227,9 +227,11 @@
 
     .dropdown {
         position: absolute;
-        top: 2.3rem;
+        top: 2.6rem;
         right: 0.5rem;
         border-radius: 7px;
+        color: white;
+        background-color: rgba(47, 85, 138, 0.8);
     }
 
     .dropdownUl {
