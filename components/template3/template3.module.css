@@ -79,7 +79,7 @@
 }
 
 .card {
-    display: flex;
+    display: none;
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -500,8 +500,6 @@
         margin-left: 5px;
         font-size: 25px;
         font-weight: 500;
-        font-family: 'Times New Roman', Times, serif;
-        color: #aa66fd;
     }
 
     .headerLeft img {
@@ -544,6 +542,7 @@
     }
 
     .card {
+        display: flex;
         width: 160px;
         gap: 20px;
         padding-top: 20px;
@@ -858,6 +857,7 @@
     }
 
     .card {
+        display: flex;
         justify-content: start;
         width: 160px;
         gap: 40px;
@@ -1166,6 +1166,7 @@
     }
 
     .card {
+        display: flex;
         justify-content: start;
         width: 160px;
         gap: 40px;

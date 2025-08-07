@@ -57,7 +57,7 @@ export default function Header({ experience, image, resume }) {
                     <button className={styles.resume}>Resume</button>
                 </a>
             </div>
-            <div className={styles.card} style={{ right: burgerOpen ? "0" : "-100%" }}>
+            <div className={styles.card} style={{ right: burgerOpen ? "0" : "-60%" }}>
                 <span className={styles.close} onClick={handleClose}>X</span>
                 <ul>
                     <li>

@@ -59,6 +59,41 @@
     transition: all 200ms ease;
 }
 
+.section1button::after {
+    display: none;
+}
+
+.dotLoader::after {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    text-align: left;
+    animation: dot-flash 1.2s steps(4, end) infinite;
+}
+
+@keyframes dot-flash {
+    0% {
+        content: '';
+    }
+
+    25% {
+        content: '.';
+    }
+
+    50% {
+        content: '..';
+    }
+
+    75% {
+        content: '...';
+    }
+
+    100% {
+        content: '';
+    }
+}
+
+
 .section1button:hover {
     background-color: rgb(63, 59, 178);
 }
