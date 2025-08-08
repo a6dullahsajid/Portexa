@@ -59,7 +59,7 @@ export default function Dashboard() {
 
     if (status === "loading") {
         return (
-            <div className={styles.dashboard}>
+            <div className={styles.dashboardContainer}>
                 <p className={styles.loading}>Loading Your Dashboard <span className={styles.dots}></span></p>
             </div>
         );

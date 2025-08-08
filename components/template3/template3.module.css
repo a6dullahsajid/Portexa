@@ -587,7 +587,6 @@
 
     .section {
         justify-content: start;
-        height: 90vh;
         width: 100%;
         padding-left: 0px;
         padding-top: 50px;
@@ -599,6 +598,7 @@
     .section1 {
         padding-left: 40px;
         padding-top: 100px;
+        min-height: 70vh;
     }
 
     .hi {
@@ -616,6 +616,10 @@
     }
 
     /* section2 starts here */
+
+    .section2{
+        min-height: 70vh;
+    }
 
     .heading {
         gap: 8px;
