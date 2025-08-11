@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
       >
         <SessionWrapper>
           <StoreProvider>
-        <Toaster position="top-right" />
+        <Toaster position="bottom-left" />
             {children}
             <Analytics />
           </StoreProvider>
