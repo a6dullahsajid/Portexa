@@ -6,7 +6,7 @@
     align-items: center;
     background-color: rgb(228, 233, 255);
     position: relative;
-    z-index: -99;
+    z-index: 0;
 }
 
 .portfolioForm {
