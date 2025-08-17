@@ -4,7 +4,7 @@ export default function Project({ name, description, image, link, code, techUsed
   return (
     <div className={styles.project}>
       <div className={styles.projectImage}>
-        <img src={image} alt="" />
+        <img src={image} alt={name} />
       </div>
       <div className={styles.projectName}>{name}</div>
       <div className={styles.projectDescription}>{description}</div>

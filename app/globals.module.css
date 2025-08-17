@@ -98,45 +98,6 @@
     background-color: rgb(63, 59, 178);
 }
 
-/* .exampleContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
-    padding: 5rem;
-    box-sizing: border-box;
-    height: 50%;
-    gap: 2rem;
-}
-
-.exampleFolios {
-    display: flex;
-    gap: 5rem;
-}
-
-.exampleContainerh2 {
-    font-size: 1.1rem;
-    color: var(--theme-text-color);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: var(--theme-bg);
-}
-
-.exampleVideo {
-    position: relative;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    transition: all 500ms ease;
-    object-fit: cover;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.exampleVideo:hover {
-    transform: scale(2);
-    bottom: 1.5rem;
-    z-index: 1;
-} */
-
-
 @media (max-width:389px) {
     .homepage {
         height: 100vh;

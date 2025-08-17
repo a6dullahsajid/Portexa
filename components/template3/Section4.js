@@ -9,7 +9,7 @@ export default function Section4({ userDetails }) {
         <div className={styles.hline}></div>
       </div>
       <div className={styles.projectContainer}>
-        {userDetails.projects.map((project, index) => {
+        {userDetails.projects.slice().reverse().map((project, index) => {
           return <div key={index} className={styles.projectCard}>
             <div className={styles.cardHead}>
               <img src="/template3/folder.svg" alt="folder" className={styles.folder} />

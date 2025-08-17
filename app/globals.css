@@ -17,17 +17,22 @@ body {
     --theme-text-color: rgb(42, 39, 129);
     --theme-button-color: rgb(47, 85, 138);
     --theme-text-shadow: -1px 0px 2px rgb(125, 121, 231);
+    --theme-color: rgb(82, 78, 191);
+    --heading-color: rgb(32, 30, 81);
 }
 
-#bgCanvas {
+/* #bgCanvas {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     z-index: -1;
-    background-color: rgb(228, 233, 255);
-}
+    background: linear-gradient(135deg,
+            rgba(146, 166, 255, 0.8) 0%,
+            rgba(137, 210, 255, 0.4) 50%,
+            rgba(146, 166, 255, 0.8) 100%);
+} */
 
 .loggedOut{
     display: flex;

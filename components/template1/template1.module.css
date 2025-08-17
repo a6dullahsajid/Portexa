@@ -13,6 +13,7 @@
     width: 100vw;
 }
 
+
 .header {
     grid-area: a;
     width: 100%;
@@ -263,6 +264,7 @@
 
 .project {
     background-color: rgb(244, 234, 255);
+    color: var(--theme-color);
     min-height: 24rem;
     width: 19rem;
     display: flex;
@@ -287,7 +289,7 @@
     box-sizing: border-box;
     padding: 0.7rem;
     padding-bottom: 0;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--heading-color);
     text-shadow: -1px 0px 1px var(--theme-color);
     font-family: "Open Sans", sans-serif;

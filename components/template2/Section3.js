@@ -5,7 +5,7 @@ export default function Section3({ userDetails }) {
         <>
             <section id="section3" className={`${styles.section} ${styles.section3}`}>
                 <h2>Experience</h2>
-                {userDetails.experience.map((exp, index) => {
+                {userDetails.experience.slice().reverse().map((exp, index) => {
                     return <div key={index} className={styles.experienceContainer}>
                         <div className={styles.position}>{exp.position}</div>
                         <div className={styles.companyDetails}>{exp.company} | {exp.from} - {exp.to}</div>

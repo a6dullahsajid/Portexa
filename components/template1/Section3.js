@@ -9,7 +9,7 @@ export default function Section3({projects}) {
         <div className={styles.line}></div>
       </h2>
       <div className={styles.allprojects}>
-        {projects.map((project, index)=> {
+        {projects.slice().reverse().map((project, index)=> {
           return (
             <Project
               key={index}

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import styles from "./FormPage.module.css";
+import styles from "./form.module.css";
 import Navbar from "@/components/Navbar";
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
@@ -280,287 +280,330 @@ export default function PortfolioForm() {
                         {step === 1 ? "Basic Info" : step === 2 ? "Projects" : step === 3 ? "Experience" : "Contact Info"}
                     </h2>
 
-                    {/* STEP 1 - Personal Info + Skills */}
+                    {/* STEP 1 */}
                     {step === 1 && (
-                        <div className={styles.formSection}>
-                            <input
-                                name="name"
-                                placeholder="Full Name"
-                                onChange={handleNameChange}
-                                value={name}
-                                className={styles.formInput}
-                            />
-                            <input
-                                name="title"
-                                placeholder="Role / Title"
-                                onChange={handleTitleChange}
-                                value={title}
-                                className={styles.formInput}
-                            />
-                            <div className={styles.uploadImage}>
-                                <input
-                                    name="profileImage"
-                                    type="file"
-                                    placeholder="Upload Image(max 10MB)"
-                                    accept="image/png, image/jpeg"
-                                    onChange={handleProfileChange}
-                                    className={`${styles.formInput} ${styles.imageInput}`}
-                                />
-                                {/* {profileImage && <img width={52} height={42} src={profileImage} alt="profile" />} */}
-                                <button
-                                    type="button"
-                                    onClick={handleUploadProfileImage}
-                                    className={styles.btnUpload}
-                                >
-                                    Add Profile Image
-                                </button>
-                            </div>
-                            <textarea
-                                name="bio"
-                                placeholder="About Me"
-                                onChange={handleBioChange}
-                                value={bio}
-                                className={styles.formTextarea}
-                            />
+                        <>
+                            <section className={styles.basicSection}>
+                                <div className={styles.inputContainer}>
+                                    <label className={styles.formLabel}>Name</label>
+                                    <input
+                                        name="name"
+                                        placeholder="Enter your full name"
+                                        onChange={handleNameChange}
+                                        value={name}
+                                        className={styles.formInput}
+                                    />
+                                </div>
 
-                            <input
-                                name="resume"
-                                placeholder="Resume Link"
-                                onChange={handleResumeChange}
-                                value={resume}
-                                className={styles.formInput}
-                            />
-                            <div className={styles.skillInputWrapper}>
-                                <input
-                                    name="skill"
-                                    type="text"
-                                    placeholder="Enter a skill"
-                                    value={skillInput}
-                                    onChange={(e) => setSkillInput(e.target.value)}
-                                    className={styles.formInput}
-                                />
-                                <button type="button" onClick={handleAddSkill} className={styles.btnAdd}>Add Skill</button>
-                            </div>
+                                <div className={styles.inputContainer}>
+                                    <label className={styles.formLabel}>Role / Title</label>
+                                    <input
+                                        name="title"
+                                        placeholder="E.g. Data Engineer"
+                                        onChange={handleTitleChange}
+                                        value={title}
+                                        className={styles.formInput}
+                                    />
+                                </div>
 
-                            <div className={styles.skillList}>
-                                {skills.map((skill, index) => (
-                                    <div key={index} className={styles.skillChip}>
-                                        {skill}
-                                        <button type="button" onClick={() => handleRemoveSkill(index)} className={styles.removeSkill}>×</button>
+                                <div className={styles.inputContainer}>
+                                    <label className={styles.formLabel}>Profile</label>
+                                    <div className={styles.profileInputWrapper}>
+                                        <input
+                                            name="profileImage"
+                                            type="file"
+                                            accept="image/png, image/jpeg"
+                                            onChange={handleProfileChange}
+                                            className={`${styles.formInput} ${styles.imageInput}`}
+                                        />
+                                        <button
+                                            type="button"
+                                            onClick={handleUploadProfileImage}
+                                            className={styles.btnUpload}
+                                        >
+                                            Add Image
+                                        </button>
                                     </div>
-                                ))}
-                            </div>
+                                </div>
+
+                                <div className={styles.inputContainer}>
+                                    <label className={styles.formLabel}>About</label>
+                                    <textarea
+                                        name="bio"
+                                        placeholder="Write something for your about section"
+                                        onChange={handleBioChange}
+                                        value={bio}
+                                        className={styles.formTextarea}
+                                    />
+                                </div>
+
+                                <div className={styles.inputContainer}>
+                                    <label className={styles.formLabel}>Resume</label>
+                                    <input
+                                        name="resume"
+                                        placeholder="Enter a link to your resume"
+                                        onChange={handleResumeChange}
+                                        value={resume}
+                                        className={styles.formInput}
+                                    />
+                                </div>
+
+                                <div className={styles.inputContainer}>
+                                    <label className={styles.formLabel}>Skills</label>
+                                    <div className={styles.skillInputWrapper}>
+                                        <input
+                                            type="text"
+                                            placeholder="Enter a skill"
+                                            value={skillInput}
+                                            onChange={(e) => setSkillInput(e.target.value)}
+                                            className={styles.formInput}
+                                        />
+                                        <button type="button" onClick={handleAddSkill} className={styles.btnAdd}>Add Skill</button>
+                                    </div>
+                                </div>
+                                <div className={styles.skillList}>
+                                    {skills.map((skill, index) => (
+                                        <div key={index} className={styles.skillChip}>
+                                            {skill}
+                                            <button type="button" onClick={() => handleRemoveSkill(index)} className={styles.removeSkill}>×</button>
+                                        </div>
+                                    ))}
+                                </div>
+                            </section>
                             <div className={styles.formNav}>
                                 <Link href="/dashboard">
                                     <button type="button" className={styles.btnPrev}>Go Back</button>
                                 </Link>
                                 <button type="button" onClick={nextStep} className={styles.btnNext}>Next</button>
                             </div>
-                        </div>
+                        </>
                     )}
 
-                    {/* STEP 2 - Projects */}
+                    {/* STEP 2 */}
                     {step === 2 && (
-                        <div className={styles.formSection}>
-                            {projects.map((proj, index) => (
-                                <div key={index} className={styles.projectEntry}>
-                                    <div className={styles.formInput}>{proj.title}</div>
-                                    <div className={styles.formInput}>{proj.desc}</div>
-                                    <div className={styles.formInput}>{proj.tech}</div>
-                                    <div className={styles.formInput}>{proj.prevLink}</div>
-                                    <div className={styles.formInput}>{proj.githubLink}</div>
-                                    <button
-                                        type="button"
-                                        onClick={() => handleRemoveProject(index)}
-                                        className={styles.btnDelete}
-                                    >
-                                        × Remove
-                                    </button>
+                        <>
+                            <div className={styles.projectSection}>
+                                <div className={styles.inputContainer}>
+                                    <label className={styles.formLabel}>Project Title</label>
+                                    <input
+                                        type="text"
+                                        name="title"
+                                        placeholder="Name of Project"
+                                        value={project.title}
+                                        onChange={handleProjectChange}
+                                        className={styles.formInput}
+                                    />
+                                    <label className={styles.formLabel}>Project Description</label>
+                                    <textarea
+                                        name="desc"
+                                        placeholder="Describe your project"
+                                        value={project.desc}
+                                        onChange={handleProjectChange}
+                                        className={styles.formTextarea}
+                                    />
+                                    <label className={styles.formLabel}>Tech Used</label>
+                                    <input
+                                        type="text"
+                                        name="tech"
+                                        placeholder="Mention the technologies used"
+                                        value={project.tech}
+                                        onChange={handleProjectChange}
+                                        className={styles.formInput}
+                                    />
+                                    <label className={styles.formLabel}>Project Image</label>
+                                    <input
+                                        name="projectImage"
+                                        type="file"
+                                        accept="image/png, image/jpeg"
+                                        onChange={handleProjectImageChange}
+                                        className={`${styles.formInput} ${styles.projimageInput}`}
+                                    />
+                                    <label className={styles.formLabel}>Preview Link</label>
+                                    <input
+                                        type="text"
+                                        name="prevLink"
+                                        placeholder="Paste the link of hosted project(if applicable)"
+                                        value={project.prevLink}
+                                        onChange={handleProjectChange}
+                                        className={styles.formInput}
+                                    />
+                                    <label className={styles.formLabel}>Code Link</label>
+                                    <input
+                                        type="text"
+                                        name="githubLink"
+                                        placeholder="Paste the link to view code"
+                                        value={project.githubLink}
+                                        onChange={handleProjectChange}
+                                        className={styles.formInput}
+                                    />
+                                    <button type="button" onClick={handleAddProject} className={styles.btnAdd}>Add Project</button>
                                 </div>
-                            ))}
-                            <input
-                                type="text"
-                                name="title"
-                                placeholder="Project Title"
-                                value={project.title}
-                                onChange={handleProjectChange}
-                                className={styles.formInput}
-                            />
 
-                            <textarea
-                                name="desc"
-                                placeholder="Project Description"
-                                value={project.desc}
-                                onChange={handleProjectChange}
-                                className={styles.formTextarea}
-                            />
+                                {projects.slice().reverse().map((proj, index) => {
+                                    const originalIndex = projects.length - 1 - index; // map back to original index
+                                    return (
+                                        <div key={originalIndex} className={styles.projectEntry}>
+                                            <div className={styles.projName}>{proj.title}</div>
+                                            <div className={styles.projDesc}>{proj.desc}</div>
+                                            <div className={styles.projTech}>Tech Used: {proj.tech}</div>
+                                            <div className={styles.projLink}>Preview: {proj.prevLink}</div>
+                                            <div className={styles.projGithub}>Code: {proj.githubLink}</div>
+                                            <button
+                                                type="button"
+                                                onClick={() => handleRemoveProject(originalIndex)}
+                                                className={styles.btnDelete}
+                                            >
+                                                × Remove
+                                            </button>
+                                        </div>
+                                    );
+                                })}
 
-                            <input
-                                type="text"
-                                name="tech"
-                                placeholder="Technologies Used"
-                                value={project.tech}
-                                onChange={handleProjectChange}
-                                className={styles.formInput}
-                            />
-                            {/* <div className="upload-image"> */}
-                            <input
-                                name="projectImage"
-                                type="file"
-                                placeholder="Upload Image(max 10MB)"
-                                accept="image/png, image/jpeg"
-                                onChange={handleProjectImageChange}
-                                className={`${styles.formInput} ${styles.imageInput}`}
-                            />
-                            {/* </div> */}
 
-                            <input
-                                type="text"
-                                name="prevLink"
-                                placeholder="Live Preview Link"
-                                value={project.prevLink}
-                                onChange={handleProjectChange}
-                                className={styles.formInput}
-                            />
-
-                            <input
-                                type="text"
-                                name="githubLink"
-                                placeholder="GitHub Repo Link"
-                                value={project.githubLink}
-                                onChange={handleProjectChange}
-                                className={styles.formInput}
-                            />
-                            <button type="button" onClick={handleAddProject} className={styles.btnAdd}>
-                                Add Project
-                            </button>
-
+                            </div>
                             <div className={styles.formNav}>
                                 <button type="button" onClick={prevStep} className={styles.btnPrev}>Back</button>
                                 <button type="button" onClick={nextStep} className={styles.btnNext}>Next</button>
                             </div>
-                        </div>
+                        </>
                     )}
 
-                    {/* STEP-3 Expereince Details */}
+                    {/* STEP 3 */}
                     {step === 3 && (
-                        <div className={styles.formSection}>
-                            <p>You can skip this if you are a fresher</p>
-                            {experience.map((exp, index) => {
-                                return <div key={index} className={styles.projectEntry}>
-                                    <div className={styles.formInput}>{exp.company}</div>
-                                    <div className={styles.formInput}>{exp.position}</div>
-                                    <div className={styles.formInput}>{exp.work}</div>
-                                    <button
-                                        type="button"
-                                        onClick={() => handleRemoveExperience(index)}
-                                        className={styles.btnDelete}
-                                    >
-                                        × Remove
-                                    </button>
+                        <>
+                            <p className={styles.skipExp}>You can skip this if you are a fresher</p>
+                            <div className={styles.expSection}>
+                                <div className={styles.inputContainer}>
+                                    <label className={styles.formLabel}>Orgaisation Name</label>
+                                    <input
+                                        type="text"
+                                        name="company"
+                                        placeholder="Enter the name of organisation"
+                                        value={experienceInput.company}
+                                        onChange={handleExperienceChange}
+                                        className={styles.formInput}
+                                    />
+
+
+                                    <label className={styles.formLabel}>Role</label>
+                                    <input
+                                        type="text"
+                                        name="position"
+                                        placeholder="Enter your role in it"
+                                        value={experienceInput.position}
+                                        onChange={handleExperienceChange}
+                                        className={styles.formInput}
+                                    />
+
+                                    <label className={styles.formLabel}>Start Date</label>
+                                    <input
+                                        type="text"
+                                        name="from"
+                                        placeholder="Enter the date of joining"
+                                        value={experienceInput.from}
+                                        onChange={handleExperienceChange}
+                                        className={styles.formInput}
+                                    />
+
+                                    <label className={styles.formLabel}>End Date</label>
+                                    <input
+                                        type="text"
+                                        name="to"
+                                        placeholder="Enter the date till you worked"
+                                        value={experienceInput.to}
+                                        onChange={handleExperienceChange}
+                                        className={styles.formInput}
+                                    />
+                                    <label className={styles.formLabel}>Work Description</label>
+                                    <textarea
+                                        name="work"
+                                        placeholder="Tell something about your role (in sentences)"
+                                        value={experienceInput.work}
+                                        onChange={handleExperienceChange}
+                                        className={styles.formTextarea}
+                                    />
+
+                                    <button type="button" onClick={handleAddExperience} className={styles.btnAdd}>Add Experience</button>
                                 </div>
-                            })}
+                                {experience.slice().reverse().map((exp, index) => (
+                                    <div key={index} className={styles.projectEntry}>
+                                        <div className={styles.projName}>{exp.company}</div>
+                                        <div className={styles.expRole}>{exp.position}</div>
+                                        <div className={styles.projDesc}>{exp.work}</div>
+                                        <button type="button" onClick={() => handleRemoveExperience(index)} className={styles.btnDelete}>× Remove</button>
+                                    </div>
+                                ))}
 
-                            <input
-                                type="text"
-                                name="company"
-                                placeholder="Company Name"
-                                value={experienceInput.company}
-                                onChange={handleExperienceChange}
-                                className={styles.formInput}
-                            />
-
-                            <input
-                                type="text"
-                                name="position"
-                                placeholder="Position"
-                                value={experienceInput.position}
-                                onChange={handleExperienceChange}
-                                className={styles.formInput}
-                            />
-                            <input
-                                type="text"
-                                name="from"
-                                placeholder="Start date"
-                                value={experienceInput.from}
-                                onChange={handleExperienceChange}
-                                className={styles.formInput}
-                            />
-                            <input
-                                type="text"
-                                name="to"
-                                placeholder="End date"
-                                value={experienceInput.to}
-                                onChange={handleExperienceChange}
-                                className={styles.formInput}
-                            />
-
-                            <textarea
-                                type="text"
-                                name="work"
-                                placeholder="Describe your role in it"
-                                value={experienceInput.work}
-                                onChange={handleExperienceChange}
-                                className={styles.formInput}
-                            />
-
-                            <button type="button" onClick={handleAddExperience} className={styles.btnAdd}>
-                                Add Experience
-                            </button>
-
+                            </div>
                             <div className={styles.formNav}>
                                 <button type="button" onClick={prevStep} className={styles.btnPrev}>Back</button>
                                 <button type="button" onClick={nextStep} className={styles.btnNext}>Next</button>
                             </div>
-                        </div>
+                        </>
                     )}
+
+                    {/* STEP 4 */}
                     {step === 4 && (
-                        <div className={styles.formSection}>
-                            <textarea
-                                name="connectDesc"
-                                placeholder="Say something for your connect section"
-                                onChange={handleConnectDescChange}
-                                value={connectDesc}
-                                className={styles.formTextarea}
-                            />
-                            <input
-                                name="email"
-                                placeholder="Email"
-                                onChange={handleEmailChange}
-                                value={email}
-                                className={styles.formInput}
-                            />
-                            <input
-                                name="linkedin"
-                                placeholder="LinkedIn URL"
-                                onChange={handleLinkedinChange}
-                                value={linkedin}
-                                className={styles.formInput}
-                            />
-                            <input
-                                name="github"
-                                placeholder="GitHub URL"
-                                onChange={handleGithubChange}
-                                value={github}
-                                className={styles.formInput}
-                            />
-                            <input
-                                name="x"
-                                placeholder="Twitter / X Profile"
-                                onChange={handlexChange}
-                                value={x}
-                                className={styles.formInput}
-                            />
+                        <>
+                            <div className={styles.connectSection}>
+                                <div className={styles.inputContainer}>
+                                    <label className={styles.formLabel}>Connect Section Description</label>
+                                    <textarea
+                                        name="connectDesc"
+                                        onChange={handleConnectDescChange}
+                                        value={connectDesc}
+                                        className={styles.formTextarea}
+                                    />
+                                </div>
+
+                                <div className={styles.inputContainer}>
+                                    <label className={styles.formLabel}>Email</label>
+                                    <input
+                                        name="email"
+                                        onChange={handleEmailChange}
+                                        value={email}
+                                        className={styles.formInput}
+                                    />
+                                </div>
+
+                                <div className={styles.inputContainer}>
+                                    <label className={styles.formLabel}>LinkedIn URL</label>
+                                    <input
+                                        name="linkedin"
+                                        onChange={handleLinkedinChange}
+                                        value={linkedin}
+                                        className={styles.formInput}
+                                    />
+                                </div>
+
+                                <div className={styles.inputContainer}>
+                                    <label className={styles.formLabel}>GitHub URL</label>
+                                    <input
+                                        name="github"
+                                        onChange={handleGithubChange}
+                                        value={github}
+                                        className={styles.formInput}
+                                    />
+                                </div>
+
+                                <div className={styles.inputContainer}>
+                                    <label className={styles.formLabel}>Twitter / X Profile</label>
+                                    <input
+                                        name="x"
+                                        onChange={handlexChange}
+                                        value={x}
+                                        className={styles.formInput}
+                                    />
+                                </div>
+
+                            </div>
                             <div className={styles.formNav}>
                                 <button type="button" onClick={prevStep} className={styles.btnPrev}>Back</button>
                                 <button type="submit" className={styles.btnSubmit} disabled={isSubmitting}>
-                                    {isSubmitting ? <>
-                                        Generating Portfolio<span className={styles.dots}></span>
-                                    </>
-                                        : "Finish"}
+                                    {isSubmitting ? <>Generating Portfolio<span className={styles.dots}></span></> : "Finish"}
                                 </button>
                             </div>
-                        </div>
+                        </>
                     )}
                 </form>
             </main>

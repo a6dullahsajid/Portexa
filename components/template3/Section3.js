@@ -17,7 +17,7 @@ export default function Section3({ userDetails }) {
       <div className={styles.work}>
         <div className={styles.workLeft}>
           <ol className={styles.companyList}>
-            {userDetails.experience.map((each, index) => {
+            {userDetails.experience.slice().reverse().map((each, index) => {
               return <li key={index} onClick={() => handleActiveCompany(index)} style={{ fontWeight: companyIndex === index && "bold" }}>
                 {index + 1}.{each.company.split(" ").slice(0, 2).join(" ")}
               </li>
