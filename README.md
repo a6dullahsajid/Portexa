@@ -2,7 +2,7 @@
 
 **Portexa** is a modern web application that allows users to create, customize, and publish beautiful personal portfolios with ease. Built using **Next.js**, **Next Auth**,**Redux Toolkit**, **Firebase**, and **Cloudinary**, it offers a smooth user experience and flexible customization for developers and creatives alike.
 
-> 🔗 Live Demo - [LView](https://portexa.vercel.app/) 
+> 🔗 Live Demo - [View](https://portexa.vercel.app/) 
 > 🛠️ Built & maintained by [@a6dullahsajid](https://github.com/a6dullahsajid)
 
 ---
