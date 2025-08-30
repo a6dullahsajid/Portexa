@@ -63,7 +63,7 @@ export default function BackgroundCanvas() {
         const animate = () => {
             let width = canvas.width;
             let height = canvas.height;
-            ctx.fillStyle = "rgb(228, 233, 255)"; 
+            ctx.fillStyle = "white"; 
             ctx.fillRect(0, 0, width, height);
 
             for (let p of particles) {

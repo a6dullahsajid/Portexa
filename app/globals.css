@@ -13,12 +13,16 @@ body {
 }
 
 :root {
-    --theme-bg: rgb(228, 233, 255);
-    --theme-text-color: rgb(42, 39, 129);
-    --theme-button-color: rgb(47, 85, 138);
-    --theme-text-shadow: -1px 0px 2px rgb(125, 121, 231);
-    --theme-color: rgb(82, 78, 191);
-    --heading-color: rgb(32, 30, 81);
+    --theme-bg: white;
+    --theme-text-color: #3d4494;
+    /* Lighter blue-purple for text */
+    --theme-button-color: #4a52a8;
+    /* Lighter version of your specified color */
+    --theme-text-shadow: -1px 0px 2px rgba(74, 82, 168, 0.4);
+    --theme-color: #f8f9ff;
+    /* Lighter blue-purple tint for backgrounds */
+    --heading-color: #2a2781;
+    /* Your original specified color for headings */
 }
 
 /* #bgCanvas {
@@ -34,7 +38,7 @@ body {
             rgba(146, 166, 255, 0.8) 100%);
 } */
 
-.loggedOut{
+.loggedOut {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -44,7 +48,7 @@ body {
     width: 100%;
 }
 
-.loggedOut h1{
+.loggedOut h1 {
     font-size: 3rem;
     color: var(--theme-text-color);
     margin-bottom: 5rem;

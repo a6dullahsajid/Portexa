@@ -91,8 +91,8 @@
     cursor: pointer;
     border-radius: 0.5rem;
     background-color: var(--theme-bg);
-    border: 1px solid rgba(42, 39, 129, 0.5);
-    box-shadow: 0px 0px 5px rgb(42, 39, 129);
+    border: 1px solid rgba(74, 82, 168, 0.3);
+    box-shadow: 0px 0px 5px rgba(74, 82, 168, 0.3);
     transition: all 300ms ease-out;
 }
 
@@ -104,8 +104,8 @@
 
 .templateCard:hover {
     transform: scale(1.08);
-    border: 1px solid rgba(42, 39, 129, 1);
-    box-shadow: 0px 0px 7px rgb(42, 39, 129);
+    border: 1px solid #1a1f5e;
+    box-shadow: 0px 0px 10px rgba(26, 31, 94, 0.5);
 }
 
 .templateCard p {
@@ -123,15 +123,20 @@
 
 .tempPrevButton {
     color: white;
-    border-radius: 0.3rem;
+    border-radius: 8px;
     font-size: 0.8rem;
-    padding: 0.1rem 0.4rem;
+    padding: 0.3rem 0.8rem;
     background-color: var(--theme-button-color);
-    transition: all 300ms ease;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(74, 82, 168, 0.3);
+    cursor: pointer;
 }
 
 .tempPrevButton:hover {
-    background-color: rgb(20, 54, 101);
+    background-color: #3d4494;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 82, 168, 0.4);
 }
 
 
@@ -171,8 +176,8 @@
         border-radius: 0.3rem;
         height: 10rem;
         width: 18rem;
-        border: 1px solid rgba(42, 39, 129, 0.1);
-        box-shadow: -1px 0px 3px rgb(42, 39, 129);
+        border: 1px solid rgba(74, 82, 168, 0.2);
+        box-shadow: -1px 0px 3px rgba(74, 82, 168, 0.3);
     }
 
     .templateCardImageContainer {
@@ -196,9 +201,13 @@
     }
 
     .tempPrevButton {
-        border-radius: 0.3rem;
+        border-radius: 6px;
         font-size: 0.55rem;
-        padding: 0.1rem 0.4rem;
+        padding: 0.2rem 0.6rem;
+        background-color: var(--theme-button-color);
+        color: white;
+        border: none;
+        box-shadow: 0 1px 4px rgba(74, 82, 168, 0.3);
     }
 
     .tempPrevButton:hover {
@@ -238,8 +247,8 @@
         border-radius: 0.3rem;
         height: 11rem;
         width: 20rem;
-        border: 1px solid rgba(42, 39, 129, 0.2);
-        box-shadow: 0px 0px 5px rgb(42, 39, 129, 0.7);
+        border: 1px solid rgba(74, 82, 168, 0.2);
+        box-shadow: 0px 0px 5px rgba(74, 82, 168, 0.3);
     }
 
     .templateCardImageContainer {
@@ -263,9 +272,13 @@
     }
 
     .tempPrevButton {
-        border-radius: 0.3rem;
+        border-radius: 6px;
         font-size: 0.65rem;
-        padding: 0.1rem 0.4rem;
+        padding: 0.2rem 0.6rem;
+        background-color: var(--theme-button-color);
+        color: white;
+        border: none;
+        box-shadow: 0 1px 4px rgba(74, 82, 168, 0.3);
     }
 
     .tempPrevButton:hover {
@@ -305,8 +318,8 @@
         border-radius: 0.3rem;
         height: 13rem;
         width: 21.7rem;
-        border: 1px solid rgba(42, 39, 129, 0.4);
-        box-shadow: 0px 0px 5px rgb(42, 39, 129, 0.8);
+        border: 1px solid rgba(74, 82, 168, 0.3);
+        box-shadow: 0px 0px 5px rgba(74, 82, 168, 0.4);
     }
 
     .templateCardImageContainer {
@@ -330,9 +343,13 @@
     }
 
     .tempPrevButton {
-        border-radius: 0.3rem;
+        border-radius: 6px;
         font-size: 0.8rem;
-        padding: 0.1rem 0.4rem;
+        padding: 0.2rem 0.6rem;
+        background-color: var(--theme-button-color);
+        color: white;
+        border: none;
+        box-shadow: 0 1px 4px rgba(74, 82, 168, 0.3);
     }
 
     .tempPrevButton:hover {

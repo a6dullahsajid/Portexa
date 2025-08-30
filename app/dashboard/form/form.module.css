@@ -1,60 +1,68 @@
 .template1 {
-    height: 90vh;
-    overflow: scroll;
+    height: 100vh;
+    overflow: visible;
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: rgb(228, 233, 255);
+    align-items: flex-start;
+    background: transparent;
     position: relative;
     z-index: 0;
+    padding: 2rem 0;
 }
 
 .portfolioForm {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
     height: 100%;
     width: 100%;
-    padding: 1rem;
-    color: white;
+    color: var(--theme-text-color);
+    position: relative;
 }
 
 .stepTitle {
-    width: 60%;
-    padding: 0rem 0rem 1rem 5rem;
-    font-size: 2.7rem;
+    width: 100%;
+    text-align: center;
+    font-size: 3.2rem;
     letter-spacing: 0.1rem;
     font-weight: bold;
-    color: rgb(42, 39, 129);
-    text-shadow: -1px 0px 2px rgba(42, 39, 129, 0.4);
+    color: var(--theme-text-color);
+    text-shadow: var(--theme-text-shadow);
+    background: linear-gradient(135deg, var(--theme-text-color), var(--theme-button-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .basicSection,
 .connectSection {
-    width: 60%;
-    height: 70%;
+    width: 100%;
+    max-width: 800px;
     display: flex;
     flex-wrap: wrap;
-    overflow: scroll;
     align-items: flex-start;
     justify-content: center;
-    padding: 0rem 0rem 0rem 5rem;
+    padding: 0 1rem;
     column-gap: 2rem;
+    row-gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .projectSection,
 .expSection {
-    width: 96%;
-    height: 80%;
+    width: 100%;
+    max-width: 800px;
+    height: 60vh;
     display: flex;
     flex-wrap: wrap;
-    overflow: scroll;
     align-items: flex-start;
-    justify-content: center;
-    padding: 0rem 0rem 0rem 4rem;
+    justify-content: flex-start;
+    padding: 0 1rem;
     gap: 2rem;
-
+    margin-bottom: 6rem;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .projImageInput {
@@ -66,21 +74,30 @@
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    width: 20%;
+    width: 300px;
     gap: 1rem;
-    background-color: rgb(69, 103, 138);
-    box-shadow: -1px 1px 1px #1F294E;
-    border-radius: 1rem;
-    margin-top: 2rem;
-    padding: 1rem;
-    color: rgb(221, 254, 255);
+    background: linear-gradient(135deg, #f8f9ff 0%, #e6e9ff 100%);
+    box-shadow: 0 4px 20px rgba(74, 82, 168, 0.15);
+    border-radius: 16px;
+    margin-top: 1rem;
+    padding: 1.5rem;
+    color: var(--theme-text-color);
+    border: 1px solid rgba(74, 82, 168, 0.1);
+    transition: all 0.3s ease;
+}
+
+.projectEntry:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(74, 82, 168, 0.25);
 }
 
 .projName {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: bold;
-    color: #c4d0fa;
-    text-shadow: -1px 1px 2px #1F294E;
+    color: var(--theme-text-color);
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(74, 82, 168, 0.2);
+    padding-bottom: 0.5rem;
 }
 
 .projDesc {
@@ -129,12 +146,23 @@
 
 .formInput,
 .formTextarea {
-    width: 97%;
-    padding: 0.5rem 0.6rem;
-    border-radius: 4px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    font-size: 0.9rem;
-    background-color: rgb(69, 103, 138);
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    border: 2px solid rgba(74, 82, 168, 0.2);
+    font-size: 1rem;
+    background: linear-gradient(135deg, #f8f9ff 0%, #e6e9ff 100%);
+    color: var(--theme-text-color);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(74, 82, 168, 0.1);
+}
+
+.formInput:focus,
+.formTextarea:focus {
+    outline: none;
+    border-color: var(--theme-button-color);
+    box-shadow: 0 4px 16px rgba(74, 82, 168, 0.2);
+    transform: translateY(-2px);
 }
 
 .profileInputWrapper {
@@ -156,15 +184,19 @@
 }
 
 .imageInput {
-    background-color: rgb(69, 103, 138);
+    background: linear-gradient(135deg, #f8f9ff 0%, #e6e9ff 100%);
     width: 70%;
     font-size: 0.8rem;
+    border: 2px solid rgba(74, 82, 168, 0.2);
+    border-radius: 8px;
+    padding: 0.5rem 0.8rem;
+    transition: all 0.3s ease;
 }
 
 .formInput:focus,
 .formTextarea:focus {
     border: 1px solid rgba(255, 255, 255, 0.5);
-    background-color: rgb(69, 103, 138);
+    background-color: var(--theme-button-color);
 }
 
 .formTextarea {
@@ -201,8 +233,9 @@
     padding: 0rem 0.6rem;
     border-radius: 25px;
     font-size: 0.7rem;
-    background-color: rgb(44, 95, 115);
-    box-shadow: 0px 0px 4px rgb(45, 140, 191);
+    color: white;
+    background-color: var(--theme-text-color);
+    box-shadow: 0px 0px 4px var(--theme-button-color);
 }
 
 .removeSkill {
@@ -215,10 +248,17 @@
 }
 
 .formNav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
     width: 100%;
     justify-content: space-between;
-    padding: 1rem 5rem;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background: transparent;
+    z-index: 1000;
 }
 
 .btnNext,
@@ -235,7 +275,7 @@
     width: fit-content;
     min-width: 3rem;
     color: white;
-    background-color: rgb(47, 85, 138);
+    background-color: var(--theme-button-color);
 }
 
 
@@ -245,55 +285,108 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 3rem;
-    font-size: 1.2rem;
-    padding: 0.2rem 0.8rem;
-    box-shadow: -1px 1px 5px rgb(121, 223, 248);
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--theme-button-color), #3d4494);
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(74, 82, 168, 0.3);
+    cursor: pointer;
+    min-width: 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btnNext::before,
+.btnPrev::before,
+.btnSubmit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btnNext:hover::before,
+.btnPrev:hover::before,
+.btnSubmit:hover::before {
+    left: 100%;
 }
 
 .btnNext:hover,
 .btnPrev:hover {
-    background-color: rgb(20, 54, 101);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(74, 82, 168, 0.4);
+    background: linear-gradient(135deg, #3d4494, var(--theme-button-color));
 }
 
 .btnUpload {
-    background-color: rgb(45, 140, 191);
+    background-color: #1a1f5e;
     min-width: fit-content;
-
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.4rem 0.8rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(26, 31, 94, 0.3);
 }
 
 .btnAdd {
-    background-color: rgb(45, 140, 191);
+    background-color: #1a1f5e;
     min-width: 6rem;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.4rem 0.8rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(26, 31, 94, 0.3);
 }
 
 
 .btnAdd:hover,
 .btnUpload:hover {
-    background-color: rgb(32, 82, 109);
-
+    background-color: #2a2781;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(26, 31, 94, 0.4);
 }
 
 .btnDelete {
     cursor: pointer;
     padding: 0.2rem 0.5rem;
     border-radius: 20px;
-    background-color: rgb(44, 95, 115);
-    box-shadow: 0px 0px 4px rgb(45, 140, 191);
+    background-color: #1a1f5e;
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 4px rgba(26, 31, 94, 0.3);
 }
 
 .btnDelete:hover {
-    background-color: rgb(35, 80, 98);
-    box-shadow: 0px 0px 3px rgb(146, 210, 245);
-
+    background-color: #2a2781;
+    transform: translateY(-2px);
+    box-shadow: 0px 0px 6px rgba(26, 31, 94, 0.4);
 }
 
 .btnSubmit {
-    background-color: #008000;
+    background-color: #1a1f5e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.4rem 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(26, 31, 94, 0.3);
 }
 
 .btnSubmit:hover {
-    background-color: #0b4f0b;
+    background-color: #2a2781;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(26, 31, 94, 0.4);
 }
 
 .dots::after {
@@ -302,6 +395,72 @@
     width: 1em;
     text-align: left;
     animation: dots 1.5s steps(4, end) infinite;
+}
+
+/* Progress Indicator */
+.progressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(74, 82, 168, 0.1);
+    z-index: 1001;
+}
+
+.progressFill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--theme-button-color), #3d4494);
+    transition: width 0.5s ease;
+    border-radius: 0 2px 2px 0;
+}
+
+/* Form Section Headers */
+.sectionHeader {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f8f9ff 0%, #e6e9ff 100%);
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(74, 82, 168, 0.1);
+    border: 1px solid rgba(74, 82, 168, 0.1);
+}
+
+.sectionHeader h2 {
+    font-size: 1.8rem;
+    color: var(--theme-text-color);
+    margin: 0;
+    font-weight: 600;
+}
+
+.sectionHeader p {
+    color: var(--theme-text-color);
+    opacity: 0.8;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Custom Scrollbar Styling */
+.projectSection::-webkit-scrollbar,
+.expSection::-webkit-scrollbar {
+    width: 8px;
+}
+
+.projectSection::-webkit-scrollbar-track,
+.expSection::-webkit-scrollbar-track {
+    background: rgba(74, 82, 168, 0.1);
+    border-radius: 4px;
+}
+
+.projectSection::-webkit-scrollbar-thumb,
+.expSection::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--theme-button-color), #3d4494);
+    border-radius: 4px;
+}
+
+.projectSection::-webkit-scrollbar-thumb:hover,
+.expSection::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #3d4494, var(--theme-button-color));
 }
 
 @keyframes dots {
@@ -330,11 +489,11 @@
 @media (max-width:389px) {
     .template1 {
         height: 90vh;
-        overflow: scroll;
+        overflow: visible;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgb(228, 233, 255);
+        background: transparent;
         position: relative;
         z-index: 0;
     }
@@ -513,7 +672,6 @@
         padding: 0rem 0.4rem;
         border-radius: 25px;
         font-size: 0.5rem;
-        background-color: rgb(44, 95, 115);
         box-shadow: 0px 0px 2px rgb(45, 140, 191);
     }
 
@@ -530,7 +688,7 @@
         display: flex;
         width: 100%;
         justify-content: space-between;
-        padding: 0rem 0rem;
+        padding: 1rem 1.5rem;
     }
 
     .btnNext,
@@ -538,16 +696,18 @@
     .btnAdd,
     .btnSubmit,
     .btnUpload {
-        padding: 0.3rem 0.5rem;
-        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.7rem;
         border: none;
-        border-radius: 4px;
+        border-radius: 8px;
         cursor: pointer;
-        height: 90%;
+        height: auto;
         width: fit-content;
-        min-width: 3rem;
+        min-width: 60px;
         color: white;
-        background-color: rgb(47, 85, 138);
+        background: linear-gradient(135deg, var(--theme-button-color), #3d4494);
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 6px rgba(74, 82, 168, 0.3);
     }
 
 
@@ -557,21 +717,39 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 3rem;
-        font-size: 1.2rem;
-        padding: 0.2rem 0.8rem;
-        box-shadow: -1px 1px 5px rgb(121, 223, 248);
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        background: linear-gradient(135deg, var(--theme-button-color), #3d4494);
+        color: white;
+        border: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 6px rgba(74, 82, 168, 0.3);
+        cursor: pointer;
+        min-width: 70px;
     }
 
     .btnUpload {
-        background-color: rgb(45, 140, 191);
+        background: linear-gradient(135deg, var(--theme-button-color), #3d4494);
         min-width: fit-content;
-
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.7rem;
+        transition: all 0.3s ease;
     }
 
     .btnAdd {
-        background-color: rgb(45, 140, 191);
-        min-width: 5rem;
+        background: linear-gradient(135deg, var(--theme-button-color), #3d4494);
+        min-width: 4rem;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.7rem;
+        transition: all 0.3s ease;
     }
 
     .btnDelete {
@@ -595,11 +773,11 @@
 @media (min-width:390px) and (max-width: 576px) {
     .template1 {
         height: 90vh;
-        overflow: scroll;
+        overflow: visible;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgb(228, 233, 255);
+        background: transparent;
         position: relative;
         z-index: 0;
     }
@@ -612,7 +790,7 @@
         height: 100%;
         width: 100%;
         padding: 1rem;
-        color: white;
+        color: var(--theme-text-color);
     }
 
     .stepTitle {
@@ -621,7 +799,7 @@
         padding: 0rem 0rem 0rem 0rem;
         font-size: 2.5rem;
         letter-spacing: 0.1rem;
-        text-shadow: -1px 0px 2px rgba(42, 39, 129, 0.4);
+        text-shadow: var(--theme-text-shadow);
     }
 
     .basicSection,
@@ -779,7 +957,6 @@
         padding: 0.1rem 0.5rem;
         border-radius: 25px;
         font-size: 0.6rem;
-        background-color: rgb(44, 95, 115);
         box-shadow: 0px 0px 2px rgb(45, 140, 191);
     }
 
@@ -796,7 +973,7 @@
         display: flex;
         width: 100%;
         justify-content: space-between;
-        padding: 0rem 0rem;
+        padding: 1rem 1.5rem;
     }
 
     .btnNext,
@@ -861,11 +1038,11 @@
 @media (min-width: 577px) and (max-width: 767px) {
     .template1 {
         height: 90vh;
-        overflow: scroll;
+        overflow: visible;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgb(228, 233, 255);
+        background: transparent;
         position: relative;
         z-index: 0;
     }
@@ -1045,7 +1222,6 @@
         padding: 0.1rem 0.5rem;
         border-radius: 25px;
         font-size: 0.6rem;
-        background-color: rgb(44, 95, 115);
         box-shadow: 0px 0px 2px rgb(45, 140, 191);
     }
 
@@ -1062,7 +1238,7 @@
         display: flex;
         width: 100%;
         justify-content: space-between;
-        padding: 0rem 0rem;
+        padding: 1.5rem 3rem;
     }
 
     .btnNext,
@@ -1126,7 +1302,7 @@
 
 @media (min-width: 767px) and (max-width: 991px) {
     .template1 {
-        background-color: rgb(228, 233, 255);
+        background: transparent;
         position: relative;
         z-index: 0;
     }
@@ -1321,7 +1497,6 @@
         padding: 0rem 0.6rem;
         border-radius: 25px;
         font-size: 0.7rem;
-        background-color: rgb(44, 95, 115);
         box-shadow: 0px 0px 4px rgb(45, 140, 191);
     }
 
