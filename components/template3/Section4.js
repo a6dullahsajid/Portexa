@@ -11,18 +11,20 @@ export default function Section4({ userDetails }) {
       <div className={styles.projectContainer}>
         {userDetails.projects.slice().reverse().map((project, index) => {
           return <div key={index} className={styles.projectCard}>
+            <div className={styles.projectImageContainer}>
+            <img src={project.image} alt="project" />
             <div className={styles.cardHead}>
-              <img src="/template3/folder.svg" alt="folder" className={styles.folder} />
               <div className={styles.links}>
-                <a href={project.githubLink} target='_blank'><img src="/template1/github_logo.png" alt="git" /></a>
-                {project.prevLink && <a href={project.prevLink} target='_blank'><img src="/template3/link_logo.svg" alt="" /></a>}
+                {project.prevLink && <a href={project.prevLink} target='_blank'>Live</a>}
+                <a href={project.githubLink} target='_blank'>Github</a>
               </div>
             </div>
-            <a href={project.prevLink} target='_blank'>
+            </div>
+            <div href={project.prevLink} target='_blank' className={styles.projectDetails}>
               <div className={styles.projectName}>{project.title}</div>
               <p className={styles.projectDesc}>{project.desc}</p>
               <p className={styles.projectTech}>Tech: {project.tech}</p>
-            </a>
+            </div>
           </div>
         })}
       </div>

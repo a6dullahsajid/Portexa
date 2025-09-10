@@ -1,3 +1,4 @@
+
 .root {
     background-color: white;
     color: black;
@@ -384,15 +385,59 @@
     background-color: #ddc8f7;
     backdrop-filter: 10px;
     width: 320px;
-    min-height: 330px;
+    min-height: 350px;
     height: fit-content;
-    padding: 15px;
     color: black;
+    overflow: hidden;
+    border-radius: 4px;
     gap: 30px;
     cursor: pointer;
     border: #aa66fd solid 1px;
     transition: all 300ms;
 }
+
+.projectImageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.cardHead {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto Mono", monospace;
+    padding: 5px 0px;
+    width: 80%;
+    background-color: #C39DF3;
+    border-radius: 7px;
+    position: relative;
+    top: -20px;
+}
+
+.cardHead img {
+    width: 25px;
+}
+
+.links {
+    display: flex;
+    gap: 8px;
+}
+
+.projectCard a {
+    background-color: #ddc8f7;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 300ms ease-out;
+    font-size: 12px;
+}
+.projectCard a:hover {
+    background-color: #a184c5;
+    color: white;
+}
+
 
 .projectCard:hover .projectName {
     color: #aa66fd;
@@ -403,32 +448,24 @@
     box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.3);
 }
 
-
-.cardHead {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0px;
-}
-
-.cardHead img {
-    width: 25px;
-}
-
-.links {
-    display: flex;
-    gap: 3px;
-}
-
-.projectCard a {
+.projectDetails {
+    padding: 15px;
+    transition: all 300ms ease-out;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 8px;
+    margin-top: -50px;
+}
+
+.projectDetails:hover {
+    background-color: #ddc8f7;
+    color: black;
 }
 
 .projectName {
     font-size: 19px;
     font-weight: bold;
+    font-family: "Roboto Mono", monospace;
 }
 
 .projectDesc {
@@ -438,7 +475,8 @@
 
 .projectTech {
     font-size: 13px;
-    font-family: monospace;
+    font-family: "Roboto Mono", monospace;
+    color: rgb(72, 72, 72);
     letter-spacing: -1px;
 }
 

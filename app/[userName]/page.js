@@ -31,5 +31,7 @@ export default async function UserPortfolioPage({ params }) {
     return <HomePage2 userData={userData} />;
   } else if (userData.template === "template3") {
     return <HomePage3 userData={userData} />
+  }else{
+    return <NoData />
   }
 }
