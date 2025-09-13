@@ -1,11 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+import { NextResponse } from 'next/server';
+
+export async function GET() {
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
    <!-- Homepage - Highest Priority -->
    <url>
       <loc>https://portexa.vercel.app/</loc>
-      <lastmod>2025-01-27</lastmod>
+      <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
       <image:image>
@@ -18,7 +21,7 @@
    <!-- Dashboard - High Priority for User Acquisition -->
    <url>
       <loc>https://portexa.vercel.app/dashboard</loc>
-      <lastmod>2025-01-27</lastmod>
+      <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.9</priority>
       <image:image>
@@ -31,7 +34,7 @@
    <!-- Login Page - High Priority for User Onboarding -->
    <url>
       <loc>https://portexa.vercel.app/login</loc>
-      <lastmod>2025-01-27</lastmod>
+      <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
@@ -39,9 +42,18 @@
    <!-- Portfolio Form - Medium Priority for User Engagement -->
    <url>
       <loc>https://portexa.vercel.app/dashboard/form</loc>
-      <lastmod>2025-01-27</lastmod>
+      <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
 
-</urlset>
+</urlset>`;
+
+  return new NextResponse(sitemap, {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/xml',
+      'Cache-Control': 'public, max-age=3600, s-maxage=3600',
+    },
+  });
+}

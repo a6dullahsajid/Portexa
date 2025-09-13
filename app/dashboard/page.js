@@ -65,14 +65,44 @@ export default function Dashboard() {
         );
     }
 
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Portexa Portfolio Dashboard",
+        "description": "Create your professional portfolio with our easy-to-use dashboard. Choose from 3 stunning templates - Classic, Minimal, and Modern.",
+        "url": "https://portexa.vercel.app/dashboard",
+        "applicationCategory": "Portfolio Builder",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "Portexa"
+        },
+        "featureList": [
+            "Template Selection",
+            "Portfolio Builder",
+            "Professional Templates",
+            "Easy Customization"
+        ]
+    };
+
     return (
-        <main className={styles.dashboard}>
-            <Navbar />
-            <div className={styles.dashboardContainer}>
-                <div className={styles.heading}>
-                    <h1>Choose a Template</h1>
-                    <p>Select a starting point. You can always change it later.</p>
-                </div>
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+            />
+            <main className={styles.dashboard}>
+                <Navbar />
+                <div className={styles.dashboardContainer}>
+                    <div className={styles.heading}>
+                        <h1>Choose a Template</h1>
+                        <p>Select a starting point. You can always change it later.</p>
+                    </div>
                 <div className={styles.templateContainer}>
                     {templates.map((tpl) => (
                         <div className={styles.templateCard}
@@ -95,5 +125,6 @@ export default function Dashboard() {
                 </div>
             </div>
         </main>
+        </>
     );
 }

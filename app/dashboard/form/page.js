@@ -271,28 +271,103 @@ export default function PortfolioForm() {
 
 
 
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Portfolio Builder Form - Create Your Professional Portfolio",
+        "description": "Build your professional portfolio with our easy-to-use form. Add your projects, experience, skills, and contact information.",
+        "url": "https://portexa.vercel.app/dashboard/form",
+        "mainEntity": {
+            "@type": "WebApplication",
+            "name": "Portexa Portfolio Builder",
+            "applicationCategory": "Portfolio Builder",
+            "operatingSystem": "Web Browser",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            },
+            "creator": {
+                "@type": "Organization",
+                "name": "Portexa"
+            },
+            "featureList": [
+                "Project Management",
+                "Experience Tracking",
+                "Skills Management",
+                "Contact Information",
+                "Image Upload",
+                "Multi-step Form"
+            ]
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://portexa.vercel.app"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Dashboard",
+                    "item": "https://portexa.vercel.app/dashboard"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Portfolio Form",
+                    "item": "https://portexa.vercel.app/dashboard/form"
+                }
+            ]
+        }
+    };
+
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+            />
             <Navbar />
             <main className={styles.template1}>
-                <form onSubmit={handleSubmit} className={styles.portfolioForm}>
-                    <h2 className={styles.stepTitle}>
-                        {step === 1 ? "Basic Info" : step === 2 ? "Projects" : step === 3 ? "Experience" : "Contact Info"}
-                    </h2>
+                <form onSubmit={handleSubmit} className={styles.portfolioForm} role="form" aria-label="Portfolio Builder Form">
+                    <h1 className={styles.stepTitle}>
+                        {step === 1 ? "Basic Information" : step === 2 ? "Projects & Work" : step === 3 ? "Professional Experience" : "Contact & Social Links"}
+                    </h1>
+                    <p className={styles.stepDescription}>
+                        {step === 1 ? "Tell us about yourself and your professional background" : 
+                         step === 2 ? "Showcase your projects and technical skills" : 
+                         step === 3 ? "Add your work experience and career highlights" : 
+                         "Add your contact information and social media links"}
+                    </p>
+                    
+                    <div className={styles.progressIndicator} role="progressbar" aria-valuenow={step} aria-valuemin="1" aria-valuemax="4" aria-label={`Step ${step} of 4`}>
+                        <div className={styles.progressBar}>
+                            <div className={styles.progressFill} style={{ width: `${(step / 4) * 100}%` }}></div>
+                        </div>
+                        <span className={styles.progressText}>Step {step} of 4</span>
+                    </div>
 
                     {/* STEP 1 */}
                     {step === 1 && (
                         <>
                             <section className={styles.basicSection}>
                                 <div className={styles.inputContainer}>
-                                    <label className={styles.formLabel}>Name</label>
+                                    <label className={styles.formLabel} htmlFor="name">Name *</label>
                                     <input
+                                        id="name"
                                         name="name"
                                         placeholder="Enter your full name"
                                         onChange={handleNameChange}
                                         value={name}
                                         className={styles.formInput}
+                                        required
+                                        aria-describedby="name-help"
                                     />
+                                    <small id="name-help" className={styles.helpText}>Your full name as it should appear on your portfolio</small>
                                 </div>
 
                                 <div className={styles.inputContainer}>
