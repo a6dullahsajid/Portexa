@@ -21,7 +21,7 @@ export default function BackgroundCanvas() {
         const particleCount = isMobile ? 30 : 80;
 
         const shapes = ["circle", "square", "triangle"];
-        const colors = ["#222", "#555", "#999"];
+        const colors = ["rgb(55, 59, 102)", "rgb(144, 88, 208)", "rgb(74, 82, 168)"];
         let particles = [];
 
         // Encapsulate particle creation to call it on init and resize

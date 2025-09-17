@@ -343,13 +343,6 @@ export default function PortfolioForm() {
                          step === 3 ? "Add your work experience and career highlights" : 
                          "Add your contact information and social media links"}
                     </p>
-                    
-                    <div className={styles.progressIndicator} role="progressbar" aria-valuenow={step} aria-valuemin="1" aria-valuemax="4" aria-label={`Step ${step} of 4`}>
-                        <div className={styles.progressBar}>
-                            <div className={styles.progressFill} style={{ width: `${(step / 4) * 100}%` }}></div>
-                        </div>
-                        <span className={styles.progressText}>Step {step} of 4</span>
-                    </div>
 
                     {/* STEP 1 */}
                     {step === 1 && (
@@ -367,7 +360,6 @@ export default function PortfolioForm() {
                                         required
                                         aria-describedby="name-help"
                                     />
-                                    <small id="name-help" className={styles.helpText}>Your full name as it should appear on your portfolio</small>
                                 </div>
 
                                 <div className={styles.inputContainer}>

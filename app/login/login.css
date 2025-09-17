@@ -5,8 +5,8 @@
     align-items: center;
     padding: 4rem 0rem;
     height: 90vh;
-    background-color: rgb(228, 233, 255);
-    color: white;
+    background-color: var(--theme-bg);
+    color: var(--theme-text-color);
 }
 
 .loginBtnContainer {
@@ -14,13 +14,9 @@
     flex-direction: column;
     align-items: center;
     border-radius: 1rem;
-    background: linear-gradient(135deg,
-            rgba(146, 166, 255, 0.8) 0%,
-            rgba(137, 210, 255, 0.35) 50%,
-            rgba(146, 166, 255, 0.8) 100%);
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(135deg, #f8f9ff 0%, #e6e9ff 100%);
+    border: 1px solid rgba(74, 82, 168, 0.1);
+    box-shadow: 0 4px 20px rgba(74, 82, 168, 0.15);
     padding: 2rem;
     gap: 1rem;
     width: 25%;
@@ -28,8 +24,22 @@
 
 .loginPage h1 {
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 3rem;
+    text-align: center;
+    color: var(--theme-text-color);
+    text-shadow: var(--theme-text-shadow);
+    background: linear-gradient(135deg, var(--theme-text-color), var(--theme-button-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
 
+.loginPage p {
+    color: var(--theme-text-color);
+    opacity: 0.8;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 .loginPage button {
@@ -38,8 +48,52 @@
     width: 13rem;
     gap: 0.3rem;
     padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(74, 82, 168, 0.3);
+}
+
+.loginPage button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 82, 168, 0.4);
 }
 
 .loginPage button svg {
     width: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .loginBtnContainer {
+        width: 90%;
+        padding: 1.5rem;
+    }
+    
+    .loginPage h1 {
+        font-size: 2.2rem;
+    }
+    
+    .loginPage p {
+        font-size: 0.9rem;
+    }
+    
+    .loginPage button {
+        width: 100%;
+        max-width: 15rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .loginBtnContainer {
+        width: 95%;
+        padding: 1rem;
+    }
+    
+    .loginPage h1 {
+        font-size: 1.8rem;
+    }
+    
+    .loginPage p {
+        font-size: 0.8rem;
+    }
 }

@@ -4,7 +4,16 @@ import { db } from "@/lib/firebaseAdmin";
 import HomePage1 from "@/components/template1/HomePage1";
 import HomePage2 from "@/components/template2/HomePage2";
 import HomePage3 from "@/components/template3/HomePage3";
+import HomePage4 from "@/components/template4/HomePage4";
 import NoData from "@/components/NoData";
+
+// Template mapping configuration
+const TEMPLATE_COMPONENTS = {
+  template1: HomePage1,
+  template2: HomePage2,
+  template3: HomePage3,
+  template4: HomePage4,
+};
 
 // This function fetches the specific user's data from Firestore
 async function getUserData(userName) {
@@ -21,17 +30,20 @@ async function getUserData(userName) {
 export default async function UserPortfolioPage({ params }) {
   const { userName } = await params;
   const userData = await getUserData(userName);
+  
+  // Handle case where user data doesn't exist
   if (!userData) {
-    return <NoData />
+    return <NoData />;
   }
-  else if (userData.template === "template1") {
-    return <HomePage1 userData={userData} />;
+
+  // Get the appropriate template component
+  const TemplateComponent = TEMPLATE_COMPONENTS[userData.template];
+  
+  // Handle case where template doesn't exist
+  if (!TemplateComponent) {
+    return <NoData />;
   }
-  else if (userData.template === "template2") {
-    return <HomePage2 userData={userData} />;
-  } else if (userData.template === "template3") {
-    return <HomePage3 userData={userData} />
-  }else{
-    return <NoData />
-  }
+
+  // Render the template component
+  return <TemplateComponent userData={userData} />;
 }

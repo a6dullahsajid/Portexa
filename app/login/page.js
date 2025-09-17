@@ -73,7 +73,7 @@ export default function LoginPage() {
           </div>
           <button
             onClick={() => signIn("google")}
-            className="flex items-center bg-gray-50 border border-gray-300 rounded-lg shadow-md max-w-xs px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+            className="flex items-center bg-white border border-gray-300 rounded-lg shadow-md max-w-xs px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
             aria-label="Sign in with Google to access your portfolio dashboard">
             <FcGoogle size={24} />
             <span>Continue with Google</span>
@@ -81,7 +81,7 @@ export default function LoginPage() {
 
           <button
             onClick={() => signIn("github")}
-            className="flex items-center bg-gray-50 border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+            className="flex items-center bg-white border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
             aria-label="Sign in with GitHub to access your portfolio dashboard">
             <FaGithub size={24} />
             <span>Continue with GitHub</span>

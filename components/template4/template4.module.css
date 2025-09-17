@@ -1,0 +1,1554 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #08233b;
+}
+
+.header {
+    position: sticky;
+    top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 10vh;
+    color: #fff;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    /* Glassmorphism effect */
+    background: linear-gradient(135deg, rgba(126, 124, 174, 0.2), rgba(203, 202, 220, 0.1));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+}
+
+.logo {
+    font-size: 2.8rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: absolute;
+    top: 14%;
+    width: 90%;
+    color: #e3e3e3;
+    padding: 1rem;
+    display: flex;
+    background: linear-gradient(135deg, rgba(126, 124, 174, 0.2), rgba(203, 202, 220, 0.1));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    justify-content: space-between;
+}
+
+.dropdownNav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.dropdownContactLinks {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 15%;
+    font-size: 1.1rem;
+    gap: 1rem;
+}
+
+.nav {
+    display: flex;
+    color: #e3e3e3ae;
+    gap: 2rem;
+    font-size: 1.1rem;
+}
+
+.nav a {
+    transition: all 300ms ease-out;
+}
+
+.nav a:hover {
+    color: #ffffff;
+}
+
+.activeNav {
+    color: #ffffff;
+}
+
+.contactLinks {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.4rem;
+}
+
+.contactLinks a {
+    transition: all 300ms ease-out;
+}
+
+.contactLinks a:hover {
+    filter: drop-shadow(0px 1px 0px #e3e3e3);
+    transform: translateY(-2px);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.section {
+    width: 80%;
+}
+
+.section1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    min-height: 89vh;
+}
+
+.hey {
+    color: color-mix(in srgb, #ffffff, grey);
+    font-size: 1.8rem;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 60px;
+    font-weight: 700;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to bottom, #7cc0c4, #3c84c7);
+}
+
+.name p {
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to bottom, #ffffff, grey);
+}
+
+.profname {
+    color: #ffffff;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.photo {
+    width: 30%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.photo img {
+    width: 100%;
+}
+
+.section2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 20px;
+    width: 80%;
+    min-height: 85vh;
+    margin-bottom: 50px;
+    color: #e3e3e3;
+}
+
+.h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #f6f6f6;
+    text-transform: uppercase;
+}
+
+.aboutContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 20px;
+    padding: 0px 50px;
+}
+
+.description {
+    font-size: 24px;
+    /* margin-bottom: 20px; */
+}
+
+.resume {
+    font-size: 16px;
+    background-color: #e3e3e3;
+    color: #08233b;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.resume:hover {
+    transform: scale(1.05);
+}
+
+.h3 {
+    font-size: 32px;
+    margin-top: 20px;
+    color: #f6f6f6;
+    text-transform: uppercase;
+}
+
+.skillContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 55%;
+    gap: 35px;
+}
+
+.skillCard {
+    font-size: 24px;
+}
+
+.section3 {
+    min-height: 85vh;
+    margin-bottom: 50px;
+}
+
+.experienceWrapper {
+    display: flex;
+    width: 100%;
+    height: 270px;
+}
+
+.experienceContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    color: #f6f6f6;
+    gap: 10px;
+    padding: 0px 50px;
+}
+
+.vLine {
+    position: relative;
+    top: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 8px;
+    height: 270px;
+    background: linear-gradient(to bottom, rgba(246, 246, 246, 0.9), rgba(246, 246, 246, 0.3));
+}
+
+.vLineDot {
+    position: relative;
+    top: -5px;
+    width: 15px;
+    height: 15px;
+    background-color: #cfcfcf;
+    border-radius: 50%;
+}
+
+.position {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.companyDetails {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.companyDuration {
+    font-size: 18px;
+    color: #a4a4a4;
+}
+
+.work li {
+    font-size: 16px;
+    padding-left: 15px;
+    margin-bottom: 5px;
+}
+
+.section4 {
+    min-height: 85vh;
+    margin-bottom: 50px;
+}
+
+.projectContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+}
+
+.projectCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 250px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, rgba(154, 152, 194, 0.15), rgba(203, 202, 220, 0.1));
+    border-radius: 20px;
+}
+
+.projectCard img {
+    height: 90%;
+    width: 40%;
+    border-radius: 10px;
+    object-position: center;
+    object-fit: contain;
+}
+
+.projectDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 5px 20px;
+    height: 100%;
+    font-weight: 500;
+    gap: 10px;
+}
+
+.projHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.projectName {
+    font-size: 40px;
+    font-weight: bold;
+    color: #f6f6f6;
+}
+
+.projDesc {
+    font-size: 16px;
+    color: #f6f6f6;
+}
+
+.cardButtons {
+    display: flex;
+    gap: 10px;
+}
+
+.cardButtons button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f6f6f6;
+    font-size: 25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: linear-gradient(to left, rgba(126, 124, 174, 0.2), rgba(203, 202, 220, 0.1));
+    border: none;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.cardButtons button:hover {
+    transform: scale(1.1);
+    text-shadow: 0px 0px 3px #f6f6f6;
+}
+
+
+.projectTechContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.projectTech {
+    font-size: 16px;
+    color: #f6f6f6;
+    background: linear-gradient(to left, rgba(126, 124, 174, 0.2), rgba(203, 202, 220, 0.1));
+    padding: 5px 10px;
+}
+
+.section5 {
+    min-height: 85vh;
+}
+
+.connectContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    color: #e3e3e3;
+    gap: 20px;
+    padding: 0px 50px;
+}
+
+.connectButtons {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 80px;
+}
+
+.connectButtons button {
+    cursor: pointer;
+    font-size: 42px;
+    transition: all 300ms ease-out;
+    filter: drop-shadow(0px 0px 0px #e3e3e3);
+}
+
+.connectButtons button:hover {
+    filter: drop-shadow(-1px 0px 0px #e3e3e3);
+    transform: translateY(-3px);
+}
+
+.section5Footer {
+    font-size: 18px;
+    color: #e3e3e3;
+}
+
+@media (max-width:389px) {
+    .header {
+        position: sticky;
+        top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        height: 10vh;
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        font-size: 2.2rem;
+    }
+
+    .burger {
+        display: flex;
+        cursor: pointer;
+        font-size: 1.5rem;
+    }
+
+    .dropdown {
+        position: absolute;
+        top: 14%;
+        width: 90%;
+        color: #e3e3e3;
+        padding: 1rem;
+        display: flex;
+        background: linear-gradient(135deg, rgba(126, 124, 174, 0.2), rgba(203, 202, 220, 0.1));
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 20px;
+        justify-content: space-between;
+    }
+
+    .dropdownNav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .dropdownContactLinks {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 15%;
+        font-size: 1.1rem;
+        gap: 1rem;
+    }
+
+    .nav {
+        display: none;
+        color: #e3e3e3ae;
+        gap: 2rem;
+        font-size: 1.1rem;
+    }
+
+    .nav a {
+        transition: all 300ms ease-out;
+    }
+
+    .nav a:hover {
+        color: #ffffff;
+    }
+
+    .activeNav {
+        color: #ffffff;
+    }
+
+    .contactLinks {
+        display: none;
+        gap: 1rem;
+        font-size: 1.4rem;
+    }
+
+    .contactLinks a {
+        transition: all 300ms ease-out;
+    }
+
+    .contactLinks a:hover {
+        filter: drop-shadow(0px 1px 0px #e3e3e3);
+        transform: translateY(-2px);
+    }
+
+    .section {
+        width: 90%;
+    }
+
+    .section1 {
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        width: 90%;
+        gap: 60px;
+        min-height: 89vh;
+        padding-top: 80px;
+    }
+
+    .hey {
+        display: flex;
+        justify-content: center;
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+
+    .name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 35px;
+    }
+
+    .profname {
+        font-size: 32px;
+    }
+
+    .photo {
+        width: 70%;
+        height: 80%;
+        border-radius: 10px;
+    }
+
+    .section2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        gap: 10px;
+        width: 90%;
+        min-height: 90vh;
+        margin-bottom: 50px;
+    }
+
+    .h2 {
+        font-size: 44px;
+        margin-bottom: 10px;
+    }
+
+    .aboutContainer {
+        gap: 20px;
+        padding: 0px 20px;
+    }
+
+    .description {
+        font-size: 18px;
+        /* margin-bottom: 20px; */
+    }
+
+    .resume {
+        font-size: 14px;
+        padding: 5px 10px;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: all 300ms ease-in-out;
+    }
+
+    .resume:hover {
+        transform: scale(1.05);
+    }
+
+    .h3 {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    .skillContainer {
+        width: 70%;
+        gap: 20px;
+    }
+
+    .skillCard {
+        font-size: 18px;
+    }
+
+    .section3 {
+        min-height: 90vh;
+        margin-bottom: 50px;
+    }
+
+    .experienceWrapper {
+        height: 300px;
+    }
+
+    .experienceContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        gap: 3px;
+        padding: 0px 15px;
+    }
+
+    .vLine {
+        top: 18px;
+        width: 5px;
+        height: 300px;
+    }
+
+    .vLineDot {
+        position: relative;
+        top: -5px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .position {
+        font-size: 24px;
+    }
+
+    .companyDetails {
+        font-size: 16px;
+    }
+
+    .companyDuration {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .work li {
+        font-size: 13px;
+        padding-left: 5px;
+        margin-bottom: 5px;
+    }
+
+    .section4 {
+        min-height: 85vh;
+        margin-bottom: 50px;
+    }
+
+    .projectContainer {
+        gap: 20px;
+        width: 100%;
+    }
+
+    .projectCard {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        min-height: 250px;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .projectCard img {
+        height: 50%;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .projectDetails {
+        padding: 0px;
+        width: 100%;
+    }
+
+    .projectName {
+        font-size: 30px;
+    }
+
+    .projDesc {
+        font-size: 16px;
+    }
+
+    .cardButtons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .cardButtons button {
+        font-size: 18px;
+        height: 35px;
+        width: 35px;
+    }
+
+    .cardButtons button:hover {
+        transform: scale(1.1);
+        text-shadow: 0px 0px 3px #f6f6f6;
+    }
+
+    .projectTechContainer {
+        gap: 8px;
+    }
+
+    .projectTech {
+        font-size: 14px;
+        padding: 3px 10px;
+    }
+
+    .section5 {
+        min-height: 70vh;
+    }
+
+    .connectContainer {
+        gap: 10px;
+        padding: 0px 20px;
+    }
+
+    .connectButtons {
+        width: 100%;
+        gap: 40px;
+        margin-top: 50px;
+    }
+
+    .connectButtons button {
+        font-size: 32px;
+    }
+
+    .section5Footer {
+        font-size: 15px;
+    }
+
+}
+
+
+@media (min-width:390px) and (max-width: 576px) {
+
+    .header {
+        position: sticky;
+        top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        height: 8vh;
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        font-size: 2.2rem;
+    }
+
+    .burger {
+        display: flex;
+        cursor: pointer;
+        font-size: 1.5rem;
+    }
+
+    .dropdown {
+        position: fixed;
+        top: 12%;
+        width: 90%;
+        color: #e3e3e3;
+        padding: 1rem;
+        display: flex;
+        background: linear-gradient(135deg, rgba(126, 124, 174, 0.2), rgba(203, 202, 220, 0.1));
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 20px;
+        justify-content: space-between;
+    }
+
+    .dropdownNav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .dropdownContactLinks {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 15%;
+        font-size: 1.1rem;
+        gap: 1rem;
+    }
+
+    .nav {
+        display: none;
+        color: #e3e3e3ae;
+        gap: 2rem;
+        font-size: 1.1rem;
+    }
+
+    .nav a {
+        transition: all 300ms ease-out;
+    }
+
+    .nav a:hover {
+        color: #ffffff;
+    }
+
+    .activeNav {
+        color: #ffffff;
+    }
+
+    .contactLinks {
+        display: none;
+        gap: 1rem;
+        font-size: 1.4rem;
+    }
+
+    .contactLinks a {
+        transition: all 300ms ease-out;
+    }
+
+    .contactLinks a:hover {
+        filter: drop-shadow(0px 1px 0px #e3e3e3);
+        transform: translateY(-2px);
+    }
+
+    .section {
+        width: 90%;
+    }
+
+    .section1 {
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        width: 90%;
+        gap: 60px;
+        min-height: 85vh;
+        padding-top: 80px;
+    }
+
+    .hey {
+        display: flex;
+        justify-content: center;
+        font-size: 1.7rem;
+        margin-bottom: 20px;
+    }
+
+    .name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 38px;
+    }
+
+    .profname {
+        font-size: 34px;
+    }
+
+    .photo {
+        width: 70%;
+        height: 80%;
+        border-radius: 10px;
+    }
+
+    .section2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        gap: 10px;
+        width: 90%;
+        min-height: 90vh;
+        margin-bottom: 50px;
+    }
+
+    .h2 {
+        font-size: 44px;
+        margin-bottom: 10px;
+    }
+
+    .aboutContainer {
+        gap: 20px;
+        padding: 0px 20px;
+    }
+
+    .description {
+        font-size: 18px;
+        /* margin-bottom: 20px; */
+    }
+
+    .resume {
+        font-size: 14px;
+        padding: 5px 10px;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: all 300ms ease-in-out;
+    }
+
+    .resume:hover {
+        transform: scale(1.05);
+    }
+
+    .h3 {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    .skillContainer {
+        width: 100%;
+        gap: 20px;
+    }
+
+    .skillCard {
+        font-size: 18px;
+    }
+
+    .section3 {
+        min-height: 90vh;
+        margin-bottom: 50px;
+    }
+
+    .experienceWrapper {
+        height: 300px;
+    }
+
+    .experienceContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        gap: 3px;
+        padding: 0px 15px;
+    }
+
+    .vLine {
+        top: 18px;
+        width: 5px;
+        height: 300px;
+    }
+
+    .vLineDot {
+        position: relative;
+        top: -5px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .position {
+        font-size: 24px;
+    }
+
+    .companyDetails {
+        font-size: 16px;
+    }
+
+    .companyDuration {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .work li {
+        font-size: 13px;
+        padding-left: 5px;
+        margin-bottom: 5px;
+    }
+
+    .section4 {
+        min-height: 85vh;
+        margin-bottom: 50px;
+    }
+
+    .projectContainer {
+        gap: 20px;
+        width: 100%;
+    }
+
+    .projectCard {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        min-height: 250px;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .projectCard img {
+        height: 50%;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .projectDetails {
+        padding: 0px;
+        width: 100%;
+    }
+
+    .projectName {
+        font-size: 30px;
+    }
+
+    .projDesc {
+        font-size: 16px;
+    }
+
+    .cardButtons {
+        display: flex;
+        gap: 5px;
+    }
+
+    .cardButtons button {
+        font-size: 18px;
+        height: 35px;
+        width: 35px;
+    }
+
+    .cardButtons button:hover {
+        transform: scale(1.1);
+        text-shadow: 0px 0px 3px #f6f6f6;
+    }
+
+    .projectTechContainer {
+        gap: 8px;
+    }
+
+    .projectTech {
+        font-size: 14px;
+        padding: 3px 10px;
+    }
+
+    .section5 {
+        min-height: 65vh;
+    }
+
+    .connectContainer {
+        gap: 10px;
+        padding: 0px 20px;
+    }
+
+    .connectButtons {
+        width: 100%;
+        gap: 40px;
+        margin-top: 50px;
+    }
+
+    .connectButtons button {
+        font-size: 32px;
+    }
+
+    .section5Footer {
+        font-size: 15px;
+    }
+
+}
+
+
+@media (min-width: 577px) and (max-width: 767px) {
+
+    .header {
+        position: sticky;
+        top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        height: 10vh;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .logo {
+        font-size: 2.2rem;
+    }
+
+    .burger {
+        display: flex;
+        cursor: pointer;
+        font-size: 1.5rem;
+    }
+
+    .dropdown {
+        position: fixed;
+        top: 15%;
+        width: 90%;
+        color: #e3e3e3;
+        padding: 1rem;
+        display: flex;
+        background: linear-gradient(135deg, rgba(126, 124, 174, 0.2), rgba(203, 202, 220, 0.1));
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 20px;
+        justify-content: space-between;
+    }
+
+    .dropdownNav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .dropdownContactLinks {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 5%;
+        font-size: 1.3rem;
+        gap: 1rem;
+    }
+
+    .nav {
+        display: none;
+        color: #e3e3e3ae;
+        gap: 2rem;
+        font-size: 1.2rem;
+    }
+
+    .nav a {
+        transition: all 300ms ease-out;
+    }
+
+    .nav a:hover {
+        color: #ffffff;
+    }
+
+    .activeNav {
+        color: #ffffff;
+    }
+
+    .contactLinks {
+        display: none;
+        gap: 1rem;
+        font-size: 1.4rem;
+    }
+
+    .contactLinks a {
+        transition: all 300ms ease-out;
+    }
+
+    .contactLinks a:hover {
+        filter: drop-shadow(0px 1px 0px #e3e3e3);
+        transform: translateY(-2px);
+    }
+
+    .section {
+        width: 90%;
+    }
+
+    .section1 {
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        width: 90%;
+        gap: 60px;
+        min-height: 85vh;
+        padding-top: 100px;
+        margin-bottom: 50px;
+    }
+
+    .hey {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 48px;
+    }
+
+    .profname {
+        font-size: 44px;
+    }
+
+    .photo {
+        width: 50%;
+        height: 70%;
+        border-radius: 10px;
+    }
+
+    .section2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        gap: 10px;
+        width: 90%;
+        min-height: 80vh;
+        margin-bottom: 30px;
+    }
+
+    .h2 {
+        margin-bottom: 10px;
+    }
+
+    .aboutContainer {
+        gap: 20px;
+        padding: 0px 20px;
+    }
+
+    .description {
+        font-size: 18px;
+        /* margin-bottom: 20px; */
+    }
+
+    .resume {
+        font-size: 14px;
+        padding: 5px 10px;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: all 300ms ease-in-out;
+    }
+
+    .resume:hover {
+        transform: scale(1.05);
+    }
+
+    .h3 {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    .skillContainer {
+        width: 80%;
+        gap: 20px;
+    }
+
+    .skillCard {
+        font-size: 18px;
+    }
+
+    .section3 {
+        min-height: 85vh;
+        margin-bottom: 80px;
+    }
+
+    .experienceWrapper {
+        height: 260px;
+    }
+
+    .experienceContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        gap: 3px;
+        padding: 0px 15px;
+    }
+
+    .vLine {
+        top: 18px;
+        width: 5px;
+        height: 300px;
+    }
+
+    .vLineDot {
+        position: relative;
+        top: -5px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .position {
+        font-size: 28px;
+    }
+
+    /* .companyDetails {
+        font-size: 16px;
+    } */
+
+    .companyDuration {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .work li {
+        font-size: 15px;
+        padding-left: 5px;
+        margin-bottom: 5px;
+    }
+
+    .section4 {
+        min-height: 85vh;
+        margin-bottom: 50px;
+    }
+
+    .projectContainer {
+        gap: 20px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .projectCard {
+        flex-direction: column;
+        width: 85%;
+        gap: 10px;
+        min-height: 450px;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .projectCard img {
+        height: 50%;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .projectDetails {
+        padding: 0px;
+        width: 100%;
+    }
+
+    .projectName {
+        font-size: 30px;
+    }
+
+    .projDesc {
+        font-size: 16px;
+    }
+
+    .cardButtons {
+        display: flex;
+        gap: 5px;
+    }
+
+    .cardButtons button {
+        font-size: 18px;
+        height: 35px;
+        width: 35px;
+    }
+
+    .cardButtons button:hover {
+        transform: scale(1.1);
+        text-shadow: 0px 0px 3px #f6f6f6;
+    }
+
+    .projectTechContainer {
+        gap: 8px;
+    }
+
+    .projectTech {
+        font-size: 14px;
+        padding: 3px 10px;
+    }
+
+    .section5 {
+        min-height: 65vh;
+    }
+
+    .connectContainer {
+        gap: 10px;
+        padding: 0px 20px;
+    }
+
+    .connectButtons {
+        width: 100%;
+        gap: 40px;
+        margin-top: 50px;
+    }
+
+    .connectButtons button {
+        font-size: 32px;
+    }
+
+    .section5Footer {
+        font-size: 15px;
+    }
+
+}
+
+
+@media (min-width: 767px) and (max-width: 991px) {
+    .header {
+        padding: 0.7rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav {
+        display: flex;
+        color: #e3e3e3ae;
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .nav a {
+        transition: all 300ms ease-out;
+    }
+
+    .nav a:hover {
+        color: #ffffff;
+    }
+
+    .activeNav {
+        color: #ffffff;
+    }
+
+    .contactLinks {
+        display: flex;
+        gap: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .contactLinks a {
+        transition: all 300ms ease-out;
+    }
+
+    .contactLinks a:hover {
+        filter: drop-shadow(0px 1px 0px #e3e3e3);
+        transform: translateY(-2px);
+    }
+
+    .section {
+        width: 90%;
+    }
+
+    .section1 {
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        gap: 60px;
+        min-height: 85vh;
+        padding-top: 100px;
+        margin-bottom: 50px;
+    }
+
+    .hey {
+        display: flex;
+        justify-content: start;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 44px;
+    }
+
+    .profname {
+        font-size: 40px;
+    }
+
+    .photo {
+        width: 35%;
+        height: 70%;
+        border-radius: 10px;
+    }
+
+    .section2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        gap: 10px;
+        width: 90%;
+        min-height: 80vh;
+        margin-bottom: 30px;
+    }
+
+
+    .section4 {
+        min-height: 85vh;
+        margin-bottom: 50px;
+    }
+
+    .projectContainer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .projectCard {
+        width: 100%;
+        min-height: 210px;
+        padding: 5px 10px;
+        border-radius: 15px;
+    }
+
+    .projectCard img {
+        height: fit-content;
+        width: 45%;
+        border-radius: 10px;
+        object-position: center;
+        object-fit: contain;
+    }
+
+    .projectDetails {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        padding: 5px 10px;
+        height: 100%;
+        font-weight: 500;
+        gap: 10px;
+    }
+
+    .projHead {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .projectName {
+        font-size: 32px;
+    }
+
+    .projDesc {
+        font-size: 14px;
+    }
+
+    .cardButtons {
+        display: flex;
+        gap: 8px;
+    }
+
+    .cardButtons button {
+        font-size: 20px;
+        height: 40px;
+        width: 40px;
+    }
+
+    .cardButtons button:hover {
+        transform: scale(1.1);
+        text-shadow: 0px 0px 3px #f6f6f6;
+    }
+
+
+    .projectTechContainer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .projectTech {
+        font-size: 14px;
+        padding: 4px 8px;
+    }
+
+}
