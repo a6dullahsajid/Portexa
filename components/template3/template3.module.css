@@ -798,8 +798,6 @@
 
     .cardHead {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
         padding: 10px 0px;
     }
 
@@ -1113,7 +1111,7 @@
 
     .cardHead {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         padding: 10px 0px;
     }

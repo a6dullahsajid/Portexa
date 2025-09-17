@@ -17,7 +17,11 @@
     align-items: center;
     font-size: 2.7rem;
     font-weight: bold;
-    color: #1a1f5e;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(135deg, rgba(16, 167, 191), #3d2794);
     padding: 0.5rem 1rem;
     border-radius: 12px;
 }
@@ -54,7 +58,7 @@
     font-size: 1rem;
     border-radius: 12px;
     padding: 0.4rem 0.8rem;
-    background: linear-gradient(135deg, var(--theme-button-color), #3d4494);
+    background: linear-gradient(135deg, rgb(95, 16, 191), rgb(16, 109, 191));
     color: white;
     border: none;
     transition: all 0.3s ease;
@@ -64,7 +68,7 @@
 
 .dropdownDefaultButton:hover {
     box-shadow: 0 4px 15px rgba(74, 82, 168, 0.4);
-    background: linear-gradient(135deg, #3d4494, var(--theme-button-color));
+    background: linear-gradient(135deg, rgb(16, 109, 191), rgb(95, 16, 191));
 }
 
 .dropdown {
@@ -211,7 +215,7 @@
 
     .dropdown {
         position: absolute;
-                top: 1.5rem;
+        top: 1.5rem;
         right: -0.4rem;
         border-radius: 12px;
         background: rgba(255, 255, 255, 0.95);
