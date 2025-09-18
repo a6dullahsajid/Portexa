@@ -346,9 +346,9 @@ export default function PortfolioForm() {
 
                     {/* STEP 1 */}
                     {step === 1 && (
-                        <>
+                        <div key="step-1">
                             <section className={styles.basicSection}>
-                                <div className={styles.inputContainer}>
+                                <div className={styles.inputContainer} style={{ '--input-index': 0 }}>
                                     <label className={styles.formLabel} htmlFor="name">Name *</label>
                                     <input
                                         id="name"
@@ -362,7 +362,7 @@ export default function PortfolioForm() {
                                     />
                                 </div>
 
-                                <div className={styles.inputContainer}>
+                                <div className={styles.inputContainer} style={{ '--input-index': 1 }}>
                                     <label className={styles.formLabel}>Role / Title</label>
                                     <input
                                         name="title"
@@ -373,7 +373,7 @@ export default function PortfolioForm() {
                                     />
                                 </div>
 
-                                <div className={styles.inputContainer}>
+                                <div className={styles.inputContainer} style={{ '--input-index': 2 }}>
                                     <label className={styles.formLabel}>Profile</label>
                                     <div className={styles.profileInputWrapper}>
                                         <input
@@ -393,7 +393,7 @@ export default function PortfolioForm() {
                                     </div>
                                 </div>
 
-                                <div className={styles.inputContainer}>
+                                <div className={styles.inputContainer} style={{ '--input-index': 3 }}>
                                     <label className={styles.formLabel}>About</label>
                                     <textarea
                                         name="bio"
@@ -404,7 +404,7 @@ export default function PortfolioForm() {
                                     />
                                 </div>
 
-                                <div className={styles.inputContainer}>
+                                <div className={styles.inputContainer} style={{ '--input-index': 4 }}>
                                     <label className={styles.formLabel}>Resume</label>
                                     <input
                                         name="resume"
@@ -415,7 +415,7 @@ export default function PortfolioForm() {
                                     />
                                 </div>
 
-                                <div className={styles.inputContainer}>
+                                <div className={styles.inputContainer} style={{ '--input-index': 5 }}>
                                     <label className={styles.formLabel}>Skills</label>
                                     <div className={styles.skillInputWrapper}>
                                         <input
@@ -441,9 +441,15 @@ export default function PortfolioForm() {
                                 <Link href="/dashboard">
                                     <button type="button" className={styles.btnPrev}>Go Back</button>
                                 </Link>
+                                <div className={styles.progressIndicator}>
+                                    <span className={styles.stepCounter}>Step {step} of 4</span>
+                                    <div className={styles.progressBar}>
+                                        <div className={styles.progressFill} style={{ width: `${(step / 4) * 100}%` }}></div>
+                                    </div>
+                                </div>
                                 <button type="button" onClick={nextStep} className={styles.btnNext}>Next</button>
                             </div>
-                        </>
+                        </div>
                     )}
 
                     {/* STEP 2 */}
@@ -509,7 +515,7 @@ export default function PortfolioForm() {
                                 {projects.slice().reverse().map((proj, index) => {
                                     const originalIndex = projects.length - 1 - index; // map back to original index
                                     return (
-                                        <div key={originalIndex} className={styles.projectEntry}>
+                                        <div key={originalIndex} className={styles.projectEntry} style={{ '--project-index': index }}>
                                             <div className={styles.projName}>{proj.title}</div>
                                             <div className={styles.projDesc}>{proj.desc}</div>
                                             <div className={styles.projTech}>Tech Used: {proj.tech}</div>
@@ -530,6 +536,12 @@ export default function PortfolioForm() {
                             </div>
                             <div className={styles.formNav}>
                                 <button type="button" onClick={prevStep} className={styles.btnPrev}>Back</button>
+                                <div className={styles.progressIndicator}>
+                                    <span className={styles.stepCounter}>Step {step} of 4</span>
+                                    <div className={styles.progressBar}>
+                                        <div className={styles.progressFill} style={{ width: `${(step / 4) * 100}%` }}></div>
+                                    </div>
+                                </div>
                                 <button type="button" onClick={nextStep} className={styles.btnNext}>Next</button>
                             </div>
                         </>
@@ -593,7 +605,7 @@ export default function PortfolioForm() {
                                     <button type="button" onClick={handleAddExperience} className={styles.btnAdd}>Add Experience</button>
                                 </div>
                                 {experience.slice().reverse().map((exp, index) => (
-                                    <div key={index} className={styles.projectEntry}>
+                                    <div key={index} className={styles.projectEntry} style={{ '--project-index': index }}>
                                         <div className={styles.projName}>{exp.company}</div>
                                         <div className={styles.expRole}>{exp.position}</div>
                                         <div className={styles.projDesc}>{exp.work}</div>
@@ -604,6 +616,12 @@ export default function PortfolioForm() {
                             </div>
                             <div className={styles.formNav}>
                                 <button type="button" onClick={prevStep} className={styles.btnPrev}>Back</button>
+                                <div className={styles.progressIndicator}>
+                                    <span className={styles.stepCounter}>Step {step} of 4</span>
+                                    <div className={styles.progressBar}>
+                                        <div className={styles.progressFill} style={{ width: `${(step / 4) * 100}%` }}></div>
+                                    </div>
+                                </div>
                                 <button type="button" onClick={nextStep} className={styles.btnNext}>Next</button>
                             </div>
                         </>
@@ -666,6 +684,12 @@ export default function PortfolioForm() {
                             </div>
                             <div className={styles.formNav}>
                                 <button type="button" onClick={prevStep} className={styles.btnPrev}>Back</button>
+                                <div className={styles.progressIndicator}>
+                                    <span className={styles.stepCounter}>Step {step} of 4</span>
+                                    <div className={styles.progressBar}>
+                                        <div className={styles.progressFill} style={{ width: `${(step / 4) * 100}%` }}></div>
+                                    </div>
+                                </div>
                                 <button type="submit" className={styles.btnSubmit} disabled={isSubmitting}>
                                     {isSubmitting ? <>Generating Portfolio<span className={styles.dots}></span></> : "Finish"}
                                 </button>

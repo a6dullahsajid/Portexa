@@ -7,7 +7,7 @@ import styles from "./dashboard.module.css";
 import "./dashboard.css";
 import { useDispatch } from "react-redux";
 import { useSession } from "next-auth/react";
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { setTemplate, setUserName, initializeUserData } from "@/store/userDataSlice";
 
 const templates = [
@@ -22,9 +22,11 @@ export default function Dashboard() {
     const { data: session, status } = useSession();
     const router = useRouter();
     const dispatch = useDispatch();
+    const [isLoadingUserData, setIsLoadingUserData] = useState(false);
 
 
     const fetchUserData = useCallback(async () => {
+        setIsLoadingUserData(true);
         try {
             const res = await fetch("/api/getUserData", {
                 method: "GET",
@@ -39,6 +41,8 @@ export default function Dashboard() {
             }
         } catch (err) {
             console.log("Error loading user:", err.message);
+        } finally {
+            setIsLoadingUserData(false);
         }
     }, [dispatch]);
 
@@ -58,10 +62,24 @@ export default function Dashboard() {
         }
     };
 
-    if (status === "loading") {
+    if (status === "loading" || isLoadingUserData) {
         return (
             <div className={styles.dashboardContainer}>
-                <p className={styles.loading}>Loading Your Dashboard <span className={styles.dots}></span></p>
+                <div className={styles.loadingContainer}>
+                    <div className={styles.loadingSpinner}></div>
+                    <h2 className={styles.loadingTitle}>Loading Your Dashboard</h2>
+                    <p className={styles.loadingSubtitle}>
+                        {status === "loading" 
+                            ? "Welcome back! Setting up your workspace..." 
+                            : "Crafting your perfect portfolio experience..."
+                        }
+                    </p>
+                    <div className={styles.loadingDots}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
             </div>
         );
     }
@@ -105,9 +123,10 @@ export default function Dashboard() {
                         <p>Select a starting point. You can always change it later.</p>
                     </div>
                 <div className={styles.templateContainer}>
-                    {templates.map((tpl) => (
+                    {templates.map((tpl, index) => (
                         <div className={styles.templateCard}
                             key={tpl.id}
+                            style={{ '--card-index': index }}
                         >
                             <div className={styles.templateCardImageContainer}>
                                 <Image

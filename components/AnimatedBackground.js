@@ -18,29 +18,49 @@ export default function BackgroundCanvas() {
 
         // 4. Mobile Optimization: Use fewer particles on smaller screens
         const isMobile = window.innerWidth < 768;
-        const particleCount = isMobile ? 30 : 80;
+        const particleCount = isMobile ? 30 : 100;
 
         const shapes = ["circle", "square", "triangle"];
         const colors = ["rgb(55, 59, 102)", "rgb(144, 88, 208)", "rgb(74, 82, 168)"];
         let particles = [];
+        let lastParticleTime = 0;
+        const baseSpawnInterval = 200; // Base spawn interval
 
         // Encapsulate particle creation to call it on init and resize
         const initializeParticles = () => {
             particles = [];
             let width = (canvas.width = window.innerWidth);
             let height = (canvas.height = window.innerHeight);
-
-            for (let i = 0; i < particleCount; i++) {
+            lastParticleTime = 0; // Reset the timer
+            
+            // Create initial particles scattered across the screen
+            for (let i = 0; i < Math.min(particleCount, 15); i++) {
                 particles.push({
                     x: Math.random() * width,
-                    y: Math.random() * height,
-                    vx: Math.random() * 0.7 - 0.3,
-                    vy: Math.random() * 0.7 - 0.3,
-                    size: Math.random() * 10 + 5,
+                    y: Math.random() * height, // Random position across the screen
+                    vx: Math.random() * 0.3 - 0.15, // Slower horizontal movement
+                    vy: -(Math.random() * 1 + 0.5), // Negative velocity for upward movement, slower
+                    size: Math.random() * 15 + 9,
                     shape: shapes[Math.floor(Math.random() * shapes.length)],
                     color: colors[Math.floor(Math.random() * colors.length)],
                 });
             }
+        };
+
+        // Function to create a new particle at the bottom
+        const createNewParticle = () => {
+            let width = canvas.width;
+            let height = canvas.height;
+            
+            return {
+                x: Math.random() * width,
+                y: height + 20, // Start below the visible area
+                vx: Math.random() * 0.3 - 0.15, // Slower horizontal movement
+                vy: -(Math.random() * 1 + 0.5), // Negative velocity for upward movement, slower
+                size: Math.random() * 13 + 7, 
+                shape: shapes[Math.floor(Math.random() * shapes.length)],
+                color: colors[Math.floor(Math.random() * colors.length)],
+            };
         };
 
         const drawShape = (p) => {
@@ -66,13 +86,29 @@ export default function BackgroundCanvas() {
             ctx.fillStyle = "white"; 
             ctx.fillRect(0, 0, width, height);
 
-            for (let p of particles) {
+            // Update and draw particles
+            for (let i = particles.length - 1; i >= 0; i--) {
+                let p = particles[i];
                 drawShape(p);
                 p.x += p.vx;
                 p.y += p.vy;
 
-                if (p.x + p.size / 2 < 0 || p.x - p.size / 2 > width) p.vx *= -1;
-                if (p.y + p.size / 2 < 0 || p.y - p.size / 2 > height) p.vy *= -1;
+                // Remove particles that have moved off the top
+                if (p.y + p.size / 2 < 0) {
+                    particles.splice(i, 1);
+                }
+                // Keep particles within horizontal bounds (optional - can remove for more natural movement)
+                else if (p.x + p.size / 2 < 0 || p.x - p.size / 2 > width) {
+                    p.vx *= -1;
+                }
+            }
+
+            // Spawn new particles at random intervals
+            const currentTime = Date.now();
+            const randomInterval = baseSpawnInterval + Math.random() * 300; // Add 0-300ms randomness
+            if (currentTime - lastParticleTime > randomInterval && particles.length < particleCount) {
+                particles.push(createNewParticle());
+                lastParticleTime = currentTime;
             }
 
             // 5. Store the animation frame ID to cancel it on unmount

@@ -1,37 +1,90 @@
-.dots::after {
-    content: '';
-    display: inline-block;
-    width: 1em;
-    text-align: left;
-    animation: dots 1.5s steps(4, end) infinite;
+.loadingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 2rem;
+    animation: fadeInUp 0.8s ease-out;
 }
 
-@keyframes dots {
-    0% {
-        content: '';
-    }
-
-    25% {
-        content: '.';
-    }
-
-    50% {
-        content: '..';
-    }
-
-    75% {
-        content: '...';
-    }
-
-    100% {
-        content: '';
-    }
+.loadingSpinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(74, 82, 168, 0.2);
+    border-top: 4px solid var(--theme-button-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
 }
 
-.loading {
-    margin-top: 40vh;
-    font-size: 2rem;
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loadingTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
     color: var(--theme-text-color);
+    text-shadow: var(--theme-text-shadow);
+    margin: 0;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.02);
+    }
+}
+
+.loadingSubtitle {
+    font-size: 1.1rem;
+    color: var(--theme-text-color);
+    opacity: 0.8;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.loadingDots {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.loadingDots span {
+    width: 8px;
+    height: 8px;
+    background-color: var(--theme-button-color);
+    border-radius: 50%;
+    animation: bounce 1.4s ease-in-out infinite both;
+}
+
+.loadingDots span:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.loadingDots span:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+.loadingDots span:nth-child(3) {
+    animation-delay: 0s;
+}
+
+@keyframes bounce {
+    0%, 80%, 100% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .dashboardContainer {
@@ -42,6 +95,18 @@
     width: 100%;
     height: 90vh;
     gap: 0.7rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .heading {
@@ -52,6 +117,18 @@
     margin: 1rem 0rem 0rem 0rem;
     gap: 1rem;
     background: transparent;
+    animation: slideInDown 1s ease-out 0.2s both;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .heading h1 {
@@ -92,18 +169,51 @@
     border: 1px solid rgba(74, 82, 168, 0.3);
     box-shadow: 0px 0px 5px rgba(74, 82, 168, 0.3);
     transition: all 300ms ease-out;
+    animation: cardSlideIn 0.6s ease-out both, float 6s ease-in-out infinite;
+    animation-delay: calc(var(--card-index) * 0.1s);
+}
+
+@keyframes cardSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
 }
 
 .templateCardImageContainer {
     position: relative;
     width: 100%;
     height: 80%;
+    overflow: hidden;
+    transition: transform 0.3s ease-out;
+}
+
+.templateCard:hover .templateCardImageContainer {
+    transform: scale(1.05);
 }
 
 .templateCard:hover {
-    transform: scale(1.08);
-    border: 1px solid #1a1f5e;
-    box-shadow: 0px 0px 10px rgba(26, 31, 94, 0.5);
+    transform: scale(1.08) translateY(-5px);
+    /* border: 1px solid #1a1f5e; */
+    box-shadow: 0px 10px 25px rgba(26, 31, 94, 0.4);
+}
+
+.templateCard:active {
+    transform: scale(1.02) translateY(-2px);
+    transition: all 0.1s ease-out;
 }
 
 .templateCard p {
@@ -139,6 +249,31 @@
 
 
 @media (max-width:389px) {
+    .loadingContainer {
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+
+    .loadingSpinner {
+        width: 50px;
+        height: 50px;
+        border-width: 3px;
+    }
+
+    .loadingTitle {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .loadingSubtitle {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .loadingDots span {
+        width: 6px;
+        height: 6px;
+    }
 
     .dashboardContainer {
         display: flex;
@@ -214,6 +349,23 @@
 }
 
 @media (min-width:390px) and (max-width: 576px) {
+    .loadingContainer {
+        gap: 1.8rem;
+    }
+
+    .loadingSpinner {
+        width: 55px;
+        height: 55px;
+    }
+
+    .loadingTitle {
+        font-size: 2.2rem;
+    }
+
+    .loadingSubtitle {
+        font-size: 1rem;
+    }
+
     .dashboardContainer {
         width: 100%;
         height: 90vh;
