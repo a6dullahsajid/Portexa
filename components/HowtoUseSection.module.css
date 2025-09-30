@@ -1,0 +1,54 @@
+.howtoUseSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 7rem;
+}
+
+.howtoUseTitle {
+    font-size: 2.6rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #5f10bf, #106dbf);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.howtoUseContainer {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.howtoUseCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--theme-text-color);
+    font-weight: bold;
+}
+
+.howtoUseLine {
+    width: 260px;
+    margin-bottom: 25px;
+    height: 7px;
+    background-color: #5f10bf;
+}
+
+.howtoUseCard p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #5f10bf;
+    color: white;
+    font-size: 0.9rem;
+    border-radius: 50%;
+    padding: 0.9rem;
+    width: 160px;
+    height: 160px;
+}

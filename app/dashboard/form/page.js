@@ -10,8 +10,19 @@ import useCloudinaryUpload from "@/app/hooks/useCloudinaryUpload";
 import { setName, setProfileImage, setTitle, setBio, setResume, setSkills, setExperience, setProjects, setConnectDesc, setX, setGithub, setLinkedin, setEmail } from "@/store/userDataSlice";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 export default function PortfolioForm() {
+    const { data: session, status } = useSession();
+    const router = useRouter();
+
+    // Redirect to dashboard if no session
+    useEffect(() => {
+        if (status === "loading") return; // Still loading
+        if (!session) {
+            router.push("/login");
+        }
+    }, [session, status, router]);
 
     useEffect(() => {
         const bgCanvas = document.getElementById("bgCanvas");
@@ -43,7 +54,6 @@ export default function PortfolioForm() {
         userName
     } = useSelector((state) => state.userData);
 
-    const router = useRouter();
     const { uploadImage, uploading } = useCloudinaryUpload();
 
     const [isSubmitting, setIsSubmitting] = useState(false);
