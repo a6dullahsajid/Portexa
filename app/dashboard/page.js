@@ -51,7 +51,7 @@ export default function Dashboard() {
             fetchUserData();
             dispatch(setUserName(session.user.email.split("@")[0]));
         }
-    }, [status, session, fetchUserData]);
+    }, [status, session, fetchUserData, dispatch]);
 
     const selectTemplate = (templateId) => {
         dispatch(setTemplate(templateId));

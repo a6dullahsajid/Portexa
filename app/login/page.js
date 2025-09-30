@@ -16,7 +16,7 @@ export default function LoginPage() {
     if (session) {
       router.push("/");
     }
-  }, [session])
+  }, [session, router])
 
   const structuredData = {
     "@context": "https://schema.org",
