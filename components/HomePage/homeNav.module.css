@@ -5,7 +5,7 @@
     padding: 0rem 3rem;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
     height: 10vh;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     position: sticky;
@@ -38,7 +38,8 @@
     object-position: center;
 }
 
-.nav ul{
+/* Desktop Navigation */
+.desktopNav {
     display: flex;
     gap: 3rem;
     font-weight: 500;
@@ -49,18 +50,118 @@
     padding: 0;
 }
 
-.nav ul li{
+.desktopNav li {
     transition: all 200ms ease-out;
 }
 
-.nav ul li:hover{
+.desktopNav li:hover {
     text-shadow: 0px 0px 2px var(--theme-text-color);
     transform: translateY(-2px);
 }
 
-.nav ul li a {
+.desktopNav li a {
     text-decoration: none;
     color: inherit;
+}
+
+/* Desktop Login Button */
+.desktopLogin {
+    display: block;
+}
+
+/* Mobile Hamburger Button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.hamburgerLine {
+    width: 25px;
+    height: 3px;
+    background-color: var(--theme-text-color);
+    margin: 2px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.hamburgerLine.open:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburgerLine.open:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburgerLine.open:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Mobile Dropdown Menu */
+.mobileDropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 0px 0px 0px 10px;
+    box-shadow: -2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+    padding: 0.6rem;
+    min-width: 100px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.mobileDropdownOpen {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mobileNav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--theme-text-color);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mobileNav li {
+    transition: all 200ms ease-out;
+}
+
+.mobileNav li:hover {
+    text-shadow: 0px 0px 2px var(--theme-text-color);
+    transform: translateX(5px);
+}
+
+.mobileNav li a {
+    text-decoration: none;
+    color: inherit;
+    padding: 0.2rem 0;
+    display: block;
+}
+
+.mobileLogin {
+    display: flex;
+    justify-content: center;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 0.5rem;
 }
 
 .login button {
@@ -101,12 +202,29 @@
     background: linear-gradient(135deg, rgb(16, 109, 191), rgb(95, 16, 191));
 }
 
+/* Mobile Styles - Show hamburger, hide desktop nav */
+@media (max-width: 767px) {
+    .desktopNav {
+        display: none;
+    }
 
+    .desktopLogin {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .mobileDropdown {
+        display: block;
+    }
+}
 
 @media (max-width:389px) {
     .nav {
         padding: 0rem 0.2rem;
-        height: 8vh;
+        height: 6.2vh;
     }
 
     .logoContainer {
@@ -128,18 +246,19 @@
         height: 100% !important;
     }
 
-    .nav ul {
-        gap: 1rem;
-        font-size: 0.6rem;
+    .hamburgerLine {
+        width: 20px;
+        height: 2px;
     }
 
-    .login button {
-        display: flex;
-        align-items: center;
-        gap: 0.1rem;
-        font-size: 0.6rem;
-        border-radius: 6px;
-        padding: 0.1rem 0.4rem;
+    .mobileNav {
+        font-size: 0.8rem;
+        gap: 0rem;
+    }
+
+    .mobileLogin button {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.5rem;
     }
 }
 
@@ -150,14 +269,14 @@
     }
 
     .logoContainer {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         height: 3rem;
     }
 
     .logo {
         position: relative;
-        height: 1.8rem;
-        width: 1.8rem;
+        height: 2rem;
+        width: 2rem;
     }
 
     .logoImg {
@@ -165,18 +284,19 @@
         object-position: center;
     }
 
-    .nav ul {
-        gap: 0.7rem;
-        font-size: 0.7rem;
+    .hamburgerLine {
+        width: 22px;
+        height: 2.5px;
     }
 
-    .login button {
-        display: flex;
-        align-items: center;
-        gap: 0.1rem;
-        font-size: 0.65rem;
-        border-radius: 5px;
-        padding: 0.1rem 0.4rem;
+    .mobileNav {
+        font-size: 1rem;
+        gap: 1rem;
+    }
+
+    .mobileLogin button {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
     }
 }
 
@@ -203,18 +323,19 @@
         object-position: center;
     }
 
-    .nav ul {
-        gap: 2rem;
-        font-size: 1rem;
+    .hamburgerLine {
+        width: 25px;
+        height: 3px;
     }
 
-    .login button {
-        display: flex;
-        align-items: center;
-        gap: 0.1rem;
-        font-size: 0.7rem;
-        border-radius: 6px;
-        padding: 0.2rem 0.5rem;
+    .mobileNav {
+        font-size: 1.1rem;
+        gap: 1.2rem;
+    }
+
+    .mobileLogin button {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
     }
 }
 

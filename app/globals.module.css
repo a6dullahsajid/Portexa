@@ -145,9 +145,9 @@
     }
 
     .section1button {
-        padding: 0.2rem 0.3rem;
+        padding: 0.3rem 0.7rem;
         cursor: pointer;
-        font-size: 0.6rem;
+        font-size: 0.8rem;
         border-radius: 0.3rem;
     }
 }
@@ -184,7 +184,7 @@
     .section1button {
         padding: 0.2rem 0.6rem;
         cursor: pointer;
-        font-size: 0.8rem;
+        font-size: 0.6rem;
         border-radius: 0.4rem;
     }
 }

@@ -131,16 +131,17 @@
 
 @media (max-width:389px) {
     .whyPortexaSection {
-        gap: 1rem;
+        gap: 0.5rem;
     }
     
     .whyPortexaTitle {
         font-size: 2rem;
         text-align: center;
+        line-height: 1.1;
     }
         
     .whyPortexaSubtitle {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         width: 95%;
     }
     
@@ -153,7 +154,7 @@
     .whyCard {
         width: 40%;
         gap: 0rem;
-        min-height: 185px;
+        min-height: 170px;
         padding: 0.5rem;
         border: 1px solid rgba(95, 16, 191, 0.1);
         box-shadow: 0px 2px 5px rgba(95, 16, 191, 0.2);
@@ -161,7 +162,7 @@
     }
     
     .whyCard h2 {
-        font-size: 1rem;
+        font-size: 0.9rem;
         font-weight: bold;
     }
     
@@ -170,13 +171,13 @@
     }
     
     .whyCard p {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
         letter-spacing: 0.5px;
     }
     
     .whyPortexaBottom {
         margin-top: 3rem;
-        height: 300px;
+        height: 260px;
     }
     
     .whyBottomGrid {
@@ -192,16 +193,16 @@
     }
     
     .whyBottomGridItem h2 {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
     
     .whyBottomGridItem h3 {
-        font-size: 0.75rem;
+        font-size: 0.55rem;
         letter-spacing: 0.5px;
     }
     
     .whyBottomGridItem p {
-        font-size: 0.7rem;
+        font-size: 0.55rem;
     }  
 }
 
@@ -272,7 +273,7 @@
     }
     
     .whyBottomGridItem h3 {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         letter-spacing: 0.5px;
         line-height: 1.1;
     }

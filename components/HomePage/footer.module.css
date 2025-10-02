@@ -302,7 +302,11 @@
   
   .footerMain {
     gap: 1.5rem;
-    padding: 1.5rem 0 1rem;
+    padding: 0.5rem 0 1rem;
+  }
+
+  .footerBrand{
+    gap: 0.5rem;
   }
   
   .footerBrandName {
@@ -328,6 +332,15 @@
 
   .footerBottom{
     height: 15px;
+  }
+
+  .footerLinks{
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .footerLink{
+    font-size: 0.8rem;
   }
 }
 

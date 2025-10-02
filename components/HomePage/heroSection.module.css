@@ -172,7 +172,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 4rem;
+        gap: 2rem;
         width: 100%;
     }
 
@@ -202,7 +202,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding-bottom: 80px;
+        padding-bottom: 60px;
         padding-left: 60px;
         width: 100%;
         height: fit-content;
@@ -210,22 +210,23 @@
     }
 
     .heroTopRight:hover .heroImage1 {
-        left: none;
-        top: none;
+        left: 170px;
+        top: 5px;
     }
 
     .heroTopRight:hover .heroImage2 {
-        top: none;
+        left: 45px;
+        top: 20px;
     }
 
     .heroTopRight:hover .heroImage3 {
-        left: none;
-        top: none;
+        left: -80px;
+        top: 35px;
     }
 
     .heroTopRight:hover .heroImage4 {
-        left: none;
-        top: none;
+        left: -205px;
+        top: 55px;
     }
 
     .heroImage1 {
@@ -309,7 +310,7 @@
     .feature p {
         width: 100%;
         text-align: center;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 }
 
