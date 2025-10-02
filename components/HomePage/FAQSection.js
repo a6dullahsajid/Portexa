@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react'
-import styles from './FAQSection.module.css';
+import styles from './faqSection.module.css';
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(null);
