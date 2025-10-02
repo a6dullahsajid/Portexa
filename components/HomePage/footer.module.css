@@ -218,6 +218,8 @@
 
   .footer{
     margin-top: 2rem;
+    padding-top: 10vh;
+    padding-bottom: 4rem;
   }
   
   .footerBrand {
@@ -241,6 +243,8 @@
   
   .footer{
     margin-top: 2rem;
+    padding-top: 9vh;
+    padding-bottom: 4rem;
   }
 
   .footerMain {
@@ -348,6 +352,8 @@
   
   .footer{
     margin-top: 0rem;
+    padding-top: 6.5vh;
+    padding-bottom: 4rem;
   }
 
   .footerContainer {

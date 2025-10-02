@@ -5,6 +5,8 @@
     justify-content: center;
     gap: 1rem;
     font-family: 'Times New Roman', Times, serif;
+    padding-top: 10vh;
+    padding-bottom: 7vh;
 }
 
 .whyPortexaTitle {
@@ -132,6 +134,7 @@
 @media (max-width:389px) {
     .whyPortexaSection {
         gap: 0.5rem;
+        padding-top: 8vh;
     }
     
     .whyPortexaTitle {
@@ -209,6 +212,8 @@
 @media (min-width:390px) and (max-width: 576px) {
     .whyPortexaSection {
         gap: 1rem;
+        padding-top: 6.5vh;
+        padding-bottom: 4rem;
     }
     
     .whyPortexaTitle {
@@ -291,6 +296,8 @@
         align-items: center;
         justify-content: center;
         gap: 1rem;
+        padding-top: 9vh;
+        padding-bottom: 4rem;
     }
     
     .whyPortexaTitle {
@@ -374,6 +381,8 @@
         justify-content: center;
         gap: 1rem;
         font-family: 'Times New Roman', Times, serif;
+        padding-top: 10vh;
+        padding-bottom: 4rem;
     }
     
     .whyPortexaTitle {

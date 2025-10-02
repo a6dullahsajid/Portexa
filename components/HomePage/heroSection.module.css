@@ -6,6 +6,8 @@
     width: 100%;
     gap: 2rem;
     font-family: 'Times New Roman', Times, serif;
+    padding-top: 10vh;
+    padding-bottom: 7vh;
 }
 
 .heroTop {
@@ -165,6 +167,8 @@
         justify-content: center;
         width: 100%;
         gap: 2rem;
+        padding-top: 8vh;
+        padding-bottom: 5vh;
     }
 
     .heroTop {
@@ -323,6 +327,8 @@
         justify-content: center;
         width: 100%;
         gap: 2rem;
+        padding-top: 6.5vh;
+        padding-bottom: 4rem;
     }
 
     .heroTop {
@@ -479,6 +485,8 @@
         justify-content: center;
         width: 100%;
         gap: 1rem;
+        padding-top: 9vh;
+        padding-bottom: 4rem;
     }
     
     .heroTop {
@@ -629,6 +637,8 @@
     .heroSection {
         width: 100%;
         gap: 1rem;
+        padding-top: 10vh;
+        padding-bottom: 4rem;
     }
     
     .heroTop {

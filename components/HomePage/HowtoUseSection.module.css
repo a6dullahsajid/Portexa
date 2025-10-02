@@ -5,6 +5,8 @@
     justify-content: center;
     gap: 1rem;
     font-family: 'Times New Roman', Times, serif;
+    padding-top: 10vh;
+    padding-bottom: 7vh;
 }
 
 .howtoUseTitle {
@@ -80,6 +82,8 @@
 @media (max-width: 389px){
     .howtoUseSection {
         gap: 1rem;
+        padding-top: 8vh;
+        padding-bottom: 5vh;
     }
     
     .howtoUseTitle {
@@ -133,6 +137,8 @@
 @media (min-width:390px) and (max-width: 576px) {
     .howtoUseSection {
         gap: 1rem;
+        padding-top: 6.5vh;
+        padding-bottom: 4rem;
     }
     
     .howtoUseTitle {
@@ -191,6 +197,8 @@
         justify-content: center;
         gap: 1rem;
         font-family: 'Times New Roman', Times, serif;
+        padding-top: 9vh;
+        padding-bottom: 4rem;
     }
     
     .howtoUseTitle {
@@ -239,6 +247,10 @@
 }
 
 @media (min-width:767px) and (max-width: 991px) {
+    .howtoUseSection {
+        padding-top: 10vh;
+        padding-bottom: 4rem;
+    }
     
     .howtoUseTitle {
         font-size: 3.2rem;

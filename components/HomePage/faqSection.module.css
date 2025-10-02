@@ -6,6 +6,8 @@
     gap: 2rem;
     padding: 4rem 2rem;
     max-width: 100%;
+    padding-top: 10vh;
+    padding-bottom: 7vh;
 }
 
 .faqTitle {
@@ -101,6 +103,8 @@
         gap: 1rem;
         padding: 2rem 0rem;
         max-width: 100%;
+        padding-top: 8vh;
+        padding-bottom: 5vh;
     }
     
     .faqTitle {
@@ -162,7 +166,7 @@
 @media (min-width:390px) and (max-width: 576px) {
     .faqSection {
         gap: 1rem;
-        padding: 2rem 0rem;
+        padding: 6.5vh 0rem 4rem 0rem;
         max-width: 100%;
     }
     
@@ -225,7 +229,7 @@
 @media (min-width:577px) and (max-width: 767px) {
     .faqSection {
         gap: 1rem;
-        padding: 2rem 2rem;
+        padding: 9vh 2rem 4rem 2rem;
         max-width: 100%;
     }
     
@@ -303,7 +307,7 @@
         align-items: center;
         justify-content: center;
         gap: 2rem;
-        padding: 4rem 2rem;
+        padding: 10vh 2rem 4rem 2rem;
         max-width: 100%;
         z-index: 1005;
     }
