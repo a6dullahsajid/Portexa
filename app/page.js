@@ -1,23 +1,26 @@
 import AnimatedBackground from "@/components/AnimatedBackground.js";
-import Link from "next/link";
+import HeroSection from "@/components/HomePage/HeroSection";
+import WhyPortexaSection from "@/components/HomePage/WhyPortexaSection";
+import HowtoUseSection from "@/components/HomePage/HowtoUseSection";
+import SectionDivider from "@/components/HomePage/SectionDivider";
+import Footer from "@/components/HomePage/Footer";
 import styles from "./globals.module.css";
-import Image from "next/image";
-import StartButton from "@/components/StartButton";
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import WhyPortexaSection from "@/components/WhyPortexaSection";
-import HowtoUseSection from "@/components/HowtoUseSection";
-
+import FAQSection from "@/components/HomePage/FAQSection";
+import HomeNav from "@/components/HomePage/HomeNav";
 
 export default function Home() {
 
   return (
-    <main>
+    <main className={styles.main}>
       {/* <AnimatedBackground /> */}
+      <HomeNav />
       <HeroSection />
+      <SectionDivider />
       <WhyPortexaSection />
       <HowtoUseSection />
-      {/* Test hot reload */}
+      <SectionDivider />
+      <FAQSection />
+      <Footer />
     </main>
   );
 }

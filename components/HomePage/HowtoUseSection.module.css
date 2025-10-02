@@ -1,0 +1,78 @@
+.howtoUseSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.howtoUseTitle {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.howtoUseTitle b{
+    background: linear-gradient(135deg, #5f10bf, #106dbf);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.howtoUseContainer {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 63%;
+}
+
+
+.howtoUseLine {
+    width: 35%;
+    height: 3px;
+    background-color: black;
+}
+
+.howtoUseContainer p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #5f10bf;
+    color: white;
+    border: 3px solid black;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    padding: 0.9rem;
+    width: 70px;
+    height: 70px;
+}
+
+.howtoUseCards {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    width: 81%;
+    /* gap: 5rem; */
+}
+
+.howtoUseCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+    color: var(--theme-text-color);
+    font-weight: bold;
+}
+
+.howtoUseCard h2 {
+    color: black;
+    font-weight: lighter;
+}
+
+.howtoUseCard h3 {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}

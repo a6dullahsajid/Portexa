@@ -38,194 +38,21 @@
     object-position: center;
 }
 
-.userProfile {
-    height: 1.7rem;
-    width: 1.7rem;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid rgba(74, 82, 168, 0.2);
-}
-
-.dropdownIcon {
-    width: 1.2rem;
-    height: 1.2rem;
-    flex-shrink: 0;
-}
-
-.loadingSpinner {
-    width: 1.2rem;
-    height: 1.2rem;
-    border: 2px solid rgba(74, 82, 168, 0.2);
-    border-top: 2px solid var(--theme-button-color);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    flex-shrink: 0;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.dropdownContainer {
+.nav ul{
     display: flex;
-    flex-direction: column;
-    position: relative;
-    z-index: 9999;
-}
-
-.dropdownDefaultButton {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    gap: 0.4rem;
-    font-size: 1rem;
-    border-radius: 7px;
-    padding: 0.4rem 0.8rem;
-    background: linear-gradient(135deg, rgb(95, 16, 191), rgb(16, 109, 191));
-    color: white;
-    border: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(74, 82, 168, 0.3);
+    gap: 3rem;
     font-weight: 500;
-}
-
-.dropdownDefaultButton:hover {
-    box-shadow: 0 4px 15px rgba(74, 82, 168, 0.4);
-    background: linear-gradient(135deg, rgb(16, 109, 191), rgb(95, 16, 191));
-}
-
-.dropdown {
-    position: fixed;
-    top: 4rem;
-    right: 2rem;
-    border-radius: 20px;
+    font-size: 1.1rem;
     color: var(--theme-text-color);
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(74, 82, 168, 0.15);
-    box-shadow: 0 20px 40px rgba(74, 82, 168, 0.2);
-    min-width: 150px;
-    padding: 0.5rem 0;
-    animation: slideDownScale 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    transform-origin: top right;
 }
 
-@keyframes slideDownScale {
-    from {
-        opacity: 0;
-        transform: translateY(-10px) scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+.nav ul li{
+    transition: all 200ms ease-out;
 }
 
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.dropdownUl {
-    display: flex;
-    flex-direction: column;
-}
-
-.dropdown ul li {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    cursor: pointer;
-    padding: 0.3rem 0.7rem;
-    margin: 0.2rem 0.3rem;
-    border-radius: 12px;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
-    gap: 0.75rem;
-    font-weight: 500;
-    font-size: 0.95rem;
-}
-
-/* Ensure all menu items (except first child) have row direction */
-.dropdown ul li:not(:first-child) {
-    flex-direction: row;
-    align-items: center;
-}
-
-/* Style links and buttons inside dropdown items to display in row */
-.dropdown ul li a,
-.dropdown ul li button {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.75rem;
-    width: 100%;
-    text-decoration: none;
-    color: inherit;
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-    font: inherit;
-    cursor: pointer;
-}
-
-.dropdown ul li button:disabled {
-    cursor: not-allowed;
-    opacity: 0.7;
-}
-
-.dropdown ul li:not(:last-child) {
-    border-bottom: 1px solid rgba(74, 82, 168, 0.08);
-    margin-bottom: 0.1rem;
-}
-
-.dropdown ul li:last-child {
-    border-bottom: none;
-}
-
-/* User profile item (first child) - no hover effects */
-.dropdown ul li:first-child {
-    background: transparent;
-    border: none;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: var(--theme-text-color);
-    cursor: default;
-}
-
-.dropdown ul li:first-child:hover {
-    background: transparent;
-    transform: none;
-    box-shadow: none;
-}
-
-/* Regular menu items */
-.dropdown ul li:not(:first-child):hover {
-    background: linear-gradient(135deg, rgba(74, 82, 168, 0.08), rgba(74, 82, 168, 0.12));
-    transform: translateX(4px);
-    box-shadow: 0 4px 12px rgba(74, 82, 168, 0.15);
-}
-
-/* Logout item - special styling */
-.dropdown ul li:last-child {
-    color: #dc3545;
-    font-weight: 600;
-}
-
-.dropdown ul li:last-child:hover {
-    background: linear-gradient(135deg, rgba(220, 53, 69, 0.1), rgba(220, 53, 69, 0.15));
-    color: #c82333;
-    transform: translateX(4px);
-    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.2);
+.nav ul li:hover{
+    text-shadow: 0px 0px 2px var(--theme-text-color);
+    transform: translateY(-2px);
 }
 
 .login button {
