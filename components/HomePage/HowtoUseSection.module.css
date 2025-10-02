@@ -76,3 +76,184 @@
     text-transform: uppercase;
     font-size: 0.8rem;
 }
+
+@media (max-width: 389px){
+    .howtoUseSection {
+        gap: 1rem;
+    }
+    
+    .howtoUseTitle {
+        font-size: 2.1rem;
+        text-align: center;
+    }
+    
+    .howtoUseContainer {
+        margin-top: 2rem;
+        width: 95%;
+    }
+    
+    
+    .howtoUseLine {
+        width: 35%;
+        height: 2px;
+    }
+    
+    .howtoUseContainer p {
+        border: 2px solid black;
+        font-size: 1rem;
+        padding: 0.9rem;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .howtoUseCards {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0;
+    }
+    
+    .howtoUseCard {
+        width: 21%;
+        font-weight: bold;
+        align-items: center;
+    }
+    
+    .howtoUseCard h2 {
+        font-size: 0.7rem;
+    }
+    
+    .howtoUseCard h3 {
+        font-size: 0.6rem;
+        text-align: center;
+    }
+}
+
+@media (min-width:390px) and (max-width: 576px) {
+    .howtoUseSection {
+        gap: 1rem;
+    }
+    
+    .howtoUseTitle {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+    
+    .howtoUseContainer {
+        margin-top: 2rem;
+        width: 95%;
+    }
+    
+    
+    .howtoUseLine {
+        width: 35%;
+        height: 2px;
+    }
+    
+    .howtoUseContainer p {
+        border: 2px solid black;
+        font-size: 1.1rem;
+        padding: 0.9rem;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .howtoUseCards {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0;
+    }
+    
+    .howtoUseCard {
+        width: 21%;
+        font-weight: bold;
+        align-items: center;
+    }
+    
+    .howtoUseCard h2 {
+        font-size: 0.85rem;
+    }
+    
+    .howtoUseCard h3 {
+        font-size: 0.7rem;
+        text-align: center;
+    }
+}
+
+@media (min-width:577px) and (max-width: 767px) {
+    .howtoUseSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    .howtoUseTitle {
+        font-size: 3.0rem;
+        font-weight: bold;
+    }
+
+    .howtoUseContainer {
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 75%;
+    }
+    
+    
+    .howtoUseLine {
+        width: 35%;
+        height: 3px;
+        background-color: black;
+    }
+    
+    .howtoUseContainer p {
+        font-size: 1rem;
+        padding: 0.9rem;
+        width: 60px;
+        height: 60px;
+    }
+    
+    .howtoUseCards {
+        width: 100%;
+    }
+    
+    .howtoUseCard {
+        width: 33%;
+    }
+    
+    .howtoUseCard h2 {
+        font-size: 0.9rem;
+    }
+    
+    .howtoUseCard h3 {
+        text-transform: uppercase;
+        font-size: 0.7rem;
+    }    
+}
+
+@media (min-width:767px) and (max-width: 991px) {
+    
+    .howtoUseTitle {
+        font-size: 3.2rem;
+    }
+    
+    .howtoUseContainer {
+        width: 72%;
+    }
+    
+    .howtoUseLine {
+        width: 35%;
+        height: 3px;
+    }
+
+    .howtoUseCards{
+        width: 100%;
+    }
+}

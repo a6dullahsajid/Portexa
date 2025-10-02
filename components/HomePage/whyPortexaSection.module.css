@@ -128,3 +128,355 @@
     width: 1px;
     background-color: rgb(221, 221, 221);
 }
+
+@media (max-width:389px) {
+    .whyPortexaSection {
+        gap: 1rem;
+    }
+    
+    .whyPortexaTitle {
+        font-size: 2rem;
+        text-align: center;
+    }
+        
+    .whyPortexaSubtitle {
+        font-size: 0.9rem;
+        width: 95%;
+    }
+    
+    .whyCardsContainer {
+        margin-top: 1.5rem;
+        gap: 1rem;
+        width: 100%;
+    }
+    
+    .whyCard {
+        width: 40%;
+        gap: 0rem;
+        min-height: 185px;
+        padding: 0.5rem;
+        border: 1px solid rgba(95, 16, 191, 0.1);
+        box-shadow: 0px 2px 5px rgba(95, 16, 191, 0.2);
+        border-radius: 8px;
+    }
+    
+    .whyCard h2 {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    
+    .whyCard img {
+        width: 22px;
+    }
+    
+    .whyCard p {
+        font-size: 0.7rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .whyPortexaBottom {
+        margin-top: 3rem;
+        height: 300px;
+    }
+    
+    .whyBottomGrid {
+        gap: 0.5rem;
+        width: 95%;
+        height: 80%;
+    }
+    
+    .whyBottomGridItem {
+        height: 100%;
+        width: 33%;
+        gap: 0.5rem;
+    }
+    
+    .whyBottomGridItem h2 {
+        font-size: 0.8rem;
+    }
+    
+    .whyBottomGridItem h3 {
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .whyBottomGridItem p {
+        font-size: 0.7rem;
+    }  
+}
+
+@media (min-width:390px) and (max-width: 576px) {
+    .whyPortexaSection {
+        gap: 1rem;
+    }
+    
+    .whyPortexaTitle {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+        
+    .whyPortexaSubtitle {
+        font-size: 1.1rem;
+        width: 95%;
+    }
+    
+    .whyCardsContainer {
+        margin-top: 1.5rem;
+        gap: 1rem;
+        width: 100%;
+    }
+    
+    .whyCard {
+        width: 43%;
+        gap: 0rem;
+        min-height: 215px;
+        padding: 0.5rem;
+        border: 1px solid rgba(95, 16, 191, 0.1);
+        box-shadow: 0px 2px 5px rgba(95, 16, 191, 0.2);
+        border-radius: 8px;
+    }
+    
+    .whyCard h2 {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    
+    .whyCard img {
+        width: 27px;
+    }
+    
+    .whyCard p {
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .whyPortexaBottom {
+        margin-top: 3rem;
+        height: 320px;
+    }
+    
+    .whyBottomGrid {
+        gap: 0.5rem;
+        width: 95%;
+        height: 80%;
+    }
+    
+    .whyBottomGridItem {
+        height: 100%;
+        width: 33%;
+        gap: 0.5rem;
+    }
+    
+    .whyBottomGridItem h2 {
+        font-size: 0.85rem;
+    }
+    
+    .whyBottomGridItem h3 {
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+        line-height: 1.1;
+    }
+    
+    .whyBottomGridItem p {
+        font-size: 0.8rem;
+        line-height: 1.1;
+    }  
+}
+
+@media (min-width:577px) and (max-width: 767px) {
+    .whyPortexaSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .whyPortexaTitle {
+        font-size: 3.0rem;
+    }
+    
+    .whyPortexaSubtitle {
+        font-size: 1.2rem;
+        width: 90%;
+    }
+
+    .whyCardsContainer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1.5rem;
+        gap: 1rem;
+        width: 100%;
+    }
+    
+    .whyCard {
+        width: 30%;
+        gap: 0.4rem;
+        min-height: 275px;
+        padding: 1rem;
+    }
+    
+    .whyCard h2 {
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+    
+    .whyCard img {
+        width: 36px;
+    }
+    
+    .whyCard p {
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        font-weight: lighter;
+    }
+    
+    .whyPortexaBottom {
+        margin-top: 4rem;
+        width: 100%;
+        height: 320px;
+    }
+    
+    .whyBottomGrid {
+        gap: 1rem;
+        width: 96%;
+        height: 70%;
+    }
+    
+    .whyBottomGridItem {
+        height: 100%;
+        width: 33%;
+        gap: 0.7rem;
+    }
+    
+    .whyBottomGridItem h2 {
+        font-size: 1rem;
+    }
+    
+    .whyBottomGridItem h3 {
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .whyBottomGridItem p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width:767px) and (max-width: 991px) {
+    .whyPortexaSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    .whyPortexaTitle {
+        font-size: 3.2rem;
+    }
+
+    .whyPortexaSubtitle {
+        font-size: 1.3rem;
+        width: 80%;
+    }
+    
+    .whyCardsContainer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+        gap: 1.5rem;
+        width: 95%;
+    }
+    
+    .whyCard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 30%;
+        gap: 0.4rem;
+        min-height: 275px;
+        padding: 1rem;
+        background: #5f10bf;
+        color: white;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(95, 16, 191, 0.1);
+        box-shadow: 0px 2px 5px rgba(95, 16, 191, 0.2);
+        border-radius: 10px;
+    }
+    
+    .whyCard h2 {
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+    
+    .whyCard img {
+        width: 38px;
+    }
+    
+    .whyCard p {
+        font-size: 0.92rem;
+        letter-spacing: 0.5px;
+        font-weight: lighter;
+    }
+    
+    .whyPortexaBottom {
+        margin-top: 6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 400px;
+        background-color: #16052b;
+        color: rgb(154, 154, 154);
+    }
+    
+    .whyBottomGrid {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        width: 90%;
+        height: 60%;
+    }
+    
+    .whyBottomGridItem {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        height: 100%;
+        width: 33%;
+        gap: 1rem;
+    }
+    
+    .whyBottomGridItem h2 {
+        color: rgb(234, 228, 228);
+    }
+    
+    .whyBottomGridItem h3 {
+        color: white;
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+    }
+    
+    
+    .whyBottomGridItem h3 b{
+        font-weight: normal;
+        color: rgb(62, 212, 62);
+    }
+    
+    .whyBottomGridItem p {
+        font-size: 1.05rem;
+    }
+    
+    .whyBottomGridItem .p2 {
+        color: white;
+    }    
+}

@@ -3,7 +3,7 @@
   background: linear-gradient(135deg, rgba(16, 167, 191, 0.05), rgba(61, 39, 148, 0.05));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(16, 167, 191, 0.1);
+  border-top: 1px solid rgba(16, 167, 191, 0.2);
   margin-top: 5rem;
   position: relative;
   overflow: hidden;
@@ -20,7 +20,7 @@
 }
 
 .footerContainer {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -215,13 +215,17 @@
     text-align: center;
     align-items: center;
   }
+
+  .footer{
+    margin-top: 2rem;
+  }
   
   .footerBrand {
     align-items: center;
   }
   
   .footerDescription {
-    max-width: 100%;
+    max-width: 70%;
     text-align: center;
   }
   
@@ -235,6 +239,10 @@
     padding: 0 1.5rem;
   }
   
+  .footer{
+    margin-top: 2rem;
+  }
+
   .footerMain {
     flex-direction: column;
     gap: 2.5rem;
@@ -283,6 +291,11 @@
 }
 
 @media (max-width: 389px) {
+
+  .footer{
+    margin-top: 0rem;
+  }
+
   .footerContainer {
     padding: 0 0.75rem;
   }
@@ -296,6 +309,10 @@
     font-size: 1.3rem;
   }
   
+  .footerSection{
+    width: 95%;
+  }
+
   .footerDescription {
     font-size: 0.85rem;
   }
@@ -307,5 +324,54 @@
   .socialLink {
     width: 32px;
     height: 32px;
+  }
+
+  .footerBottom{
+    height: 15px;
+  }
+}
+
+@media (min-width:390px) and (max-width: 576px) {
+  
+  .footer{
+    margin-top: 0rem;
+  }
+
+  .footerContainer {
+    padding: 0 0.75rem;
+  }
+  
+  .footerMain {
+    gap: 1.5rem;
+    padding: 1.5rem 0 1rem;
+  }
+
+  .footerLogo{
+    gap: 0.2rem;
+  }
+  
+  .footerBrandName {
+    font-size: 1.8rem;
+  }
+  
+  .footerSection{
+    width: 95%;
+  }
+
+  .footerDescription {
+    font-size: 0.95rem;
+  }
+  
+  .footerSocial {
+    gap: 1.5rem;
+  }
+  
+  .socialLink {
+    width: 35px;
+    height: 35px;
+  }
+
+  .footerBottom{
+    height: 15px;
   }
 }

@@ -1,4 +1,4 @@
-import AnimatedBackground from "@/components/AnimatedBackground.js";
+// import AnimatedBackground from "@/components/AnimatedBackground.js";
 import HeroSection from "@/components/HomePage/HeroSection";
 import WhyPortexaSection from "@/components/HomePage/WhyPortexaSection";
 import HowtoUseSection from "@/components/HomePage/HowtoUseSection";
@@ -12,7 +12,6 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      {/* <AnimatedBackground /> */}
       <HomeNav />
       <HeroSection />
       <SectionDivider />
