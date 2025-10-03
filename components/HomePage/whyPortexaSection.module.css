@@ -139,7 +139,7 @@
     
     .whyPortexaTitle {
         font-size: 1.8rem;
-        padding: 0 2rem;
+        padding: 0 1rem;
         text-align: center;
         line-height: 1.1;
     }
@@ -147,7 +147,7 @@
     .whyPortexaSubtitle {
         font-size: 0.7rem;
         width: 95%;
-        padding: 0 2rem;
+        padding: 0 1rem;
     }
     
     .whyCardsContainer {

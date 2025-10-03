@@ -158,7 +158,7 @@
     .heroSection {
         width: 100%;
         gap: 2rem;
-        padding: 5.5vh 2rem 7rem 2rem;
+        padding: 11.5vh 1rem 16vh 1rem;
     }
 
     .heroTop {
@@ -174,13 +174,13 @@
         display: flex;
         flex-direction: column;
         align-items: start;
-        gap: 1.5rem;
+        gap: 1rem;
         width: 100%;
         height: 100%;
     }
 
     .heroTopLeftTitle {
-        font-size: 2rem;
+        font-size: 1.8rem;
         line-height: 1.1;
         letter-spacing: 0.1rem;
         word-spacing: 0.3rem;
@@ -311,7 +311,7 @@
     .heroSection {
         width: 100%;
         gap: 2rem;
-        padding: 5.5vh 2rem 10.5rem 2rem;
+        padding: 11rem 1.2rem 12rem 1.2rem;
     }
 
     .heroTop {
@@ -333,7 +333,7 @@
     }
 
     .heroTopLeftTitle {
-        font-size: 2.1rem;
+        font-size: 2rem;
         line-height: 1.1;
         letter-spacing: 0.1rem;
         word-spacing: 0.3rem;
