@@ -298,6 +298,7 @@
 
   .footer{
     margin-top: 0rem;
+    padding-bottom: 0rem;
   }
 
   .footerContainer {
@@ -335,7 +336,7 @@
   }
 
   .footerBottom{
-    height: 15px;
+    height: 5px;
   }
 
   .footerLinks{
@@ -353,7 +354,7 @@
   .footer{
     margin-top: 0rem;
     padding-top: 6.5vh;
-    padding-bottom: 4rem;
+    padding-bottom: 0rem;
   }
 
   .footerContainer {

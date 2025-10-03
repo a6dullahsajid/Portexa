@@ -11,7 +11,7 @@
 }
 
 .faqTitle {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     font-weight: bold;
     text-align: center;
     margin-bottom: 1rem;
@@ -19,24 +19,17 @@
 }
 
 .faqContainer {
-    width: 48%;
+    width: 65%;
     display: flex;
     flex-direction: column;
     font-family: sans-serif;
-    gap: 1rem;
 }
 
 .faqItem {
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
+    border-bottom: 1px solid #e0e0e0;
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(95, 16, 191, 0.2);
     transition: box-shadow 0.3s ease;
     z-index: 990;
-}
-
-.faqItem:hover {
-    box-shadow: 0 4px 8px rgba(95, 16, 191, 0.3);
 }
 
 .faqQuestion {
@@ -44,15 +37,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.6rem 1.5rem;
-    background-color: rgb(249, 244, 255);
     cursor: pointer;
     font-weight: lighter;
     transition: background-color 0.3s ease;
     user-select: none;
-}
-
-.faqQuestion:hover {
-    background-color: rgb(245, 237, 255);
 }
 
 .faqQuestion h2 {
@@ -82,7 +70,6 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
-    background-color: #fff;
 }
 
 .faqAnswer.open {
@@ -92,7 +79,7 @@
 
 .faqAnswer p {
     margin: 0;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
     color: #666;
     line-height: 1.6;
     font-size: 1rem;
@@ -103,40 +90,29 @@
         gap: 1rem;
         padding: 2rem 0rem;
         max-width: 100%;
-        padding-top: 8vh;
-        padding-bottom: 5vh;
+        padding: 8vh 2rem 5vh 2rem;
     }
     
     .faqTitle {
-        font-size: 2.1rem;
+        font-size: 1.8rem;
         margin-bottom: 0.5rem;
     }
     
     .faqContainer {
-        width: 70%;
-        gap: 1rem;
+        width: 100%;
     }
     
     .faqItem {
-        border-radius: 5px;
         overflow: hidden;
-    }
-    
-    .faqItem:hover {
-        box-shadow: none;
     }
     
     .faqQuestion {
         padding: 0.2rem 0.5rem;
-        background-color: rgb(249, 244, 255);
         cursor: pointer;
         font-weight: lighter;
         transition: background-color 0.3s ease;
         user-select: none;
-    }
-    
-    .faqQuestion:hover {
-        background-color: rgb(245, 237, 255);
+        background-color: rgb(255, 255, 255);
     }
     
     .faqQuestion h2 {
@@ -159,7 +135,8 @@
     .faqAnswer p {
         margin: 0;
         line-height: 1.6;
-        font-size: 0.8rem;
+        font-size: 0.6rem;
+        padding-top: 0.1rem;
     }
 }
 
@@ -191,15 +168,10 @@
     
     .faqQuestion {
         padding: 0.2rem 0.5rem;
-        background-color: rgb(249, 244, 255);
         cursor: pointer;
         font-weight: lighter;
         transition: background-color 0.3s ease;
         user-select: none;
-    }
-    
-    .faqQuestion:hover {
-        background-color: rgb(245, 237, 255);
     }
     
     .faqQuestion h2 {
@@ -309,7 +281,6 @@
         gap: 2rem;
         padding: 10vh 2rem 4rem 2rem;
         max-width: 100%;
-        z-index: 1005;
     }
     
     .faqTitle {
@@ -318,7 +289,7 @@
     }
     
     .faqContainer {
-        width: 60%;
+        width: 80%;
         gap: 1rem;
     }
         

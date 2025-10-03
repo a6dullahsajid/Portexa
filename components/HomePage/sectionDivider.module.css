@@ -6,21 +6,21 @@
 }
 
 .sectionDividerLine {
-    width: 80%;
+    width: 95%;
     height: 1px;
     background: rgba(95, 16, 191, 0.3);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(95, 16, 191, 0.3);
+    border: 1px solid rgba(95, 16, 191, 0.1);
     border-radius: 10px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 
-                0 1px 3px rgba(0, 0, 0, 0.08),
-                inset 0 1px 0 rgba(95, 16, 191, 0.1);
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 
+                0 1px 1px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(95, 16, 191, 0.1); */
 }
 
 @media (max-width:389px) {
     .sectionDividerLine {
-        width: 85%;
+        width: 95%;
         box-shadow: none;
     }
 

@@ -191,13 +191,13 @@
 
 @media (min-width:577px) and (max-width: 767px) {
     .main{
-        gap: 2.5rem;
+        gap: 0rem;
     }
 }
 
 @media (min-width:767px) and (max-width: 991px) {
     .main{
-        gap: 2.5rem;
+        gap: 0rem;
     }
 }
 

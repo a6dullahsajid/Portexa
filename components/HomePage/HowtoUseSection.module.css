@@ -10,7 +10,7 @@
 }
 
 .howtoUseTitle {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     font-weight: bold;
 }
 
@@ -82,12 +82,11 @@
 @media (max-width: 389px){
     .howtoUseSection {
         gap: 1rem;
-        padding-top: 8vh;
-        padding-bottom: 5vh;
+        padding: 8vh 2rem 5vh 2rem;
     }
     
     .howtoUseTitle {
-        font-size: 2rem;
+        font-size: 1.8rem;
         text-align: center;
     }
     

@@ -10,7 +10,7 @@
 }
 
 .whyPortexaTitle {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     font-weight: bold;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .whyPortexaSubtitle {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-align: center;
     color: var(--theme-text-color);
     font-weight: 500;
@@ -134,47 +134,53 @@
 @media (max-width:389px) {
     .whyPortexaSection {
         gap: 0.5rem;
-        padding-top: 8vh;
+        padding: 8vh 0rem 5vh 0rem;
     }
     
     .whyPortexaTitle {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        padding: 0 2rem;
         text-align: center;
         line-height: 1.1;
     }
-        
+    
     .whyPortexaSubtitle {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         width: 95%;
+        padding: 0 2rem;
     }
     
     .whyCardsContainer {
         margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         gap: 1rem;
         width: 100%;
     }
     
     .whyCard {
-        width: 40%;
+        width: 55%;
         gap: 0rem;
-        min-height: 170px;
-        padding: 0.5rem;
+        min-height: 220px;
+        padding: 1.2rem;
         border: 1px solid rgba(95, 16, 191, 0.1);
         box-shadow: 0px 2px 5px rgba(95, 16, 191, 0.2);
         border-radius: 8px;
     }
     
     .whyCard h2 {
-        font-size: 0.9rem;
+        font-size: 1rem;
         font-weight: bold;
     }
     
     .whyCard img {
-        width: 22px;
+        width: 25px;
     }
     
     .whyCard p {
-        font-size: 0.6rem;
+        font-size: 0.7rem;
         letter-spacing: 0.5px;
     }
     
@@ -217,26 +223,32 @@
     }
     
     .whyPortexaTitle {
-        font-size: 2.2rem;
+        font-size: 2rem;
         text-align: center;
+        padding: 0 1rem;
     }
-        
+    
     .whyPortexaSubtitle {
-        font-size: 1.1rem;
+        font-size: 0.8rem;
         width: 95%;
+        padding: 0 1rem;
     }
     
     .whyCardsContainer {
         margin-top: 1.5rem;
         gap: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         width: 100%;
     }
     
     .whyCard {
-        width: 43%;
+        width: 55%;
         gap: 0rem;
-        min-height: 215px;
-        padding: 0.5rem;
+        min-height: 240px;
+        padding: 1.5rem;
         border: 1px solid rgba(95, 16, 191, 0.1);
         box-shadow: 0px 2px 5px rgba(95, 16, 191, 0.2);
         border-radius: 8px;
