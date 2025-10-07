@@ -701,7 +701,7 @@ export default function PortfolioForm() {
                                     </div>
                                 </div>
                                 <button type="submit" className={styles.btnSubmit} disabled={isSubmitting}>
-                                    {isSubmitting ? <>Generating Portfolio<span className={styles.dots}></span></> : "Finish"}
+                                    {isSubmitting ? <>Publishing...<span className={styles.dots}></span></> : "Publish"}
                                 </button>
                             </div>
                         </>

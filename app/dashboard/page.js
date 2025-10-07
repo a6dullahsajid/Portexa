@@ -14,7 +14,8 @@ const templates = [
     { id: "template1", name: "Classic", img: "/portfolioExamples/example_1.png", preview: "https://a6dullahsajid.github.io/Portfolio/" },
     { id: "template2", name: "Minimal", img: "/portfolioExamples/example_2.png", preview: "https://sanskritirathaur.github.io/Portfolio/" },
     { id: "template3", name: "Modern", img: "/portfolioExamples/example_3.png", preview: "https://portfolio-ali-arshad-khan.netlify.app/" },
-    { id: "template4", name: "Modern", img: "/portfolioExamples/example_4.png", preview: "https://www.adeolabadero.me/" },
+    { id: "template4", name: "Dark", img: "/portfolioExamples/example_4.png", preview: "https://www.adeolabadero.me/" },
+    { id: "template5", name: "Midnight", img: "/portfolioExamples/example_5.png", preview: "https://www.adeolabadero.me/" },
 ];
 
 

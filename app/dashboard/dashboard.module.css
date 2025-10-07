@@ -11,8 +11,8 @@
 .loadingSpinner {
     width: 60px;
     height: 60px;
-    border: 4px solid rgba(74, 82, 168, 0.2);
-    border-top: 4px solid var(--theme-button-color);
+    border: 4px solid rgba(95, 16, 191, 0.2);
+    border-top: 4px solid #5f10bf;
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -25,8 +25,10 @@
 .loadingTitle {
     font-size: 2.5rem;
     font-weight: bold;
-    color: var(--theme-text-color);
-    text-shadow: var(--theme-text-shadow);
+    background: linear-gradient(135deg, #5f10bf, #106dbf);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin: 0;
     animation: pulse 2s ease-in-out infinite;
 }
@@ -44,8 +46,8 @@
 
 .loadingSubtitle {
     font-size: 1.1rem;
-    color: var(--theme-text-color);
-    opacity: 0.8;
+    color: #3d4494;
+    opacity: 0.85;
     margin: 0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -59,7 +61,7 @@
 .loadingDots span {
     width: 8px;
     height: 8px;
-    background-color: var(--theme-button-color);
+    background-color: #5f10bf;
     border-radius: 50%;
     animation: bounce 1.4s ease-in-out infinite both;
 }
@@ -136,14 +138,23 @@
     font-weight: bold;
     word-spacing: 0.5rem;
     text-transform: uppercase;
-    color: var(--theme-text-color);
-    text-shadow: var(--theme-text-shadow);
+    background: linear-gradient(135deg, #5f10bf, #106dbf);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .heading p {
     font-size: 1rem;
-    color: var(--theme-text-color);
+    color: #3d4494;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out;
+    animation-delay: 0.2s;
 }
 
 .templateContainer {
@@ -165,22 +176,42 @@
     overflow: hidden;
     cursor: pointer;
     border-radius: 0.5rem;
-    background-color: var(--theme-bg);
-    border: 1px solid rgba(74, 82, 168, 0.3);
-    box-shadow: 0px 0px 5px rgba(74, 82, 168, 0.3);
-    transition: all 300ms ease-out;
-    animation: cardSlideIn 0.6s ease-out both, float 6s ease-in-out infinite;
-    animation-delay: calc(var(--card-index) * 0.1s);
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, #5f10bf, #106dbf) border-box;
+    border: 1px solid transparent;
+    box-shadow: 0px 4px 15px rgba(95, 16, 191, 0.15);
+    transform-origin: center center;
+    will-change: transform, opacity;
+    animation: tvTurnOn 1.5s cubic-bezier(0.22, 0.65, 0.2, 1) both;
+    transition: all 0.3s ease;
 }
 
-@keyframes cardSlideIn {
-    from {
+@keyframes tvTurnOn {
+    0% {
+        transform: scaleX(0.9) scaleY(0.02);
         opacity: 0;
-        transform: translateY(40px) scale(0.9);
+        filter: brightness(1.3);
     }
-    to {
+    12% {
+        transform: scaleX(0.95) scaleY(0.02);
         opacity: 1;
-        transform: translateY(0) scale(1);
+        filter: brightness(1.1);
+    }
+    55% {
+        transform: scaleX(1) scaleY(1.02);
+        opacity: 1;
+        filter: brightness(1);
+    }
+    72% {
+        transform: scaleX(1.04) scaleY(1);
+    }
+    86% {
+        transform: scaleX(0.985) scaleY(1);
+    }
+    100% {
+        transform: scaleX(1) scaleY(1);
+        opacity: 1;
+        filter: none;
     }
 }
 
@@ -206,9 +237,10 @@
 }
 
 .templateCard:hover {
-    transform: scale(1.08) translateY(-5px);
-    /* border: 1px solid #1a1f5e; */
-    box-shadow: 0px 10px 25px rgba(26, 31, 94, 0.4);
+    background: linear-gradient(135deg, #f8f9ff, white) padding-box,
+                linear-gradient(135deg, #5f10bf, #106dbf) border-box;
+    transform: scale(1.05) translateY(-8px);
+    box-shadow: 0px 0px 5px rgba(95, 16, 191, 0.3);
 }
 
 .templateCard:active {
@@ -452,6 +484,10 @@
     .heading h1 {
         font-size: 2.8rem;
         word-spacing: 0.2rem;
+        background: linear-gradient(135deg, #5f10bf, #106dbf);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     .heading p {
