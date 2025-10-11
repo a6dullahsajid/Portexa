@@ -83,7 +83,7 @@ export default function PortfolioForm() {
     }
 
     const handleTitleChange = (e) => {
-        dispatch(setTitle(e.target.value))
+        dispatch(setTitle(e.target.value));
     }
 
     const handleProfileChange = (e) => {
@@ -109,11 +109,11 @@ export default function PortfolioForm() {
     };
 
     const handleBioChange = (e) => {
-        dispatch(setBio(e.target.value))
+        dispatch(setBio(e.target.value));
     }
 
     const handleResumeChange = (e) => {
-        dispatch(setResume(e.target.value))
+        dispatch(setResume(e.target.value));
     }
 
     const handleAddSkill = () => {
@@ -238,7 +238,72 @@ export default function PortfolioForm() {
         dispatch(setX(e.target.value))
     }
 
-    const nextStep = () => setStep((prev) => prev + 1);
+    const validateStep1 = () => {
+        const errors = [];
+        
+        // Check required fields for step 1
+        if (!name || name.trim() === '') {
+            errors.push('Name is required');
+        }
+        if (!title || title.trim() === '') {
+            errors.push('Title/Role is required');
+        }
+        if (!bio || bio.trim() === '') {
+            errors.push('About section is required');
+        }
+        if (!resume || resume.trim() === '') {
+            errors.push('Resume link is required');
+        }
+        if (!skills || skills.length === 0) {
+            errors.push('At least one skill is required');
+        }
+        
+        // Show specific error messages via toast
+        if (errors.length > 0) {
+            errors.forEach(error => {
+                toast.error(error);
+            });
+            return false;
+        }
+        
+        return true;
+    };
+
+    const validateStep4 = () => {
+        const errors = [];
+        
+        // Check required fields for step 4 (contact section)
+        if (!connectDesc || connectDesc.trim() === '') {
+            errors.push('Description is required');
+        }
+        if (!email || email.trim() === '') {
+            errors.push('Email is required');
+        }
+        if (!linkedin || linkedin.trim() === '') {
+            errors.push('LinkedIn URL is required');
+        }
+        
+        // Show specific error messages via toast
+        if (errors.length > 0) {
+            errors.forEach(error => {
+                toast.error(error);
+            });
+            return false;
+        }
+        
+        return true;
+    };
+
+    const nextStep = () => {
+        if (step === 1) {
+            if (validateStep1()) {
+                setStep((prev) => prev + 1);
+            }
+        } else {
+            setStep((prev) => prev + 1);
+        }
+    };
+    
     const prevStep = () => setStep((prev) => prev - 1);
 
     const userData = useSelector((state) => state.userData);
@@ -247,6 +312,11 @@ export default function PortfolioForm() {
         e.preventDefault();
 
         if (isSubmitting) {
+            return;
+        }
+
+        // Validate step 4 before submitting
+        if (!validateStep4()) {
             return;
         }
 
@@ -341,6 +411,9 @@ export default function PortfolioForm() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
             />
+            <div className={styles.topProgressBar}>
+                <div className={styles.topProgressFill} style={{ width: `${(step / 4) * 100}%` }}></div>
+            </div>
             <Navbar />
             <main className={styles.template1}>
                 <form onSubmit={handleSubmit} className={styles.portfolioForm} role="form" aria-label="Portfolio Builder Form">
@@ -373,7 +446,7 @@ export default function PortfolioForm() {
                                 </div>
 
                                 <div className={styles.inputContainer} style={{ '--input-index': 1 }}>
-                                    <label className={styles.formLabel}>Role / Title</label>
+                                    <label className={styles.formLabel}>Role / Title *</label>
                                     <input
                                         name="title"
                                         placeholder="E.g. Data Engineer"
@@ -404,7 +477,7 @@ export default function PortfolioForm() {
                                 </div>
 
                                 <div className={styles.inputContainer} style={{ '--input-index': 3 }}>
-                                    <label className={styles.formLabel}>About</label>
+                                    <label className={styles.formLabel}>About *</label>
                                     <textarea
                                         name="bio"
                                         placeholder="Write something for your about section"
@@ -415,7 +488,7 @@ export default function PortfolioForm() {
                                 </div>
 
                                 <div className={styles.inputContainer} style={{ '--input-index': 4 }}>
-                                    <label className={styles.formLabel}>Resume</label>
+                                    <label className={styles.formLabel}>Resume *</label>
                                     <input
                                         name="resume"
                                         placeholder="Enter a link to your resume"
@@ -426,7 +499,7 @@ export default function PortfolioForm() {
                                 </div>
 
                                 <div className={styles.inputContainer} style={{ '--input-index': 5 }}>
-                                    <label className={styles.formLabel}>Skills</label>
+                                    <label className={styles.formLabel}>Skills *</label>
                                     <div className={styles.skillInputWrapper}>
                                         <input
                                             type="text"
@@ -453,9 +526,6 @@ export default function PortfolioForm() {
                                 </Link>
                                 <div className={styles.progressIndicator}>
                                     <span className={styles.stepCounter}>Step {step} of 4</span>
-                                    <div className={styles.progressBar}>
-                                        <div className={styles.progressFill} style={{ width: `${(step / 4) * 100}%` }}></div>
-                                    </div>
                                 </div>
                                 <button type="button" onClick={nextStep} className={styles.btnNext}>Next</button>
                             </div>
@@ -465,6 +535,7 @@ export default function PortfolioForm() {
                     {/* STEP 2 */}
                     {step === 2 && (
                         <>
+                            <p className={styles.instructionText}>Latest work appears at the top</p>
                             <div className={styles.projectSection}>
                                 <div className={styles.inputContainer}>
                                     <label className={styles.formLabel}>Project Title</label>
@@ -548,9 +619,6 @@ export default function PortfolioForm() {
                                 <button type="button" onClick={prevStep} className={styles.btnPrev}>Back</button>
                                 <div className={styles.progressIndicator}>
                                     <span className={styles.stepCounter}>Step {step} of 4</span>
-                                    <div className={styles.progressBar}>
-                                        <div className={styles.progressFill} style={{ width: `${(step / 4) * 100}%` }}></div>
-                                    </div>
                                 </div>
                                 <button type="button" onClick={nextStep} className={styles.btnNext}>Next</button>
                             </div>
@@ -561,6 +629,7 @@ export default function PortfolioForm() {
                     {step === 3 && (
                         <>
                             <p className={styles.skipExp}>You can skip this if you are a fresher</p>
+                            <p className={styles.instructionText}>Latest work appears at the top</p>
                             <div className={styles.expSection}>
                                 <div className={styles.inputContainer}>
                                     <label className={styles.formLabel}>Orgaisation Name</label>
@@ -628,9 +697,6 @@ export default function PortfolioForm() {
                                 <button type="button" onClick={prevStep} className={styles.btnPrev}>Back</button>
                                 <div className={styles.progressIndicator}>
                                     <span className={styles.stepCounter}>Step {step} of 4</span>
-                                    <div className={styles.progressBar}>
-                                        <div className={styles.progressFill} style={{ width: `${(step / 4) * 100}%` }}></div>
-                                    </div>
                                 </div>
                                 <button type="button" onClick={nextStep} className={styles.btnNext}>Next</button>
                             </div>
@@ -642,7 +708,7 @@ export default function PortfolioForm() {
                         <>
                             <div className={styles.connectSection}>
                                 <div className={styles.inputContainer}>
-                                    <label className={styles.formLabel}>Connect Section Description</label>
+                                    <label className={styles.formLabel}>Connect Section Description *</label>
                                     <textarea
                                         name="connectDesc"
                                         onChange={handleConnectDescChange}
@@ -652,7 +718,7 @@ export default function PortfolioForm() {
                                 </div>
 
                                 <div className={styles.inputContainer}>
-                                    <label className={styles.formLabel}>Email</label>
+                                    <label className={styles.formLabel}>Email *</label>
                                     <input
                                         name="email"
                                         onChange={handleEmailChange}
@@ -662,7 +728,7 @@ export default function PortfolioForm() {
                                 </div>
 
                                 <div className={styles.inputContainer}>
-                                    <label className={styles.formLabel}>LinkedIn URL</label>
+                                    <label className={styles.formLabel}>LinkedIn URL *</label>
                                     <input
                                         name="linkedin"
                                         onChange={handleLinkedinChange}
@@ -696,12 +762,12 @@ export default function PortfolioForm() {
                                 <button type="button" onClick={prevStep} className={styles.btnPrev}>Back</button>
                                 <div className={styles.progressIndicator}>
                                     <span className={styles.stepCounter}>Step {step} of 4</span>
-                                    <div className={styles.progressBar}>
+                                    {/* <div className={styles.progressBar}>
                                         <div className={styles.progressFill} style={{ width: `${(step / 4) * 100}%` }}></div>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <button type="submit" className={styles.btnSubmit} disabled={isSubmitting}>
-                                    {isSubmitting ? <>Publishing...<span className={styles.dots}></span></> : "Publish"}
+                                    {isSubmitting ? <>Publishing<span className={styles.dots}></span></> : "Publish"}
                                 </button>
                             </div>
                         </>

@@ -38,7 +38,7 @@
 }
 
 .template1 {
-    height: 78vh;
+    height: 82vh;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -218,6 +218,18 @@
     justify-content: center;
 }
 
+.instructionText {
+    color: #5f10bf;
+    width: 100%;
+    display: flex;
+    padding: 0rem 0rem 1rem 0rem;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 500;
+    font-style: italic;
+    opacity: 0.8;
+}
+
 .connectSection {
     justify-content: start;
 }
@@ -269,6 +281,31 @@
     border-color: #5f10bf;
     box-shadow: 0 3px 7px rgba(95, 16, 191, 0.5);
     transform: translateY(-2px);
+}
+
+/* Error states */
+.inputError {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+}
+
+.errorMessage {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    font-weight: 500;
+    animation: fadeInError 0.3s ease-in-out;
+}
+
+@keyframes fadeInError {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .profileInputWrapper {
@@ -363,7 +400,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    z-index: 1000;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 255, 0.95) 100%);
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(74, 82, 168, 0.1);
@@ -448,7 +484,6 @@
     cursor: pointer;
     height: auto;
     width: fit-content;
-    min-width: 120px;
     color: white;
     background: linear-gradient(135deg, #5f10bf, #9c4bff);
     box-shadow: 0 4px 15px rgba(74, 82, 168, 0.2);
@@ -467,14 +502,13 @@
     border-radius: 50px;
     font-size: 1.1rem;
     font-weight: 600;
-    padding: 0.8rem 1.5rem;
+    padding: 0.4rem 1.2rem;
     background: linear-gradient(135deg, var(--theme-button-color), #3d4494);
     color: white;
     border: none;
     transition: all 0.3s ease;
     box-shadow: 0 6px 20px rgba(74, 82, 168, 0.3);
     cursor: pointer;
-    min-width: 140px;
     position: relative;
     overflow: hidden;
     text-transform: uppercase;
@@ -595,23 +629,6 @@
     animation: dots 1.5s steps(4, end) infinite;
 }
 
-/* Progress Indicator */
-.progressBar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: rgba(74, 82, 168, 0.1);
-    z-index: 1001;
-}
-
-.progressFill {
-    height: 100%;
-    background: linear-gradient(135deg, #5f10bf, #106dbf);
-    transition: width 0.5s ease;
-    border-radius: 0 2px 2px 0;
-}
 
 /* Form Section Headers */
 .sectionHeader {
@@ -683,6 +700,24 @@
     }
 }
 
+/* Top Progress Bar */
+.topProgressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(74, 82, 168, 0.1);
+    z-index: 1001;
+}
+
+.topProgressFill {
+    height: 100%;
+    background: linear-gradient(135deg, #5f10bf, #106dbf);
+    transition: width 0.5s ease;
+    border-radius: 0 2px 2px 0;
+}
+
 
 @media (max-width:389px) {
     .template1 {
@@ -704,6 +739,7 @@
         height: 100%;
         width: 100%;
         padding: 1rem;
+        padding-bottom: 8rem;
         color: white;
     }
 
@@ -740,7 +776,7 @@
         flex-wrap: wrap;
         align-items: flex-start;
         justify-content: flex-start;
-        padding: 0rem 1rem 6rem 1rem;
+        padding: 0rem 1rem 8rem 1rem;
         gap: 2rem;
 
     }
@@ -909,7 +945,7 @@
         border-radius: 20px;
         font-size: 0.7rem;
         font-weight: 600;
-        padding: 0.3rem 0.5rem;
+        padding: 0.3rem 0.4rem;
         border: none;
         transition: all 0.3s ease;
         box-shadow: 0 2px 6px rgba(74, 82, 168, 0.3);
