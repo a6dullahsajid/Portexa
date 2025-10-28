@@ -11,11 +11,11 @@ import { useCallback, useEffect, useState } from "react";
 import { setTemplate, setUserName, initializeUserData } from "@/store/userDataSlice";
 
 const templates = [
-    { id: "template1", name: "Classic", img: "/portfolioExamples/example_1.png", preview: "https://a6dullahsajid.github.io/Portfolio/" },
-    { id: "template2", name: "Minimal", img: "/portfolioExamples/example_2.png", preview: "https://sanskritirathaur.github.io/Portfolio/" },
-    { id: "template3", name: "Modern", img: "/portfolioExamples/example_3.png", preview: "https://portfolio-ali-arshad-khan.netlify.app/" },
-    { id: "template4", name: "Dark", img: "/portfolioExamples/example_4.png", preview: "https://www.adeolabadero.me/" },
-    { id: "template5", name: "Midnight", img: "/portfolioExamples/example_5.png", preview: "https://www.adeolabadero.me/" },
+    { id: "template1", name: "Classic", img: "/portfolioExamples/example_1.png", preview: "/preview_template1" },
+    { id: "template2", name: "Minimal", img: "/portfolioExamples/example_2.png", preview: "/preview_template2" },
+    { id: "template3", name: "Modern", img: "/portfolioExamples/example_3.png", preview: "/preview_template3" },
+    { id: "template4", name: "Dark", img: "/portfolioExamples/example_4.png", preview: "/preview_template4" },
+    { id: "template5", name: "Midnight", img: "/portfolioExamples/example_5.png", preview: "preview_template5" },
 ];
 
 
@@ -139,7 +139,12 @@ export default function Dashboard() {
                             </div>
                             <div className={styles.tempTextContainer}>
                                 <p>{tpl.name}</p>
-                                <a className={styles.tempPrevButton} href={tpl.preview} target="_blank" rel="noopener noreferrer">Preview</a>
+                                <button 
+                                    className={styles.tempPrevButton} 
+                                    onClick={() => router.push(tpl.preview)}
+                                >
+                                    Preview
+                                </button>
                             </div>
                         </div>
                     ))}

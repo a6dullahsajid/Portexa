@@ -110,6 +110,7 @@
 
 .section {
     width: 80%;
+    padding-top: 14vh;
 }
 
 .section1 {
@@ -117,7 +118,7 @@
     justify-content: space-between;
     align-items: center;
     width: 80%;
-    min-height: 89vh;
+    min-height: 84vh;
 }
 
 .hey {
@@ -387,7 +388,7 @@
 }
 
 .section5 {
-    min-height: 85vh;
+    min-height: 75vh;
 }
 
 .connectContainer {
