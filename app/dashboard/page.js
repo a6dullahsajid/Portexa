@@ -141,7 +141,7 @@ export default function Dashboard() {
                                 <p>{tpl.name}</p>
                                 <button 
                                     className={styles.tempPrevButton} 
-                                    onClick={() => router.push(tpl.preview)}
+                                    onClick={() => window.open(tpl.preview, '_blank', 'noopener,noreferrer')}
                                 >
                                     Preview
                                 </button>
