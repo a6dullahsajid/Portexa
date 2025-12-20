@@ -3,7 +3,7 @@ import styles from "./template1.module.css";
 export default function SectionExp({ userDetails }) {
     return (
         <>
-            <section id="sectionexp" className={`${styles.section} ${styles.section2}`}>
+            {userDetails.experience.length !== 0 && <section id="sectionexp" className={`${styles.section} ${styles.section2}`}>
                 <h2 className={styles.h2}>
                     Experience
                     <div className={styles.line}></div>
@@ -20,7 +20,7 @@ export default function SectionExp({ userDetails }) {
                             ))}</div>
                     </div>
                 })}
-            </section>
+            </section>}
         </>
     )
 }

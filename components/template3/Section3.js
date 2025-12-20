@@ -8,8 +8,7 @@ export default function Section3({ userDetails }) {
   function handleActiveCompany(index) {
     setCompanyIndex(index);
   }
-  return (
-    <section id="section3" className={`${styles.section} ${styles.section3}`}>
+  return (userDetails.experience.length !== 0 && <section id="section3" className={`${styles.section} ${styles.section3}`}>
       <div className={styles.heading}>
         <h4>Where I&apos;ve Worked</h4>
         <div className={styles.hline}></div>

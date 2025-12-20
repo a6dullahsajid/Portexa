@@ -2,8 +2,7 @@ import Project from "./Project.js";
 import styles from "./template1.module.css";
 
 export default function Section3({projects}) {
-  return (
-    <section id="section3" className={`${styles.section} ${styles.section3}`}>
+  return (projects.length !== 0 && <section id="section3" className={`${styles.section} ${styles.section3}`}>
       <h2 className={styles.h2}>
         Projects
         <div className={styles.line}></div>

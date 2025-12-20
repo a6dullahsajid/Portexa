@@ -11,15 +11,16 @@ export default function Screen({ userDetails }) {
         <div className={styles.screen}>
             <div className={styles.left}>
                 <div className={styles.socialIcons}>
-                    <a href={userDetails.github}>
+                    {userDetails.github && <a href={userDetails.github}>
                         <img src="/template1/github_logo.png" target="_blank" alt="" />
                     </a>
-                    <a href={userDetails.x}>
+                    }
+                    {userDetails.x && <a href={userDetails.x}>
                         <img src="/template1/x_logo.png" target="_blank" alt="" />
-                    </a>
-                    <a href={userDetails.github}>
+                    </a>}
+                    {userDetails.linkedin && <a href={userDetails.linkedin}>
                         <img src="/template1/linkedin.png" target="_blank" alt="" />
-                    </a>
+                    </a>}
                 </div>
                 <div className={styles.vline}></div>
             </div>
@@ -27,7 +28,7 @@ export default function Screen({ userDetails }) {
                 <Section1 userDetails={userDetails} />
                 <Section2 userDetails={userDetails} />
                 {userDetails.experience.length !== 0 && <Section3 userDetails={userDetails} />}
-                <Section4 userDetails={userDetails} />
+                {userDetails.projects.length !== 0 && <Section4 userDetails={userDetails} />}
                 <Section5 userDetails={userDetails} />
             </main>
             <div className={styles.right}>

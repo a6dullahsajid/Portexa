@@ -7,9 +7,9 @@ export default function Section1({userDetails}) {
       <h1 className={styles.hi}>Hi, my name is</h1>
       <h2 className={styles.name}>{userDetails.name}</h2>
       <h3 className={styles.profName}>I&apos;m a {userDetails.title}.</h3>
-      <a href={userDetails.resume} target='_blank'>
+      {userDetails.resume && <a href={userDetails.resume} target='_blank'>
         <button className={styles.resume}>Resume</button>
-      </a>
+      </a>}
     </section>
   )
 }

@@ -4,7 +4,7 @@ import styles from "./template2.module.css";
 export default function Section4({ userDetails }) {
     return (
         <>
-            <section id="section4" className={`${styles.section} ${styles.section4}`}>
+            {userDetails.projects.length !== 0 && <section id="section4" className={`${styles.section} ${styles.section4}`}>
                 <h2>
                     My Projects
                 </h2>
@@ -12,7 +12,7 @@ export default function Section4({ userDetails }) {
                     {userDetails.projects.slice().reverse().map((project, index) => {
                         return <div key={index} className={styles.projectCard}>
                             <div>
-                                <img src={project.image} alt={project.name} />
+                                {project.image && <img src={project.image} alt={project.name} />}
                                 <div className={styles.projectName}>{project.title}</div>
                                 <div className={styles.projDesc}>{project.desc}</div>
                             </div>
@@ -27,8 +27,8 @@ export default function Section4({ userDetails }) {
                         </div>
                     })}
                 </div>
-            </section>
-            <div className={styles.line}></div>
+            </section>}
+            {userDetails.projects.length !== 0 && <div className={styles.line}></div>}
         </>
     )
 }

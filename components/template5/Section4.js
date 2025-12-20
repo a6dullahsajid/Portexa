@@ -32,7 +32,7 @@ export default function Section4({ userDetails }) {
                 </a>
               </div>
             </div>
-            <img src={project.image} alt={project.name} />
+            {project.image && <img src={project.image} alt={project.name} />}
           </div>
         })}
         </div>

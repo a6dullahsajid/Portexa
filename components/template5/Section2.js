@@ -11,7 +11,7 @@ export default function Section2({ userDetails }) {
             </h2>
             <div className={styles.aboutContainer}>
                 <div className={styles.aboutLeft}>
-                    <img src={userDetails.profileImage} alt="Profile" className={styles.profileImage} />
+                    {userDetails.profileImage && <img src={userDetails.profileImage} alt="Profile" className={styles.profileImage} />}
                 </div>
                 <div className={styles.aboutRight}>
                     <div className={styles.aboutContent}>

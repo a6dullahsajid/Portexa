@@ -11,9 +11,9 @@ export default function Section1({userDetails}) {
             <div className={styles.profession}>
                 <p>A {userDetails.title}</p>
             </div>
-            <a href={userDetails.resume} target='_blank'>
+            {userDetails.resume && <a href={userDetails.resume} target='_blank'>
                 <button className={styles.resume}>Resume</button>
-            </a>
+            </a>}
         </div>
     </section>
   )

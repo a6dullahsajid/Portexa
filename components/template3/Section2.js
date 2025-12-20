@@ -9,7 +9,7 @@ export default function Section2({ userDetails }) {
         <div className={styles.hline}></div>
       </div>
       <div className={styles.content}>
-        <img  className={styles.profileImg} src={userDetails.profileImage} alt="Profile" />
+        {userDetails.profileImage && <img  className={styles.profileImg} src={userDetails.profileImage} alt="Profile" />}
         <div className={styles.aboutBio}>
           <div>{userDetails.bio}</div>
           <div>Here are few technologies I&apos;ve been working with recently:</div>

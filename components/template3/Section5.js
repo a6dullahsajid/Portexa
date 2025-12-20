@@ -11,12 +11,12 @@ export default function Section5({ userDetails }) {
                 <div className={styles.connectContent}>
                     {userDetails.connectDesc}
                 </div>
-                <div>Email:{userDetails.email}</div>
-                <a href={`mailto:${userDetails.email}`}>
+                {userDetails.email && <div>Email:{userDetails.email}</div>}
+                {userDetails.email && <a href={`mailto:${userDetails.email}`}>
                     <button className={styles.helloBtn}>
                         Say Hello
                     </button>
-                </a>
+                </a>}
             </div>
         </section>
     )

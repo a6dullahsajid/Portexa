@@ -8,7 +8,7 @@ export default function Section1({ userName, title, profileImage }) {
         <div className={styles.profession}>{title}</div>
       </div>
       <div className={styles.profile}>
-        <img src={profileImage} alt="Profile Photo" />
+        {profileImage && <img src={profileImage} alt="Profile Photo" />}
       </div>
     </section>
   );

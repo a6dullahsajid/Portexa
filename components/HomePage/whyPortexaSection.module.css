@@ -134,7 +134,7 @@
 @media (max-width:389px) {
     .whyPortexaSection {
         gap: 0.5rem;
-        padding: 8vh 0rem 5vh 0rem;
+        padding: 9vh 0rem 5vh 0rem;
     }
     
     .whyPortexaTitle {
@@ -218,7 +218,7 @@
 @media (min-width:390px) and (max-width: 576px) {
     .whyPortexaSection {
         gap: 1rem;
-        padding-top: 6.5vh;
+        padding-top: 8vh;
         padding-bottom: 4rem;
     }
     

@@ -22,12 +22,12 @@ export default function NavBar({ experience }) {
         </p>
       </a>
       }
-      <a href="#section3">
+      {experience.length !== 0 && <a href="#section3">
         <p>
           <img src="/template1/project.svg" alt="logo" />
           Projects
         </p>
-      </a>
+      </a>}
       <a href="#section4">
         <p>
           <img src="/template1/contact.svg" alt="logo" />

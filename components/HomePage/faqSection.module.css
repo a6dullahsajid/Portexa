@@ -143,7 +143,7 @@
 @media (min-width:390px) and (max-width: 576px) {
     .faqSection {
         gap: 1rem;
-        padding: 6.5vh 0rem 3rem 0rem;
+        padding: 8vh 0rem 3rem 0rem;
         max-width: 100%;
     }
     

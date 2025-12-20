@@ -3,7 +3,7 @@ import styles from "./template2.module.css"
 export default function Section3({ userDetails }) {
     return (
         <>
-            <section id="section3" className={`${styles.section} ${styles.section3}`}>
+            {userDetails.experience.length !== 0 && <section id="section3" className={`${styles.section} ${styles.section3}`}>
                 <h2>Experience</h2>
                 {userDetails.experience.slice().reverse().map((exp, index) => {
                     return <div key={index} className={styles.experienceContainer}>
@@ -18,8 +18,8 @@ export default function Section3({ userDetails }) {
                         </ul>
                     </div>
                 })}
-            </section>
-            <div className={styles.line}></div>
+            </section>}
+            {userDetails.experience.length !== 0 && <div className={styles.line}></div>}
         </>
     )
 }

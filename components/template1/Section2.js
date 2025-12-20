@@ -13,7 +13,7 @@ export default function Section2({ bio, skills }) {
           Resume
         </a>
       </div>
-      <h3 className={styles.h3}>Key Skills</h3>
+      {skills.length !== 0 && <h3 className={styles.h3}>Key Skills</h3>}
       <ul className={styles.skills}>
         {skills.map((skill, index) => {
           return <li key={index}>

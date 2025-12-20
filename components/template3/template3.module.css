@@ -541,8 +541,8 @@
     }
 
     .headerLeft img {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
     }
 
@@ -636,20 +636,20 @@
     .section1 {
         padding-left: 40px;
         padding-top: 100px;
-        min-height: 70vh;
+        min-height: 65vh;
     }
 
     .hi {
-        font-size: 10px;
+        font-size: 12px;
         margin-bottom: 10px;
     }
 
     .name {
-        font-size: 28px;
+        font-size: 30px;
     }
 
     .profName {
-        font-size: 26px;
+        font-size: 28px;
         padding-bottom: 20px;
     }
 
@@ -665,43 +665,46 @@
 
     .heading h4 {
         margin-left: 15px;
-        font-size: 18px;
+        font-size: 20px;
         font-family: "Roboto Mono", monospace;
         font-weight: bold;
         display: flex;
-        width: fit-content;
+        width: max-content; 
     }
 
     .hline {
-        width: 100px;
+        width: 80px;
     }
 
     .content {
-        margin-left: 40px;
-        margin-top: 15px;
+        margin-left: 0px;
+        margin-top: 5px;
+        width: 100%;
+        align-items: center;
+        flex-direction: column;
         gap: 10px;
     }
 
     .profileImg {
         margin-top: 10px;
         margin-left: 10px;
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
     }
 
     .aboutBio {
-        font-size: 9px;
+        font-size: 11px;
         margin-top: 10px;
         gap: 5px;
-        max-width: 170px;
+        max-width: 310px;
         min-width: 120px;
-        line-height: 15px;
+        line-height: 19px;
     }
 
     .skillList {
-        max-width: 170px;
+        max-width: 310px;
         min-width: 120px;
-        grid-template-columns: repeat(2, minmax(80px, 100px));
+        grid-template-columns: repeat(3, minmax(80px, 100px));
         gap: 0px 6px;
         padding-left: 5px;
         padding-top: 5px;
@@ -718,11 +721,11 @@
         display: flex;
         height: 300px;
         padding-top: 40px;
-        padding-left: 40px;
+        padding-left: 30px;
     }
 
     .workLeft {
-        width: 65px;
+        width: 85px;
         padding-top: 20px;
         padding-left: 10px;
         padding-right: 10px;
@@ -798,7 +801,9 @@
 
     .cardHead {
         display: flex;
-        padding: 10px 0px;
+        padding: 8px 0px;
+        width: 75%;
+        margin-bottom: 10px;
     }
 
     .cardHead img {
@@ -807,7 +812,8 @@
 
     .links {
         display: flex;
-        gap: 3px;
+        padding: 2px 0px;
+        gap: 8px;
     }
 
     .projectCard a {
@@ -817,16 +823,16 @@
     }
 
     .projectName {
-        font-size: 17px;
+        font-size: 19px;
         font-weight: bold;
     }
 
     .projectDesc {
-        font-size: 10px;
+        font-size: 11px;
     }
 
     .projectTech {
-        font-size: 10px;
+        font-size: 9px;
         letter-spacing: 0px;
     }
 
@@ -834,7 +840,8 @@
 
     .section5 {
         padding-top: 80px;
-        /* min-height: 55vh; */
+        height: 35vh;
+        padding-bottom: 0px;
     }
 
     .section5 h4 {

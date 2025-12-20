@@ -9,9 +9,9 @@ export default function Section1({userDetails}) {
                     <div className={styles.name}>{userDetails.name}</div>
                     <div className={styles.profname}>{userDetails.title}</div>
                 </div>
-                <div className={styles.photo}>
+                {userDetails.profileImage && <div className={styles.photo}>
                     <img src={userDetails.profileImage} alt="" />
-                </div>
+                </div>}
             </section>
             <div className={styles.line}></div>
         </>

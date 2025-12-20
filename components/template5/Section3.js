@@ -4,7 +4,7 @@ import styles from './template5.module.css'
 export default function Section3({ userDetails }) {
   return (
     <>
-      <section id='section3' className={styles.section3}>
+      {userDetails.experience.length !== 0 && <section id='section3' className={styles.section3}>
         <h2 className={styles.h2}>
           Experience
           <span className={styles.titleUnderline}></span>
@@ -29,9 +29,9 @@ export default function Section3({ userDetails }) {
             </div>
           })}
         </div>
-      </section>
+      </section>}
 
-      <div className={styles.line}></div>
+      {userDetails.experience.length !== 0 && <div className={styles.line}></div>}
     </>
   )
 }

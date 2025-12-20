@@ -12,11 +12,11 @@ export default function Section4({ userDetails }) {
         {userDetails.projects.slice().reverse().map((project, index) => {
           return <div key={index} className={styles.projectCard}>
             <div className={styles.projectImageContainer}>
-            <img src={project.image} alt="project" />
+            {project.image && <img src={project.image} alt="project" />}
             <div className={styles.cardHead}>
               <div className={styles.links}>
                 {project.prevLink && <a href={project.prevLink} target='_blank'>Live</a>}
-                <a href={project.githubLink} target='_blank'>Github</a>
+                {project.githubLink && <a href={project.githubLink} target='_blank'>Github</a>}
               </div>
             </div>
             </div>

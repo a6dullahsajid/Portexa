@@ -11,7 +11,7 @@ export default function Section4({ userDetails }) {
                 <div className={styles.projectContainer}>
                     {userDetails.projects.slice().reverse().map((project, index) => {
                         return <div key={index} className={styles.projectCard}>
-                            <img src={project.image} alt={project.name} />
+                            {project.image && <img src={project.image} alt={project.name} />}
                             <div className={`${styles.projectDetails} kumbh-sans-font`}>
                                 <div className={styles.projHead}>
                                     <div className={styles.projectName}>{project.title}</div>
@@ -41,7 +41,7 @@ export default function Section4({ userDetails }) {
                                                 </svg>
                                             </button>
                                         </a>}
-                                        <a href={project.githubLink} target='_blank'>
+                                        {project.githubLink && <a href={project.githubLink} target='_blank'>
                                             <button>
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ export default function Section4({ userDetails }) {
                                                     </g>
                                                 </svg>
                                             </button>
-                                        </a>
+                                        </a>}
                                     </div>
                                 </div>
                                 <div className={`${styles.projDesc} kumbh-sans-font`}>{project.desc}</div>

@@ -21,7 +21,7 @@ export default function Header({ experience, image, resume }) {
     return (
         <div className={styles.header}>
             <div className={styles.headerLeft}>
-                <img src={image} alt="logo" />
+                {image && <img src={image} alt="logo" />}
                 <span>Portfolio</span>
             </div>
             <div className={`headerRight`}>
@@ -53,9 +53,9 @@ export default function Header({ experience, image, resume }) {
                         </a>
                     </li>
                 </ul>
-                <a href={resume} target='_blank'>
+                {resume && <a href={resume} target='_blank'>
                     <button className={styles.resume}>Resume</button>
-                </a>
+                </a>}
             </div>
             <div className={styles.card} style={{ right: burgerOpen ? "0" : "-60%" }}>
                 <span className={styles.close} onClick={handleClose}>X</span>
