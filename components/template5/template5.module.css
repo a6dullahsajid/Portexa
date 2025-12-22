@@ -230,7 +230,7 @@
     align-items: start;
     justify-content: start;
     width: 80%;
-    padding: 0px 20px;
+    padding: 20px;
 }
 
 .experienceWrapper {
@@ -255,7 +255,7 @@
     flex-direction: column;
     align-items: center;
     width: 8px;
-    height: 280px;
+    min-height: 280px;
     background: linear-gradient(to bottom, #ff3258c5, #ff32583d);
 }
 
@@ -563,7 +563,7 @@
 
     .experienceContainer {
         width: 100%;
-        padding: 0px 10px;
+        padding: 10px;
     }
 
     .experienceDetails {
@@ -573,7 +573,7 @@
 
     .vLine {
         width: 4px;
-        height: 260px;
+        min-height: 260px;
     }
 
     .vLineDot {
@@ -800,7 +800,7 @@
 
     .experienceContainer {
         width: 100%;
-        padding: 0px 15px;
+        padding: 15px;
     }
 
     .experienceDetails {
@@ -810,7 +810,7 @@
 
     .vLine {
         width: 5px;
-        height: 296px;
+        min-height: 296px;
     }
 
     .vLineDot {
@@ -1042,7 +1042,7 @@
 
     .vLine {
         width: 6px;
-        height: 330px;
+        min-height: 330px;
     }
 
     .vLineDot {
@@ -1254,7 +1254,7 @@
 
     .vLine {
         width: 6px;
-        height: 350px;
+        min-height: 350px;
     }
 
     .vLineDot {
@@ -1457,7 +1457,7 @@
 
     .vLine {
         width: 8px;
-        height: 280px;
+        min-height: 280px;
     }
 
     .vLineDot {
