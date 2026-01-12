@@ -208,6 +208,7 @@
 
 .section1 {
     padding-left: 150px;
+    padding-bottom: 150px;
 }
 
 .hi {
@@ -385,7 +386,7 @@
     background-color: #ddc8f7;
     backdrop-filter: 10px;
     width: 320px;
-    min-height: 350px;
+    min-height: 370px;
     height: fit-content;
     color: black;
     overflow: hidden;
@@ -409,8 +410,8 @@
     justify-content: center;
     align-items: center;
     font-family: "Roboto Mono", monospace;
-    padding: 5px 0px;
-    width: 80%;
+    padding: 10px 0px;
+    width: 62%;
     background-color: #C39DF3;
     border-radius: 7px;
     position: relative;
@@ -588,7 +589,7 @@
         background-color: hsla(0, 0%, 100%, 0.9);
         color: black;
         transition: all 0.5s ease;
-        height: 95vh;
+        height: 99vh;
         z-index: 1;
     }
 
@@ -910,7 +911,7 @@
         gap: 40px;
         padding-top: 70px;
         padding-bottom: 0px;
-        height: 95vh;
+        height: 99vh;
         z-index: 1;
     }
 
@@ -925,7 +926,7 @@
 
     .screen {
         display: flex;
-        height: 84vh;
+        height: 90vh;
         width: 100%;
     }
 
@@ -1219,7 +1220,7 @@
         gap: 40px;
         padding-top: 70px;
         padding-bottom: 0px;
-        height: 95vh;
+        height: 99vh;
         z-index: 1;
     }
 
@@ -1234,7 +1235,7 @@
 
     .screen {
         display: flex;
-        height: 84vh;
+        height: 90vh;
         width: 100%;
     }
 
