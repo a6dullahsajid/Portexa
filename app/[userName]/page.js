@@ -6,6 +6,7 @@ import HomePage2 from "@/components/template2/HomePage2";
 import HomePage3 from "@/components/template3/HomePage3";
 import HomePage4 from "@/components/template4/HomePage4";
 import HomePage5 from "@/components/template5/HomePage5";
+import HomePage6 from "@/components/template6/Homepage6";
 import dummyData from "@/lib/dummy_data";
 import NoData from "@/components/NoData";
 
@@ -16,6 +17,7 @@ const TEMPLATE_COMPONENTS = {
   template3: HomePage3,
   template4: HomePage4,
   template5: HomePage5,
+  template6: HomePage6,
 };
 
 // This function fetches the specific user's data from Firestore

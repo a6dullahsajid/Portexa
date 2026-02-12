@@ -35,8 +35,8 @@ export default function HeroSection() {
                 </div>
                 <div className={styles.heroTopRight}>
                     <Image src="/portfolioExamples/example_1.png" className={styles.heroImage1} alt="example 1" width={400} height={400} />
-                    <Image src="/portfolioExamples/example_2.png" className={styles.heroImage2} alt="example 2" width={400} height={400} />
-                    <Image src="/portfolioExamples/example_3.png" className={styles.heroImage3} alt="example 3" width={400} height={400} />
+                    <Image src="/portfolioExamples/example_3.png" className={styles.heroImage2} alt="example 2" width={400} height={400} />
+                    <Image src="/portfolioExamples/example_5.png" className={styles.heroImage3} alt="example 3" width={400} height={400} />
                     <Image src="/portfolioExamples/example_4.png" className={styles.heroImage4} alt="example 4" width={400} height={400} />
                 </div>
             </div>

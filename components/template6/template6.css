@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+  font-display: swap;
+  font-family: 'Gill Sans MT';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Gill Sans MT"), local("Gill Sans"), url(/assets/gillsansmt.ttf) format("truetype");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
