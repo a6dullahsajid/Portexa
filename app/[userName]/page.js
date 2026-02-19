@@ -7,7 +7,7 @@ import HomePage3 from "@/components/template3/HomePage3";
 import HomePage4 from "@/components/template4/HomePage4";
 import HomePage5 from "@/components/template5/HomePage5";
 import HomePage6 from "@/components/template6/Homepage6";
-import Homepage7 from "@/components/template7/homepage7";
+import Homepage7 from "@/components/template7/Homepage7";
 import dummyData from "@/lib/dummy_data";
 import NoData from "@/components/NoData";
 
