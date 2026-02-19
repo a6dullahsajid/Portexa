@@ -1,0 +1,1090 @@
+.root {
+    display: flex;
+    background-color: rgb(36, 36, 36);
+}
+
+.navbar {
+    width: 7vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(210, 252, 252, 0.85);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    background: linear-gradient(135deg, rgb(100 255 255 / 5%), rgb(100 255 255 / 5%));
+    border-radius: 20px;
+    padding: 35px 10px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar ul a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+
+
+.navbar ul a img {
+    width: 25px;
+    height: 25px;
+}
+
+.navbar ul a:hover {
+    text-shadow: 0 0 1px rgba(210, 252, 252, 0.9);
+}
+
+.navbar ul a:hover img {
+    filter: drop-shadow(0 0 1px rgba(210, 252, 252, 0.5));
+}
+
+.screen {
+    width: 93vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.section1 {
+    display: flex;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    gap: 70px;
+    min-height: 100vh;
+    padding: 0px 0px 0px 70px;
+}
+
+.profession {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.hey {
+    color: rgba(210, 252, 252, 0.85);
+    font-size: 21px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.name {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-size: 52px;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    color: rgb(220, 255, 255);
+}
+
+.name span {
+    font-size: 60px;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(135deg, rgb(107, 163, 200), rgb(30, 255, 255));
+}
+
+.profname {
+    font-size: 38px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    color: rgba(210, 252, 252, 0.85);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.photo {
+    height: 320px;
+    overflow: hidden;
+}
+
+.photo img {
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.section2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    padding: 70px 0px 0px 70px;
+}
+
+.h2 {
+    font-size: 54px;
+    width: fit-content;
+    color: rgb(26, 204, 204);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.underline {
+    width: 100%;
+    height: 2px;
+    background-color: rgb(26, 204, 204);
+    margin-top: -1px;
+}
+
+.aboutContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    width: 75%;
+}
+
+.aboutContainer p {
+    font-size: 22px;
+    color: rgba(210, 252, 252, 0.85);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    word-spacing: 5px;
+}
+
+.aboutContainer a {
+    font-size: 20px;
+    color: rgba(210, 252, 252, 0.85);
+    border: 1px solid rgba(210, 252, 252, 0.85);
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: fit-content;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+    transition: all 300ms ease-out;
+}
+
+.aboutContainer a button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.aboutContainer a:hover {
+    background-color: rgba(210, 252, 252, 0.85);
+    color: rgb(36, 36, 36);
+}
+
+.h3 {
+    font-size: 30px;
+    color: rgb(26, 204, 204);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 30px;
+}
+
+.skillContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    width: 60%;
+    margin-top: 10px;
+}
+
+.skill {
+    font-size: 22px;
+    color: rgba(210, 252, 252, 0.85);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    word-spacing: 5px;
+}
+
+.section3 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    padding: 70px 0px 0px 70px;
+}
+
+.experienceContainer {
+    margin-top: 70px;
+    display: flex;
+    gap: 5px;
+    padding: 10px 0px 10px 15px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    width: 80%;
+}
+
+.experienceWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 420px;
+    max-width: 450px;
+}
+
+.vLine {
+    display: flex;
+    align-items: center;
+    height: 8px;
+    min-width: 320px;
+    background: linear-gradient(to right, rgba(190, 255, 255, 0.9), rgba(190, 252, 252, 0.6));
+}
+
+.vLineDot {
+    position: relative;
+    right: 6px;
+    width: 15px;
+    height: 15px;
+    background-color: rgba(190, 252, 252, 1);
+    border-radius: 50%;
+}
+
+
+.experience {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 35px 0px 0px;
+}
+
+.position {
+    font-size: 32px;
+    color: rgb(132, 220, 220);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.company {
+    font-size: 24px;
+    color: rgba(210, 252, 252, 0.95);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.duration {
+    font-size: 17px;
+    color: rgba(210, 252, 252, 0.75);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    line-height: 1.2;
+    font-style: italic;
+}
+
+.work {
+    display: flex;
+    flex-direction: column;
+    font-size: 17px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    word-spacing: 3px;
+    padding: 10px 0px 0px 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgba(210, 252, 252, 0.85);
+    gap: 10px;
+}
+
+.section4 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    min-height: fit-content;
+    padding: 70px 0px 0px 70px;
+}
+
+.projectContainer {
+    margin-top: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px 0px 10px 15px;
+    height: fit-content;
+    width: 100%;
+}
+
+.projectCard {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 15px;
+    width: 95%;
+    height: 310px;
+    background: linear-gradient(135deg, rgb(100 255 255 / 5%), rgb(100 255 255 / 5%));
+    box-shadow: 0 0 3px rgba(210, 252, 252, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 0px 20px;
+    overflow: hidden;
+    transition: all 300ms ease-out;
+}
+
+.projectCard:hover {
+    box-shadow: 0 0 5px rgba(210, 252, 252, 0.3);
+}
+
+.projectCard img {
+    width: 45%;
+    height: 100%;
+    border-radius: 25px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.projectDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.projectName {
+    font-size: 45px;
+    margin-top: -20px;
+    color: rgb(173, 255, 255);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 1.2;
+}
+
+.projectDescription {
+    font-size: 20px;
+    color: rgba(210, 252, 252, 0.75);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    word-spacing: 3px;
+}
+
+.projectTechnologies {
+    display: flex;
+    font-size: 17px;
+    color: rgba(210, 252, 252, 0.75);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    word-spacing: 3px;
+    gap: 10px;
+}
+
+.projectTechnologies ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.projectButtons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 30px;
+    color: rgba(210, 252, 252, 0.75);
+}
+
+.projectButtons a {
+    cursor: pointer;
+    transition: all 300ms ease-out;
+}
+
+.projectButtons button {
+    text-decoration: underline;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.projectButtons a:hover {
+    color: rgba(210, 252, 252, 1);
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 1px rgba(210, 252, 252, 0.7));
+}
+
+.section5 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: fit-content;
+    padding: 70px 0px 0px 70px;
+}
+
+.contactContainer {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 30px;
+    padding: 0px 20px;
+}
+
+.description {
+    font-size: 22px;
+    color: rgba(210, 252, 252, 0.85);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    word-spacing: 5px;
+}
+
+.connectButtons {
+    display: flex;
+    gap: 70px;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+    color: rgba(210, 252, 252, 0.75);
+}
+
+.connectButtons a {
+    font-size: 42px;
+    cursor: pointer;
+    transition: all 300ms ease-out;
+}
+
+.connectButtons a:hover {
+    color: rgba(210, 252, 252, 1);
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 1px rgba(210, 252, 252, 0.7));
+}
+
+.section5Footer {
+    font-size: 20px;
+    color: rgba(210, 252, 252, 0.75);
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    word-spacing: 3px;
+    margin-top: 30px;
+}
+
+
+@media (max-width: 480px) {
+    .root {
+        flex-direction: column-reverse;
+    }
+
+    .navbar {
+        width: 100%;
+        height: 6vh;
+        display: flex;
+        flex-direction: row;
+        padding: 0px 0px 40px 0px;
+    }
+
+    .navbar ul {
+        flex-direction: row;
+        gap: 35px;
+        border-radius: 25px;
+        padding: 10px 15px;
+    }
+
+    .navbar ul a {
+        font-size: 10px;
+    }
+
+    .navbar ul a img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .screen {
+        width: 100%;
+        height: 88vh;
+    }
+
+    .section1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        min-height: 85vh;
+        padding: 0px 10px 0px 10px;
+    }
+
+    .profession {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    .hey {
+        font-size: 18px;
+    }
+
+    .name {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        font-size: 33px;
+    }
+
+    .name span {
+        font-size: 36px;
+        word-spacing: -2px;
+    }
+
+    .profname {
+        font-size: 26px;
+    }
+
+    .photo {
+        height: 210px;
+    }
+
+    .photo img {
+        border-radius: 15px;
+    }
+
+    .section2 {
+        width: 100%;
+        min-height: fit-content;
+        padding: 20px 15px 0px 15px;
+    }
+
+    .h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 46px;
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .underline {
+        width: 70%;
+        height: 2px;
+        margin-top: 0px;
+    }
+
+    .aboutContainer {
+        gap: 10px;
+        width: 100%;
+    }
+
+    .aboutContainer p {
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        line-height: 1.6;
+        word-spacing: 2px;
+    }
+
+    .aboutContainer a {
+        font-size: 16px;
+        padding: 3px 8px;
+        border-radius: 3px;
+    }
+
+    .aboutContainer a button {
+        border: none;
+        background-color: transparent;
+    }
+
+    .aboutContainer a:hover {
+        background-color: transparent;
+        color: rgba(210, 252, 252, 0.85);
+    }
+
+    .h3 {
+        font-size: 27px;
+        margin-top: 40px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .skillContainer {
+        gap: 20px;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .skill {
+        font-size: 16px;
+        letter-spacing: 0.3px;
+        line-height: 1.2;
+        word-spacing: 0px;
+    }
+
+    .section3 {
+        min-height: fit-content;
+        padding: 20px 15px 0px 15px;
+        margin-top: 60px;
+    }
+
+    .experienceContainer {
+        margin-top: 15px;
+        display: flex;
+        gap: 2px;
+        padding: 10px 0px 10px 15px;
+        scrollbar-width: 2px;
+        width: 100%;
+    }
+
+    .experienceWrapper {
+        gap: 10px;
+        min-width: 280px;
+        max-width: 330px;
+    }
+
+    .vLine {
+        height: 5px;
+        min-width: 280px;
+    }
+
+    .vLineDot {
+        right: 6px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+
+
+    .experience {
+        gap: 6px;
+        padding: 10px 25px 0px 0px;
+    }
+
+    .position {
+        font-size: 24px;
+    }
+
+    .company {
+        font-size: 21px;
+    }
+
+    .duration {
+        font-size: 12px;
+    }
+
+    .work {
+        font-size: 15px;
+        letter-spacing: 0.3px;
+        word-spacing: 2px;
+        padding: 6px 0px 0px 0px;
+        gap: 6px;
+    }
+
+    .section4 {
+        width: 100%;
+        height: 100vh;
+        min-height: fit-content;
+        padding: 20px 10px 0px 10px;
+    }
+
+    .projectContainer {
+        margin-top: 25px;
+        gap: 20px;
+        padding: 10px 5px 10px 5px;
+        height: fit-content;
+        width: 100%;
+    }
+
+    .projectCard {
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        height: 450px;
+        max-height: fit-content;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border-radius: 10px;
+        padding: 0px 0px;
+        overflow: hidden;
+        transition: all 300ms ease-out;
+    }
+
+    .projectCard:hover {
+        box-shadow: 0 0 5px rgba(210, 252, 252, 0.3);
+    }
+
+    .projectCard img {
+        width: 100%;
+        height: fit-content;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    .projectDetails {
+        gap: 15px;
+        padding: 0px 14px;
+    }
+
+    .projectName {
+        font-size: 36px;
+        margin-top: 0px;
+    }
+
+    .projectDescription {
+        font-size: 16px;
+        letter-spacing: 0.2px;
+        line-height: 1.2;
+        word-spacing: 2px;
+    }
+
+    .projectTechnologies {
+        display: flex;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+        word-spacing: 0px;
+        gap: 0px;
+    }
+
+    .projectTechnologies ul {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .projectButtons {
+        width: 100%;
+        margin-top: 0px;
+        padding: 10px 0px;
+    }
+
+    .projectButtons button {
+        font-size: 15px;
+        text-decoration: underline;
+        line-height: 1.5;
+        font-style: italic;
+    }
+
+    .projectButtons a:hover {
+        color: rgba(210, 252, 252, 0.85);
+        transform: scale(1);
+        filter: drop-shadow(0 0 0px rgba(210, 252, 252, 0.7));
+    }
+
+    .section5 {
+        width: 100%;
+        min-height: fit-content;
+        padding: 40px 10px 0px 10px;
+    }
+
+    .contactContainer {
+        width: 100%;
+        margin-top: 20px;
+        padding: 0px 15px;
+        padding-bottom: 40px;
+    }
+
+    .description {
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        word-spacing: 2px;
+    }
+
+    .connectButtons {
+        gap: 40px;
+        margin-top: 30px;
+    }
+
+    .connectButtons a {
+        font-size: 36px;
+    }
+
+    .connectButtons a:hover {
+        color: rgba(210, 252, 252, 0.85);
+        transform: scale(1);
+        filter: drop-shadow(0 0 0px rgba(210, 252, 252, 0.7));
+    }
+
+    .section5Footer {
+        display: none;
+        font-size: 16px;
+        letter-spacing: 0.5px;
+        line-height: 1.2;
+        word-spacing: 3px;
+        margin-top: 30px;
+    }
+}
+
+@media (min-width:481px) and (max-width:780px) {
+    .root {
+        flex-direction: column-reverse;
+    }
+    
+    .navbar {
+        width: 100%;
+        height: 10vh;
+    }
+    
+    .navbar ul {
+        flex-direction: row;
+        gap: 45px;
+        padding: 12px 35px;
+    }
+    
+    .navbar ul a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+    }
+    
+    
+    
+    .navbar ul a img {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .screen {
+        width: 100%;
+        height: 87vh;
+    }
+    
+    .section1 {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        min-height: 85vh;
+        padding: 0px 10px;
+    }
+    
+    .profession {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .hey {
+        font-size: 20px;
+    }
+    
+    .name {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        font-size: 48px;
+    }
+    
+    .name span {
+        font-size: 56px;
+    }
+    
+    .profname {
+        font-size: 34px;
+    }
+    
+    .photo {
+        height: 270px;
+    }
+    
+    .photo img {
+        border-radius: 15px;
+    }
+    
+    .section2 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 100vh;
+        padding: 40px 25px 0px 25px;
+    }
+    
+    .h2 {
+        font-size: 50px;
+        margin-bottom: 16px;
+    }
+    
+    .underline {
+        width: 100%;
+    }
+    
+    .aboutContainer {
+        gap: 15px;
+        width: 100%;
+    }
+    
+    .aboutContainer p {
+        font-size: 20px;
+        letter-spacing: 1px;
+        line-height: 1.6;
+        word-spacing: 5px;
+    }
+    
+    .aboutContainer a {
+        font-size: 18px;
+        padding: 4px 8px;
+        border-radius: 4px;
+        transition: all 300ms ease-out;
+    }
+    
+    .aboutContainer a button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    
+    .h3 {
+        font-size: 28px;
+        margin-top: 30px;
+    }
+    
+    .skillContainer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        width: 95%;
+        margin-top: 10px;
+    }
+    
+    .skill {
+        font-size: 20px;
+    }
+    
+    .section3 {
+        width: 100%;
+        min-height: 85vh;
+        padding: 40px 25px 0px 25px;
+    }
+    
+    .experienceContainer {
+        margin-top: 35px;
+        gap: 5px;
+        padding: 10px;
+        width: 95%;
+    }
+    
+    .position {
+        font-size: 28px;
+    }
+    
+    .company {
+        font-size: 22px;
+    }
+    
+    .duration {
+        font-size: 14px;
+    }
+    
+    .work {
+        font-size: 15px;
+        letter-spacing: 0.3px;
+        word-spacing: 2px;
+        padding: 6px 0px 0px 0px;
+        gap: 6px;
+    }
+    
+    .section4 {
+        width: 100%;
+        height: 97vh;
+        padding: 20px 20px 0px 20px;
+    }
+    
+    .projectContainer {
+        margin-top: 40px;
+        gap: 20px;
+        padding: 0px;
+        height: fit-content;
+        width: 100%;
+    }
+    
+    .projectCard {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        gap: 15px;
+        width: 100%;
+        height: 250px;
+        border-radius: 10px;
+        padding: 0px;
+    }
+    
+    .projectCard img {
+        width: 55%;
+        height: 100%;
+        border-radius: 15px;
+    }
+    
+    .projectDetails {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 0px 7px;
+    }
+    
+    .projectName {
+        font-size: 34px;
+        margin-top: -10px;
+    }
+    
+    .projectDescription {
+        font-size: 14px;
+        letter-spacing: 0.2px;
+        line-height: 1.2;
+        word-spacing: 2px;
+    }
+    
+    .projectTechnologies {
+        display: flex;
+        font-size: 11px;
+        letter-spacing: 0.2px;
+        line-height: 1.2;
+        word-spacing: 1px;
+        gap: 6px;
+    }
+    
+    .projectTechnologies ul {
+        gap: 6px;
+    }
+    
+    .projectButtons {
+        font-size: 11px;
+        margin-top: 6px;
+    }
+    
+    .section5 {
+        padding: 40px 25px 0px 25px;
+    }
+    
+    .contactContainer {
+        width: 100%;
+        margin-top: 20px;
+        padding: 0px 15px;
+    }
+    
+    .description {
+        font-size: 18px;
+        letter-spacing: 0.2px;
+        line-height: 1.2;
+        word-spacing: 2px;
+    }
+    
+    .connectButtons {
+        gap: 40px;
+        margin-top: 20px;
+    }
+    
+    .connectButtons a {
+        font-size: 36px;
+        cursor: pointer;
+        transition: all 300ms ease-out;
+    }
+    
+    .connectButtons a:hover {
+        color: rgba(210, 252, 252, 1);
+        transform: scale(1);
+        filter: drop-shadow(0 0 0px rgba(210, 252, 252, 0.7));
+    }
+    
+    .section5Footer {
+        display: none;
+    }    
+}

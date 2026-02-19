@@ -17,6 +17,7 @@ const templates = [
     { id: "template4", name: "Dark", img: "/portfolioExamples/example_4.png", preview: "/preview_template4" },
     { id: "template5", name: "Midnight", img: "/portfolioExamples/example_5.png", preview: "preview_template5" },
     { id: "template6", name: "Canvas", img: "/portfolioExamples/example_6.png", preview: "/preview_template6" },
+    { id: "template7", name: "Cyanic", img: "/portfolioExamples/example_7.png", preview: "/preview_template7" },
 ];
 
 
