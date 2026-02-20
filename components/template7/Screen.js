@@ -12,7 +12,7 @@ export default function Screen({ userDetails }) {
     <section className={styles.screen}>
       <Section1 userDetails={userDetails} />
       <Section2 userDetails={userDetails} />
-      <Section3 userDetails={userDetails} />
+      {userDetails.experience?.length > 0 && <Section3 userDetails={userDetails} />}
       <Section4 userDetails={userDetails} />
       <Section5 userDetails={userDetails} />
     </section>

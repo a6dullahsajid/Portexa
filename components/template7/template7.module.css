@@ -130,6 +130,8 @@
 .h2 {
     font-size: 54px;
     width: fit-content;
+    display: flex;
+    flex-direction: column;
     color: rgb(26, 204, 204);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 700;
@@ -453,6 +455,10 @@
     font-size: 42px;
     cursor: pointer;
     transition: all 300ms ease-out;
+}
+
+.connectButtons a button {
+    cursor: pointer;
 }
 
 .connectButtons a:hover {
