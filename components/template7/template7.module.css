@@ -484,12 +484,18 @@
         display: flex;
         flex-direction: row;
         padding: 0px 0px 40px 0px;
+        position: sticky;
+        bottom: 0;
+        z-index: 1000;
     }
 
     .navbar ul {
         flex-direction: row;
         gap: 35px;
         border-radius: 25px;
+        background: linear-gradient(135deg, rgb(100 255 255 / 8%), rgb(104 255 255 / 8%));
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         padding: 10px 15px;
     }
 
@@ -504,7 +510,7 @@
 
     .screen {
         width: 100%;
-        height: 88vh;
+        height: none;
     }
 
     .section1 {
@@ -513,7 +519,7 @@
         align-items: center;
         justify-content: center;
         gap: 40px;
-        min-height: 85vh;
+        min-height: 90vh;
         padding: 0px 10px 0px 10px;
     }
 
@@ -623,7 +629,7 @@
     .section3 {
         min-height: fit-content;
         padding: 20px 15px 0px 15px;
-        margin-top: 60px;
+        margin-top: 80px;
     }
 
     .experienceContainer {
@@ -815,18 +821,24 @@
     .root {
         flex-direction: column-reverse;
     }
-    
+
     .navbar {
         width: 100%;
-        height: 10vh;
+        height: 9vh;
+        position: sticky;
+        bottom: 0;
+        z-index: 1000;
     }
-    
+
     .navbar ul {
         flex-direction: row;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: 20px;
         gap: 45px;
         padding: 12px 35px;
     }
-    
+
     .navbar ul a {
         display: flex;
         flex-direction: column;
@@ -834,19 +846,19 @@
         justify-content: center;
         font-size: 10px;
     }
-    
-    
-    
+
+
+
     .navbar ul a img {
         width: 25px;
         height: 25px;
     }
-    
+
     .screen {
         width: 100%;
-        height: 87vh;
+        height: none;
     }
-    
+
     .section1 {
         flex-direction: column;
         justify-content: center;
@@ -855,40 +867,40 @@
         min-height: 85vh;
         padding: 0px 10px;
     }
-    
+
     .profession {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-    
+
     .hey {
         font-size: 20px;
     }
-    
+
     .name {
         display: flex;
         align-items: baseline;
         gap: 12px;
         font-size: 48px;
     }
-    
+
     .name span {
         font-size: 56px;
     }
-    
+
     .profname {
         font-size: 34px;
     }
-    
+
     .photo {
         height: 270px;
     }
-    
+
     .photo img {
         border-radius: 15px;
     }
-    
+
     .section2 {
         display: flex;
         flex-direction: column;
@@ -896,46 +908,46 @@
         min-height: 100vh;
         padding: 40px 25px 0px 25px;
     }
-    
+
     .h2 {
         font-size: 50px;
         margin-bottom: 16px;
     }
-    
+
     .underline {
         width: 100%;
     }
-    
+
     .aboutContainer {
         gap: 15px;
         width: 100%;
     }
-    
+
     .aboutContainer p {
         font-size: 20px;
         letter-spacing: 1px;
         line-height: 1.6;
         word-spacing: 5px;
     }
-    
+
     .aboutContainer a {
         font-size: 18px;
         padding: 4px 8px;
         border-radius: 4px;
         transition: all 300ms ease-out;
     }
-    
+
     .aboutContainer a button {
         border: none;
         background-color: transparent;
         cursor: pointer;
     }
-    
+
     .h3 {
         font-size: 28px;
         margin-top: 30px;
     }
-    
+
     .skillContainer {
         display: flex;
         flex-wrap: wrap;
@@ -943,36 +955,36 @@
         width: 95%;
         margin-top: 10px;
     }
-    
+
     .skill {
         font-size: 20px;
     }
-    
+
     .section3 {
         width: 100%;
         min-height: 85vh;
         padding: 40px 25px 0px 25px;
     }
-    
+
     .experienceContainer {
         margin-top: 35px;
         gap: 5px;
         padding: 10px;
         width: 95%;
     }
-    
+
     .position {
         font-size: 28px;
     }
-    
+
     .company {
         font-size: 22px;
     }
-    
+
     .duration {
         font-size: 14px;
     }
-    
+
     .work {
         font-size: 15px;
         letter-spacing: 0.3px;
@@ -980,13 +992,13 @@
         padding: 6px 0px 0px 0px;
         gap: 6px;
     }
-    
+
     .section4 {
         width: 100%;
         height: 97vh;
         padding: 20px 20px 0px 20px;
     }
-    
+
     .projectContainer {
         margin-top: 40px;
         gap: 20px;
@@ -994,7 +1006,7 @@
         height: fit-content;
         width: 100%;
     }
-    
+
     .projectCard {
         display: flex;
         align-items: center;
@@ -1005,32 +1017,32 @@
         border-radius: 10px;
         padding: 0px;
     }
-    
+
     .projectCard img {
         width: 55%;
         height: 100%;
         border-radius: 15px;
     }
-    
+
     .projectDetails {
         display: flex;
         flex-direction: column;
         gap: 6px;
         padding: 0px 7px;
     }
-    
+
     .projectName {
         font-size: 34px;
         margin-top: -10px;
     }
-    
+
     .projectDescription {
         font-size: 14px;
         letter-spacing: 0.2px;
         line-height: 1.2;
         word-spacing: 2px;
     }
-    
+
     .projectTechnologies {
         display: flex;
         font-size: 11px;
@@ -1039,51 +1051,51 @@
         word-spacing: 1px;
         gap: 6px;
     }
-    
+
     .projectTechnologies ul {
         gap: 6px;
     }
-    
+
     .projectButtons {
         font-size: 11px;
         margin-top: 6px;
     }
-    
+
     .section5 {
         padding: 40px 25px 0px 25px;
     }
-    
+
     .contactContainer {
         width: 100%;
         margin-top: 20px;
         padding: 0px 15px;
     }
-    
+
     .description {
         font-size: 18px;
         letter-spacing: 0.2px;
         line-height: 1.2;
         word-spacing: 2px;
     }
-    
+
     .connectButtons {
         gap: 40px;
         margin-top: 20px;
     }
-    
+
     .connectButtons a {
         font-size: 36px;
         cursor: pointer;
         transition: all 300ms ease-out;
     }
-    
+
     .connectButtons a:hover {
         color: rgba(210, 252, 252, 1);
         transform: scale(1);
         filter: drop-shadow(0 0 0px rgba(210, 252, 252, 0.7));
     }
-    
+
     .section5Footer {
         display: none;
-    }    
+    }
 }
