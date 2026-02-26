@@ -11,13 +11,13 @@ import { useCallback, useEffect, useState } from "react";
 import { setTemplate, setUserName, initializeUserData } from "@/store/userDataSlice";
 
 const templates = [
-    // { id: "template1", name: "Classic", img: "/portfolioExamples/example_1.png", preview: "/preview_template1" },
-    // { id: "template2", name: "Apex", img: "/portfolioExamples/example_2.png", preview: "/preview_template2" },
+    { id: "template1", name: "Classic", img: "/portfolioExamples/example_1.png", preview: "/preview_template1" },
+    { id: "template2", name: "Apex", img: "/portfolioExamples/example_2.png", preview: "/preview_template2" },
     { id: "template3", name: "Modern", img: "/portfolioExamples/example_3.png", preview: "/preview_template3" },
     { id: "template4", name: "Dark", img: "/portfolioExamples/example_4.png", preview: "/preview_template4" },
-    // { id: "template5", name: "Midnight", img: "/portfolioExamples/example_5.png", preview: "preview_template5" },
-    // { id: "template6", name: "Canvas", img: "/portfolioExamples/example_6.png", preview: "/preview_template6" },
-    // { id: "template7", name: "Cyanic", img: "/portfolioExamples/example_7.png", preview: "/preview_template7" },
+    { id: "template5", name: "Midnight", img: "/portfolioExamples/example_5.png", preview: "preview_template5" },
+    { id: "template6", name: "Canvas", img: "/portfolioExamples/example_6.png", preview: "/preview_template6" },
+    { id: "template7", name: "Cyanic", img: "/portfolioExamples/example_7.png", preview: "/preview_template7" },
 ];
 
 
