@@ -5,11 +5,9 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import styles from "./dashboard.module.css";
 import "./dashboard.css";
-import { useDispatch } from "react-redux";
 import { useSession } from "next-auth/react";
-import { useCallback, useEffect, useState } from "react";
-import { setTemplate, setUserName, initializeUserData } from "@/store/userDataSlice";
-
+import { setTemplate } from "@/store/userDataSlice";
+import { useDispatch } from "react-redux";
 const templates = [
     { id: "template1", name: "Classic", img: "/portfolioExamples/example_1.png", preview: "/preview_template1" },
     { id: "template2", name: "Apex", img: "/portfolioExamples/example_2.png", preview: "/preview_template2" },
@@ -25,36 +23,6 @@ export default function Dashboard() {
     const { data: session, status } = useSession();
     const router = useRouter();
     const dispatch = useDispatch();
-    const [isLoadingUserData, setIsLoadingUserData] = useState(false);
-
-
-    const fetchUserData = useCallback(async () => {
-        setIsLoadingUserData(true);
-        try {
-            const res = await fetch("/api/getUserData", {
-                method: "GET",
-                credentials: "include"
-            });
-            const data = await res.json();
-            if (!res.ok || !data.success) {
-                throw new Error(data.message || "Failed to fetch user data.");
-            }
-            if (data.user) {
-                dispatch(initializeUserData(data.user));
-            }
-        } catch (err) {
-            console.log("Error loading user:", err.message);
-        } finally {
-            setIsLoadingUserData(false);
-        }
-    }, [dispatch]);
-
-    useEffect(() => {
-        if (status === "authenticated" && session?.user?.email) {
-            fetchUserData();
-            dispatch(setUserName(session.user.email.split("@")[0]));
-        }
-    }, [status, session, fetchUserData, dispatch]);
 
     const selectTemplate = (templateId) => {
         dispatch(setTemplate(templateId));
@@ -65,27 +33,6 @@ export default function Dashboard() {
         }
     };
 
-    if (status === "loading" || isLoadingUserData) {
-        return (
-            <div className={styles.dashboardContainer}>
-                <div className={styles.loadingContainer}>
-                    <div className={styles.loadingSpinner}></div>
-                    <h2 className={styles.loadingTitle}>Loading Your Dashboard</h2>
-                    <p className={styles.loadingSubtitle}>
-                        {status === "loading" 
-                            ? "Welcome back! Setting up your workspace..." 
-                            : "Crafting your perfect portfolio experience..."
-                        }
-                    </p>
-                    <div className={styles.loadingDots}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-            </div>
-        );
-    }
 
     const structuredData = {
         "@context": "https://schema.org",

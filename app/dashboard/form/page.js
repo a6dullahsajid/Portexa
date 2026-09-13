@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import styles from "./form.module.css";
 import Navbar from "@/components/Navbar";
@@ -11,18 +11,44 @@ import { setName, setProfileImage, setTitle, setBio, setResume, setSkills, setEx
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-
+import { initializeUserData } from "@/store/userDataSlice";
 export default function PortfolioForm() {
     const { data: session, status } = useSession();
     const router = useRouter();
+    const [isLoadingUserData, setIsLoadingUserData] = useState(false);
+    const dispatch = useDispatch();
+
+
+    const fetchUserData = useCallback(async () => {
+        setIsLoadingUserData(true);
+        try {
+            const res = await fetch("/api/getUserData", {
+                method: "GET",
+                credentials: "include"
+            });
+            const data = await res.json();
+            if (!res.ok || !data.success) {
+                throw new Error(data.message || "Failed to fetch user data.");
+            }
+            if (data.user) {
+                dispatch(initializeUserData(data.user));
+            }
+        } catch (err) {
+            console.log("Error loading user:", err.message);
+        } finally {
+            setIsLoadingUserData(false);
+        }
+    }, [dispatch]);
 
     // Redirect to dashboard if no session
     useEffect(() => {
         if (status === "loading") return; // Still loading
         if (!session) {
             router.push("/login");
+        } else {
+            fetchUserData();
         }
-    }, [session, status, router]);
+    }, [session, status, router, fetchUserData]);
 
     useEffect(() => {
         const bgCanvas = document.getElementById("bgCanvas");
@@ -33,7 +59,6 @@ export default function PortfolioForm() {
     }, []);
 
 
-    const dispatch = useDispatch();
     const {
         details: {
             name,
@@ -77,7 +102,8 @@ export default function PortfolioForm() {
         prevLink: "",
         githubLink: ""
     });
-
+    const userData = useSelector((state) => state.userData);
+    
     const handleNameChange = (e) => {
         dispatch(setName(e.target.value));
     }
@@ -240,7 +266,7 @@ export default function PortfolioForm() {
 
     const validateStep1 = () => {
         const errors = [];
-        
+
         // Check required fields for step 1
         if (!name || name.trim() === '') {
             errors.push('Name is required');
@@ -257,7 +283,7 @@ export default function PortfolioForm() {
         if (!skills || skills.length === 0) {
             errors.push('At least one skill is required');
         }
-        
+
         // Show specific error messages via toast
         if (errors.length > 0) {
             errors.forEach(error => {
@@ -265,13 +291,13 @@ export default function PortfolioForm() {
             });
             return false;
         }
-        
+
         return true;
     };
 
     const validateStep4 = () => {
         const errors = [];
-        
+
         // Check required fields for step 4 (contact section)
         if (!connectDesc || connectDesc.trim() === '') {
             errors.push('Description is required');
@@ -282,7 +308,7 @@ export default function PortfolioForm() {
         if (!linkedin || linkedin.trim() === '') {
             errors.push('LinkedIn URL is required');
         }
-        
+
         // Show specific error messages via toast
         if (errors.length > 0) {
             errors.forEach(error => {
@@ -290,23 +316,44 @@ export default function PortfolioForm() {
             });
             return false;
         }
-        
+
         return true;
     };
 
-    const nextStep = () => {
-        if (step === 1) {
+    const nextStep = async () => {
+        if (step !== 4) {
             if (validateStep1()) {
                 setStep((prev) => prev + 1);
+
+                try {
+                    const res = await fetch("/api/saveUserData", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(userData)
+                    });
+
+                    const result = await res.json();
+
+                    if (result.success) {
+                        toast.success("User data saved successfully!");
+                    } else {
+                        toast.error("Failed to save data.");
+                        console.log(result.error);
+                        setIsSubmitting(false);
+                    }
+                } catch (err) {
+                    console.log("Error submitting form:", err);
+                    toast.error("Something went wrong.");
+                    setIsSubmitting(false);
+                }
             }
-        } else {
-            setStep((prev) => prev + 1);
         }
     };
-    
+
     const prevStep = () => setStep((prev) => prev - 1);
 
-    const userData = useSelector((state) => state.userData);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -404,6 +451,27 @@ export default function PortfolioForm() {
             ]
         }
     };
+    if (status === "loading" || isLoadingUserData) {
+        return (
+            <div className={styles.dashboardContainer}>
+                <div className={styles.loadingContainer}>
+                    <div className={styles.loadingSpinner}></div>
+                    <h2 className={styles.loadingTitle}>Loading Your Portfolio Form</h2>
+                    <p className={styles.loadingSubtitle}>
+                        {status === "loading"
+                            ? "Setting up your previous data..."
+                            : "Loading your portfolio form..."
+                        }
+                    </p>
+                    <div className={styles.loadingDots}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <>
@@ -421,10 +489,10 @@ export default function PortfolioForm() {
                         {step === 1 ? "Basic Information" : step === 2 ? "Projects & Work" : step === 3 ? "Professional Experience" : "Contact & Social Links"}
                     </h1>
                     <p className={styles.stepDescription}>
-                        {step === 1 ? "Tell us about yourself and your professional background" : 
-                         step === 2 ? "Showcase your projects and technical skills" : 
-                         step === 3 ? "Add your work experience and career highlights" : 
-                         "Add your contact information and social media links"}
+                        {step === 1 ? "Tell us about yourself and your professional background" :
+                            step === 2 ? "Showcase your projects and technical skills" :
+                                step === 3 ? "Add your work experience and career highlights" :
+                                    "Add your contact information and social media links"}
                     </p>
 
                     {/* STEP 1 */}

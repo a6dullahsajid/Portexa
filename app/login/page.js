@@ -5,18 +5,27 @@ import { useRouter } from 'next/navigation';
 import { useEffect } from "react";
 import { FcGoogle } from "react-icons/fc";   // Google icon (color)
 import { FaGithub } from "react-icons/fa";   // GitHub icon (solid)
-
+import { useDispatch } from "react-redux";
+import { setUserName } from "@/store/userDataSlice";
 import "./login.css";
 
 export default function LoginPage() {
   const { data: session } = useSession();
   const router = useRouter();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (session) {
       router.push("/dashboard");
     }
   }, [session, router])
+
+  const signInMethod = async (method) => {
+    await signIn(method);
+    if (session) {
+      dispatch(setUserName(session.user.email.split("@")[0]));
+    }
+  }
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -72,7 +81,7 @@ export default function LoginPage() {
             <p>Access your portfolio dashboard to create and manage your professional online presence</p>
           </div>
           <button
-            onClick={() => signIn("google")}
+            onClick={() => signInMethod("google")}
             className="flex items-center bg-white border border-gray-300 rounded-lg shadow-md max-w-xs px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
             aria-label="Sign in with Google to access your portfolio dashboard">
             <FcGoogle size={24} />
@@ -80,7 +89,7 @@ export default function LoginPage() {
           </button>
 
           <button
-            onClick={() => signIn("github")}
+            onClick={() => signInMethod("github")}
             className="flex items-center bg-white border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
             aria-label="Sign in with GitHub to access your portfolio dashboard">
             <FaGithub size={24} />
