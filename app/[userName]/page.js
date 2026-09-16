@@ -109,6 +109,7 @@ export async function generateMetadata({ params }) {
   const skills = Array.isArray(userData.details.skills)
     ? userData.details.skills.filter(Boolean)
     : [];
+  console.log("User opengraph image", userData.details?.profileImage);
 
   const keywords = [
     name,
@@ -164,27 +165,12 @@ export async function generateMetadata({ params }) {
       description,
       siteName: "Portexa",
       locale: "en_US",
-
-      images: userData.details?.profileImage
-        ? [
-          {
-            url: userData.details.profileImage,
-            width: 1200,
-            height: 630,
-            alt: `${name} - ${title}`,
-          },
-        ]
-        : [],
     },
 
     twitter: {
       card: "summary_large_image",
       title: `${name} | ${title}`,
       description,
-
-      images: userData.details?.profileImage
-        ? [userData.details.profileImage]
-        : [],
     },
 
     category: "Portfolio",

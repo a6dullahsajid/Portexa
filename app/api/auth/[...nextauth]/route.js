@@ -63,8 +63,6 @@ export const authOptions = {
         },
 
         async jwt({ token, user }) {
-
-            console.log("✅ jwt callback - token IN:", token, "user:", user);
             if (user?.email) {
                 token.email = user.email;
             }

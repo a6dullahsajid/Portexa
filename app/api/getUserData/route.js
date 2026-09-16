@@ -7,7 +7,6 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 export async function GET(req) { 
   try {
     const session = await getServerSession(authOptions);
-    console.log("SESSION:", session);
 
     if (!session?.user?.email) {
       return NextResponse.json({ success: false, message: "Unauthorized" }, { status: 401 });
