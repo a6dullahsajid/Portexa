@@ -1124,6 +1124,650 @@
     }
 }
 
+.projectImagePreview {
+    width: 112px;
+    height: 80px;
+    flex: 0 0 112px;
+    object-fit: cover;
+    border-radius: 10px;
+    background: #e9ebf2;
+}
+
+.portfolioForm .projectSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    align-items: stretch;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    padding: 0 0 2rem;
+    gap: 1.25rem;
+    overflow: visible;
+}
+
+.portfolioForm .projectSection .inputContainer {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: none;
+    padding: 1.25rem;
+    border: 1px solid #e4e7f0;
+    border-radius: 16px;
+    background: #fbfcfe;
+}
+
+.portfolioForm .projectSection .projectEntry {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e2e5ee;
+    border-radius: 16px;
+    background: #fff;
+    color: #343a52;
+    box-shadow: 0 8px 24px rgba(32, 36, 58, 0.07);
+}
+
+.portfolioForm .projectSection .projectEntry:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(32, 36, 58, 0.12);
+}
+
+.portfolioForm .projectCardImage {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    background: #f1f3f8;
+}
+
+.portfolioForm .projectCardContent {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+    min-width: 0;
+    padding: 1.15rem;
+}
+
+.portfolioForm .projName {
+    width: 100%;
+    margin: 0;
+    padding: 0 0 0.65rem;
+    border-bottom: 1px solid #eceef4;
+    color: #432080;
+    font-size: 1.15rem;
+    overflow-wrap: anywhere;
+}
+
+.portfolioForm .projDesc {
+    color: #555d73;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.portfolioForm .projTech,
+.portfolioForm .projLink,
+.portfolioForm .projGithub {
+    color: #687087;
+    font-size: 0.8rem;
+    overflow-wrap: anywhere;
+}
+
+.portfolioForm .projectCardActions,
+.portfolioForm .projectFormActions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.portfolioForm .projectCardActions {
+    margin-top: auto;
+    padding-top: 0.4rem;
+}
+
+.portfolioForm .btnEditProject {
+    padding: 0.4rem 0.85rem;
+    border: 1px solid #ded6ef;
+    border-radius: 999px;
+    background: #f5f1fb;
+    color: #57359c;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 160ms ease, transform 160ms ease;
+}
+
+.portfolioForm .btnEditProject:hover {
+    transform: translateY(-1px);
+    background: #ebe3f8;
+}
+
+.projectSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    align-items: stretch;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    padding: 0 0 2rem;
+    gap: 1.25rem;
+    overflow: visible;
+}
+
+.projectSection .inputContainer {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: none;
+    padding: 1.25rem;
+    border: 1px solid #e4e7f0;
+    border-radius: 16px;
+    background: #fbfcfe;
+}
+
+.projectEntry {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e2e5ee;
+    border-radius: 16px;
+    background: #fff;
+    color: #343a52;
+    box-shadow: 0 8px 24px rgba(32, 36, 58, 0.07);
+}
+
+.projectEntry:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(32, 36, 58, 0.12);
+}
+
+.projectCardImage {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    background: #f1f3f8;
+}
+
+.projectCardContent {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+    min-width: 0;
+    padding: 1.15rem;
+}
+
+.projName {
+    width: 100%;
+    margin: 0;
+    padding: 0 0 0.65rem;
+    border-bottom: 1px solid #eceef4;
+    color: #432080;
+    font-size: 1.15rem;
+    overflow-wrap: anywhere;
+}
+
+.projDesc {
+    color: #555d73;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.projTech,
+.projLink,
+.projGithub {
+    color: #687087;
+    font-size: 0.8rem;
+    overflow-wrap: anywhere;
+}
+
+.projectCardActions,
+.projectFormActions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.projectCardActions {
+    margin-top: auto;
+    padding-top: 0.4rem;
+}
+
+.btnEditProject {
+    padding: 0.4rem 0.85rem;
+    border: 1px solid #ded6ef;
+    border-radius: 999px;
+    background: #f5f1fb;
+    color: #57359c;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 160ms ease, transform 160ms ease;
+}
+
+.btnEditProject:hover {
+    transform: translateY(-1px);
+    background: #ebe3f8;
+}
+
+@media (max-width: 640px) {
+    .projectSection {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .projectSection .inputContainer {
+        padding: 1rem;
+    }
+
+    .projectCardImage {
+        height: 180px;
+    }
+}
+
+.template1 {
+    min-height: calc(100vh - 5rem);
+    overflow: visible;
+    align-items: flex-start;
+    padding: 2.5rem 1rem 7rem;
+    background:
+        radial-gradient(ellipse at 10% 0%, rgba(126, 87, 194, 0.12), transparent 38%),
+        linear-gradient(180deg, #f8f9fc 0%, #f1f3f9 100%);
+}
+
+.portfolioForm {
+    width: min(100%, 1080px);
+    height: auto;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: stretch;
+    color: #20243a;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(42, 48, 78, 0.08);
+    border-radius: 24px;
+    box-shadow: 0 24px 70px rgba(32, 36, 58, 0.1);
+}
+
+.stepTitle {
+    width: 100%;
+    margin: 0;
+    text-align: left;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    letter-spacing: -0.04em;
+    background: linear-gradient(120deg, #5428a8, #2876b9);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.stepDescription {
+    margin: 0.65rem 0 2rem;
+    text-align: left;
+    color: #677089;
+    font-size: 1rem;
+}
+
+.basicSection,
+.connectSection {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    max-width: none;
+    height: auto;
+    justify-content: stretch;
+    column-gap: 1.5rem;
+    row-gap: 1.4rem;
+    overflow: visible;
+    padding: 0;
+}
+
+.inputContainer {
+    width: 100%;
+    min-width: 0;
+    gap: 0.55rem;
+}
+
+.formLabel {
+    color: #343a52;
+    font-size: 0.95rem;
+    font-weight: 650;
+}
+
+.formInput,
+.formTextarea {
+    width: 100%;
+    border: 1px solid #dce0eb;
+    border-radius: 10px;
+    background: #fbfcfe;
+    color: #252a3d;
+    box-shadow: none;
+    font-size: 0.95rem;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+    border-color: #7652c6;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(118, 82, 198, 0.13);
+    transform: none;
+}
+
+.formTextarea {
+    min-height: 110px;
+    height: auto;
+}
+
+.profileInputWrapper {
+    width: 100%;
+}
+
+.imageInput {
+    width: auto;
+    min-width: 0;
+    flex: 1;
+    color: #687087;
+}
+
+.profilePreview {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 0.9rem;
+    padding: 0.75rem;
+    border: 1px solid #e4e7f0;
+    border-radius: 14px;
+    background: #f8f9fc;
+}
+
+.profilePreviewImage {
+    width: 72px;
+    height: 72px;
+    flex: 0 0 72px;
+    object-fit: cover;
+    border-radius: 12px;
+    background: #e9ebf2;
+}
+
+.profilePreviewDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding-right: 2rem;
+}
+
+.profilePreviewLabel {
+    color: #343a52;
+    font-size: 0.9rem;
+    font-weight: 650;
+}
+
+.profilePreviewStatus {
+    color: #718078;
+    font-size: 0.8rem;
+}
+
+.deleteProfileImage {
+    position: absolute;
+    top: 0.55rem;
+    right: 0.55rem;
+    display: grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    padding: 0;
+    border: 1px solid #f0d4d8;
+    border-radius: 50%;
+    background: #fff;
+    color: #bd3448;
+    font-size: 1.35rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 160ms ease, transform 160ms ease;
+}
+
+.deleteProfileImage:hover:not(:disabled) {
+    transform: scale(1.06);
+    background: #fff1f2;
+}
+
+.deleteProfileImage:disabled,
+.btnUpload:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+.skillList {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    padding: 0;
+}
+
+.skillChip {
+    padding: 0.35rem 0.75rem;
+    border: 1px solid #e0d9f3;
+    background: #f3effb;
+    color: #57359c;
+    box-shadow: none;
+}
+
+.formNav {
+    z-index: 5;
+    padding: 0.9rem max(1rem, calc((100vw - 1080px) / 2));
+    border-top-color: #e8eaf1;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 -8px 26px rgba(32, 36, 58, 0.06);
+}
+
+.stepCounter {
+    color: #687087;
+}
+
+.btnNext,
+.btnPrev,
+.btnAdd,
+.btnSubmit,
+.btnUpload {
+    box-shadow: 0 5px 14px rgba(84, 40, 168, 0.16);
+}
+
+.projectSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    align-items: stretch;
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    gap: 1.25rem;
+    overflow: visible;
+}
+
+.projectSection .inputContainer {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: none;
+    padding: 1.25rem;
+    border: 1px solid #e4e7f0;
+    border-radius: 16px;
+    background: #fbfcfe;
+}
+
+.projectEntry {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e2e5ee;
+    border-radius: 16px;
+    background: #fff;
+    color: #343a52;
+    box-shadow: 0 8px 24px rgba(32, 36, 58, 0.07);
+}
+
+.projectEntry:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(32, 36, 58, 0.12);
+}
+
+.projectCardImage {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    background: #f1f3f8;
+}
+
+.projectCardContent {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+    min-width: 0;
+    padding: 1.15rem;
+}
+
+.projName {
+    width: 100%;
+    margin: 0;
+    padding: 0 0 0.65rem;
+    border-bottom: 1px solid #eceef4;
+    color: #432080;
+    font-size: 1.15rem;
+    overflow-wrap: anywhere;
+}
+
+.projDesc {
+    color: #555d73;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.projTech,
+.projLink,
+.projGithub {
+    color: #687087;
+    font-size: 0.8rem;
+    overflow-wrap: anywhere;
+}
+
+.projectCardActions,
+.projectFormActions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.projectCardActions {
+    margin-top: auto;
+    padding-top: 0.4rem;
+}
+
+.btnEditProject {
+    padding: 0.4rem 0.85rem;
+    border: 1px solid #ded6ef;
+    border-radius: 999px;
+    background: #f5f1fb;
+    color: #57359c;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 160ms ease, transform 160ms ease;
+}
+
+.btnEditProject:hover {
+    transform: translateY(-1px);
+    background: #ebe3f8;
+}
+
+@media (max-width: 640px) {
+    .template1 {
+        padding: 1rem 0.75rem 6rem;
+    }
+
+    .portfolioForm {
+        padding: 1.5rem 1rem;
+        border-radius: 18px;
+    }
+
+    .basicSection,
+    .connectSection {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 1rem;
+    }
+
+    .projectSection {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .projectSection .inputContainer {
+        padding: 1rem;
+    }
+
+    .projectCardImage {
+        height: 180px;
+    }
+
+    .skillList {
+        grid-column: auto;
+    }
+
+    .profileInputWrapper {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .imageInput {
+        width: 100%;
+    }
+
+    .formNav {
+        padding: 0.75rem;
+    }
+
+    .btnNext,
+    .btnPrev,
+    .btnSubmit {
+        font-size: 0.9rem;
+        letter-spacing: 0;
+    }
+}
+
 @media (min-width:390px) and (max-width: 576px) {
     .template1 {
         height: 90vh;
@@ -1628,6 +2272,250 @@
         background: transparent;
         position: relative;
         z-index: 0;
+    }
+
+    .template1 {
+        min-height: calc(100vh - 5rem);
+        overflow: visible;
+        align-items: flex-start;
+        padding: 2.5rem 1rem 7rem;
+        background:
+            radial-gradient(ellipse at 10% 0%, rgba(126, 87, 194, 0.12), transparent 38%),
+            linear-gradient(180deg, #f8f9fc 0%, #f1f3f9 100%);
+    }
+
+    .portfolioForm {
+        width: min(100%, 1080px);
+        height: auto;
+        margin: 0 auto;
+        padding: clamp(1.5rem, 4vw, 3.5rem);
+        align-items: stretch;
+        color: #20243a;
+        background: rgba(255, 255, 255, 0.96);
+        border: 1px solid rgba(42, 48, 78, 0.08);
+        border-radius: 24px;
+        box-shadow: 0 24px 70px rgba(32, 36, 58, 0.1);
+    }
+
+    .stepTitle {
+        width: 100%;
+        margin: 0;
+        text-align: left;
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        letter-spacing: -0.04em;
+        background: linear-gradient(120deg, #5428a8, #2876b9);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+
+    .stepDescription {
+        margin: 0.65rem 0 2rem;
+        text-align: left;
+        color: #677089;
+        font-size: 1rem;
+    }
+
+    .basicSection,
+    .connectSection {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+        max-width: none;
+        justify-content: stretch;
+        column-gap: 1.5rem;
+        row-gap: 1.4rem;
+    }
+
+    .inputContainer {
+        width: 100%;
+        min-width: 0;
+        gap: 0.55rem;
+    }
+
+    .formLabel {
+        color: #343a52;
+        font-size: 0.95rem;
+        font-weight: 650;
+    }
+
+    .formInput,
+    .formTextarea {
+        width: 100%;
+        border: 1px solid #dce0eb;
+        border-radius: 10px;
+        background: #fbfcfe;
+        color: #252a3d;
+        box-shadow: none;
+        font-size: 0.95rem;
+    }
+
+    .formInput:focus,
+    .formTextarea:focus {
+        border-color: #7652c6;
+        background: #fff;
+        box-shadow: 0 0 0 3px rgba(118, 82, 198, 0.13);
+        transform: none;
+    }
+
+    .formTextarea {
+        min-height: 110px;
+        height: auto;
+    }
+
+    .profileInputWrapper {
+        width: 100%;
+    }
+
+    .imageInput {
+        width: auto;
+        min-width: 0;
+        flex: 1;
+        color: #687087;
+    }
+
+    .profilePreview {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        margin-top: 0.9rem;
+        padding: 0.75rem;
+        border: 1px solid #e4e7f0;
+        border-radius: 14px;
+        background: #f8f9fc;
+    }
+
+    .profilePreviewImage {
+        width: 72px;
+        height: 72px;
+        flex: 0 0 72px;
+        object-fit: cover;
+        border-radius: 12px;
+        background: #e9ebf2;
+    }
+
+    .profilePreviewDetails {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        padding-right: 2rem;
+    }
+
+    .profilePreviewLabel {
+        color: #343a52;
+        font-size: 0.9rem;
+        font-weight: 650;
+    }
+
+    .profilePreviewStatus {
+        color: #718078;
+        font-size: 0.8rem;
+    }
+
+    .deleteProfileImage {
+        position: absolute;
+        top: 0.55rem;
+        right: 0.55rem;
+        display: grid;
+        width: 30px;
+        height: 30px;
+        place-items: center;
+        padding: 0;
+        border: 1px solid #f0d4d8;
+        border-radius: 50%;
+        background: #fff;
+        color: #bd3448;
+        font-size: 1.35rem;
+        line-height: 1;
+        cursor: pointer;
+        transition: background 160ms ease, transform 160ms ease;
+    }
+
+    .deleteProfileImage:hover:not(:disabled) {
+        transform: scale(1.06);
+        background: #fff1f2;
+    }
+
+    .deleteProfileImage:disabled,
+    .btnUpload:disabled {
+        cursor: not-allowed;
+        opacity: 0.55;
+    }
+
+    .skillList {
+        grid-column: 1 / -1;
+        justify-content: flex-start;
+        padding: 0;
+    }
+
+    .skillChip {
+        padding: 0.35rem 0.75rem;
+        border: 1px solid #e0d9f3;
+        background: #f3effb;
+        color: #57359c;
+        box-shadow: none;
+    }
+
+    .formNav {
+        z-index: 5;
+        padding: 0.9rem max(1rem, calc((100vw - 1080px) / 2));
+        border-top-color: #e8eaf1;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 -8px 26px rgba(32, 36, 58, 0.06);
+    }
+
+    .stepCounter {
+        color: #687087;
+    }
+
+    .btnNext,
+    .btnPrev,
+    .btnAdd,
+    .btnSubmit,
+    .btnUpload {
+        box-shadow: 0 5px 14px rgba(84, 40, 168, 0.16);
+    }
+
+    @media (max-width: 640px) {
+        .template1 {
+            padding: 1rem 0.75rem 6rem;
+        }
+
+        .portfolioForm {
+            padding: 1.5rem 1rem;
+            border-radius: 18px;
+        }
+
+        .basicSection,
+        .connectSection {
+            grid-template-columns: minmax(0, 1fr);
+            row-gap: 1rem;
+        }
+
+        .skillList {
+            grid-column: auto;
+        }
+
+        .profileInputWrapper {
+            align-items: stretch;
+            flex-direction: column;
+        }
+
+        .imageInput {
+            width: 100%;
+        }
+
+        .formNav {
+            padding: 0.75rem;
+        }
+
+        .btnNext,
+        .btnPrev,
+        .btnSubmit {
+            font-size: 0.9rem;
+            letter-spacing: 0;
+        }
     }
 
     .portfolioForm {

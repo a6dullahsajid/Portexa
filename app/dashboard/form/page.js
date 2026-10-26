@@ -82,8 +82,9 @@ export default function PortfolioForm() {
     const { uploadImage, uploading } = useCloudinaryUpload();
 
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isDeletingProfileImage, setIsDeletingProfileImage] = useState(false);
     const [step, setStep] = useState(1);
-    const [localProfileFile, setLocalProfileFile] = useState("");
+    const [localProfileFile, setLocalProfileFile] = useState(null);
 
     const [skillInput, setSkillInput] = useState("");
     const [experienceInput, setExperienceInput] = useState({
@@ -102,7 +103,22 @@ export default function PortfolioForm() {
         prevLink: "",
         githubLink: ""
     });
+    const [projectImagePreview, setProjectImagePreview] = useState("");
+    const [originalProjectImage, setOriginalProjectImage] = useState("");
+    const [isDeletingProjectImage, setIsDeletingProjectImage] = useState(false);
+    const [editingProjectIndex, setEditingProjectIndex] = useState(null);
     const userData = useSelector((state) => state.userData);
+
+    useEffect(() => {
+        if (project.image instanceof File) {
+            const previewUrl = URL.createObjectURL(project.image);
+            setProjectImagePreview(previewUrl);
+            return () => URL.revokeObjectURL(previewUrl);
+        }
+
+        setProjectImagePreview(project.image || "");
+        return undefined;
+    }, [project.image]);
     
     const handleNameChange = (e) => {
         dispatch(setName(e.target.value));
@@ -117,7 +133,6 @@ export default function PortfolioForm() {
         if (file) {
             setLocalProfileFile(file);
         }
-        console.log(file);
     };
 
     const handleUploadProfileImage = async () => {
@@ -129,9 +144,61 @@ export default function PortfolioForm() {
             toast.error("Image must be smaller than 10MB");
             return;
         }
-        uploadImage(localProfileFile, (url) => {
-            dispatch(setProfileImage(url));
+        uploadImage(localProfileFile, async (url) => {
+            const updatedUserData = {
+                ...userData,
+                details: {
+                    ...userData.details,
+                    profileImage: url
+                }
+            };
+
+            try {
+                const response = await fetch("/api/saveUserData", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(updatedUserData)
+                });
+                const result = await response.json();
+
+                if (!response.ok || !result.success) {
+                    throw new Error(result.message || "Failed to save profile image.");
+                }
+
+                dispatch(setProfileImage(url));
+                setLocalProfileFile(null);
+            } catch (error) {
+                console.error("Error saving profile image:", error);
+                toast.error("Image uploaded, but could not be saved to your profile.");
+            }
         });
+    };
+
+    const handleDeleteProfileImage = async () => {
+        if (!profileImage || isDeletingProfileImage) return;
+
+        setIsDeletingProfileImage(true);
+        try {
+            const response = await fetch("/api/deleteProfileImage", {
+                method: "DELETE"
+            });
+            const result = await response.json();
+
+            if (!response.ok || !result.success) {
+                throw new Error(result.message || "Failed to delete profile image.");
+            }
+
+            dispatch(setProfileImage(""));
+            setLocalProfileFile(null);
+            toast.success("Profile image removed.");
+        } catch (error) {
+            console.error("Error deleting profile image:", error);
+            toast.error(error.message || "Could not remove profile image.");
+        } finally {
+            setIsDeletingProfileImage(false);
+        }
     };
 
     const handleBioChange = (e) => {
@@ -173,33 +240,105 @@ export default function PortfolioForm() {
         }
     };
 
-    const handleAddProject = async () => {
+    const handleDeleteProjectImage = async () => {
+        if (project.image instanceof File) {
+            setProject((prev) => ({ ...prev, image: originalProjectImage }));
+            return;
+        }
+        if (!project.image || isDeletingProjectImage) return;
+
+        const imageUrl = project.image;
+        setIsDeletingProjectImage(true);
+        try {
+            const saveResponse = await fetch("/api/saveUserData", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(userData)
+            });
+            const saveResult = await saveResponse.json();
+
+            if (!saveResponse.ok || !saveResult.success) {
+                throw new Error(saveResult.message || "Could not save project data before deleting its image.");
+            }
+
+            const response = await fetch("/api/deleteProfileImage", {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    type: "project",
+                    imageUrl,
+                    projectIndex: editingProjectIndex
+                })
+            });
+            const result = await response.json();
+
+            if (!response.ok || !result.success) {
+                throw new Error(result.message || "Failed to delete project image.");
+            }
+
+            const projectIndex = editingProjectIndex === null
+                ? projects.findIndex((item) => item.image === imageUrl)
+                : editingProjectIndex;
+            const updatedProjects = [...projects];
+            if (projectIndex >= 0) {
+                updatedProjects[projectIndex] = { ...updatedProjects[projectIndex], image: "" };
+                dispatch(setProjects(updatedProjects));
+            }
+            setProject((prev) => ({ ...prev, image: "" }));
+            setOriginalProjectImage("");
+            toast.success("Project image removed.");
+        } catch (error) {
+            console.error("Error deleting project image:", error);
+            toast.error(error.message || "Could not remove project image.");
+        } finally {
+            setIsDeletingProjectImage(false);
+        }
+    };
+
+    const resetProjectForm = () => {
+        setProject({
+            title: "",
+            desc: "",
+            tech: "",
+            image: "",
+            prevLink: "",
+            githubLink: ""
+        });
+        setOriginalProjectImage("");
+        setEditingProjectIndex(null);
+    };
+
+    const handleEditProject = (index) => {
+        setProject({ ...projects[index] });
+        setOriginalProjectImage(projects[index].image || "");
+        setEditingProjectIndex(index);
+    };
+
+    const handleSaveProject = () => {
         const { title, desc, githubLink, image } = project;
 
         if (!title || !desc || !githubLink) {
-            toast.error("Please fill in all required project fields.");
+            toast.error("Please fill in the project title, description, and code link.");
             return;
         }
 
         const updateProjects = (imageUrl = "") => {
-            const updatedProjects = [...projects, {
-                ...project,
-                image: imageUrl
-            }];
+            const updatedProject = { ...project, image: imageUrl };
+            const updatedProjects = [...projects];
+            if (editingProjectIndex === null) {
+                updatedProjects.push(updatedProject);
+            } else {
+                updatedProjects[editingProjectIndex] = updatedProject;
+            }
             dispatch(setProjects(updatedProjects));
-
-            setProject({
-                title: "",
-                desc: "",
-                tech: "",
-                image: "",
-                prevLink: "",
-                githubLink: ""
-            });
+            resetProjectForm();
         };
 
-        // If image is provided
-        if (image) {
+        if (image instanceof File) {
             if (image.size > 10 * 1024 * 1024) {
                 toast.error("Image must be smaller than 10MB");
                 return;
@@ -209,7 +348,7 @@ export default function PortfolioForm() {
                 updateProjects(url);
             });
         } else {
-            updateProjects();
+            updateProjects(image || "");
         }
     };
 
@@ -219,6 +358,11 @@ export default function PortfolioForm() {
     const handleRemoveProject = (indexToRemove) => {
         const updatedProjects = projects.filter((_, index) => index !== indexToRemove);
         dispatch(setProjects(updatedProjects));
+        if (editingProjectIndex === indexToRemove) {
+            resetProjectForm();
+        } else if (editingProjectIndex !== null && editingProjectIndex > indexToRemove) {
+            setEditingProjectIndex((index) => index - 1);
+        }
     };
 
     const handleExperienceChange = (e) => {
@@ -538,10 +682,37 @@ export default function PortfolioForm() {
                                             type="button"
                                             onClick={handleUploadProfileImage}
                                             className={styles.btnUpload}
+                                            disabled={!localProfileFile || uploading}
                                         >
-                                            Add Image
+                                            {uploading ? "Uploading..." : "Upload"}
                                         </button>
                                     </div>
+                                    {profileImage && (
+                                        <div className={styles.profilePreview}>
+                                            <Image
+                                                src={profileImage}
+                                                alt="Uploaded profile"
+                                                width={112}
+                                                height={112}
+                                                unoptimized
+                                                className={styles.profilePreviewImage}
+                                            />
+                                            <div className={styles.profilePreviewDetails}>
+                                                <span className={styles.profilePreviewLabel}>Profile photo</span>
+                                                <span className={styles.profilePreviewStatus}>Uploaded and saved</span>
+                                            </div>
+                                            <button
+                                                type="button"
+                                                onClick={handleDeleteProfileImage}
+                                                className={styles.deleteProfileImage}
+                                                disabled={isDeletingProfileImage}
+                                                aria-label="Delete profile image"
+                                                title="Delete profile image"
+                                            >
+                                                {isDeletingProfileImage ? "…" : "×"}
+                                            </button>
+                                        </div>
+                                    )}
                                 </div>
 
                                 <div className={styles.inputContainer} style={{ '--input-index': 3 }}>
@@ -640,6 +811,34 @@ export default function PortfolioForm() {
                                         onChange={handleProjectImageChange}
                                         className={`${styles.formInput} ${styles.projimageInput}`}
                                     />
+                                    {projectImagePreview && (
+                                        <div className={styles.profilePreview}>
+                                            <Image
+                                                src={projectImagePreview}
+                                                alt={`${project.title || "Project"} image preview`}
+                                                width={160}
+                                                height={100}
+                                                unoptimized
+                                                className={styles.projectImagePreview}
+                                            />
+                                            <div className={styles.profilePreviewDetails}>
+                                                <span className={styles.profilePreviewLabel}>Project image</span>
+                                                <span className={styles.profilePreviewStatus}>
+                                                    {project.image instanceof File ? "New image selected" : "Current project image"}
+                                                </span>
+                                            </div>
+                                            <button
+                                                type="button"
+                                                onClick={handleDeleteProjectImage}
+                                                className={styles.deleteProfileImage}
+                                                disabled={isDeletingProjectImage}
+                                                aria-label="Delete project image"
+                                                title={project.image instanceof File ? "Discard selected image" : "Delete project image"}
+                                            >
+                                                {isDeletingProjectImage ? "…" : "×"}
+                                            </button>
+                                        </div>
+                                    )}
                                     <label className={styles.formLabel}>Preview Link</label>
                                     <input
                                         type="text"
@@ -658,25 +857,56 @@ export default function PortfolioForm() {
                                         onChange={handleProjectChange}
                                         className={styles.formInput}
                                     />
-                                    <button type="button" onClick={handleAddProject} className={styles.btnAdd}>Add Project</button>
+                                    <div className={styles.projectFormActions}>
+                                        <button type="button" onClick={handleSaveProject} className={styles.btnAdd}>
+                                            {editingProjectIndex === null ? "Add Project" : "Save Changes"}
+                                        </button>
+                                        {editingProjectIndex !== null && (
+                                            <button type="button" onClick={resetProjectForm} className={styles.btnPrev}>
+                                                Cancel
+                                            </button>
+                                        )}
+                                    </div>
                                 </div>
 
                                 {projects.slice().reverse().map((proj, index) => {
                                     const originalIndex = projects.length - 1 - index; // map back to original index
                                     return (
                                         <div key={originalIndex} className={styles.projectEntry} style={{ '--project-index': index }}>
-                                            <div className={styles.projName}>{proj.title}</div>
-                                            <div className={styles.projDesc}>{proj.desc}</div>
-                                            <div className={styles.projTech}>Tech Used: {proj.tech}</div>
-                                            <div className={styles.projLink}>Preview: {proj.prevLink}</div>
-                                            <div className={styles.projGithub}>Code: {proj.githubLink}</div>
-                                            <button
-                                                type="button"
-                                                onClick={() => handleRemoveProject(originalIndex)}
-                                                className={styles.btnDelete}
-                                            >
-                                                × Remove
-                                            </button>
+                                            {proj.image && (
+                                                <Image
+                                                    src={proj.image}
+                                                    alt={`${proj.title} project`}
+                                                    width={640}
+                                                    height={360}
+                                                    unoptimized
+                                                    className={styles.projectCardImage}
+                                                />
+                                            )}
+                                            <div className={styles.projectCardContent}>
+                                                <div className={styles.projName}>{proj.title}</div>
+                                                <div className={styles.projDesc}>{proj.desc}</div>
+                                                {proj.tech && <div className={styles.projTech}>Tech Used: {proj.tech}</div>}
+                                                {proj.prevLink && <div className={styles.projLink}>Preview: {proj.prevLink}</div>}
+                                                {proj.githubLink && <div className={styles.projGithub}>Code: {proj.githubLink}</div>}
+                                                <div className={styles.projectCardActions}>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => handleEditProject(originalIndex)}
+                                                        className={styles.btnEditProject}
+                                                        aria-label={`Edit ${proj.title}`}
+                                                    >
+                                                        Edit
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => handleRemoveProject(originalIndex)}
+                                                        className={styles.btnDelete}
+                                                    >
+                                                        × Remove
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
                                     );
                                 })}
@@ -845,4 +1075,3 @@ export default function PortfolioForm() {
         </>
     );
 }
-

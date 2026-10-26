@@ -36,7 +36,7 @@ const useCloudinaryUpload = () => {
 
       if (uploadRes.ok) {
         toast.success("Image uploaded successfully ✅");
-        onSuccess(data.secure_url);
+        await onSuccess(data.secure_url);
       } else {
         toast.error(data.error?.message || "Upload failed ❌");
       }
